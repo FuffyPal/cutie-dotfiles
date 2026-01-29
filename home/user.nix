@@ -37,6 +37,10 @@
     
   services.flatpak = {
       enable = true;
+      remotes = [{
+              name = "flathub";
+              location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+            }];
       packages = [
         "io.gitlab.librewolf-community"
         "com.github.rafostar.Clapper"
