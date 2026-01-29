@@ -30,16 +30,20 @@
       in {
         nixosConfigurations."${systemSettings.hostname}" = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit systemSettings userSettings; }; 
-          modules = [ ./hosts/nixos/configuration.nix ];
-        };
-        homeConfigurations."${userSettings.username}" = home-manager.lib.homeManagerConfiguration {
-          
-          inherit pkgs;
-          extraSpecialArgs = { inherit userSettings; }; 
           modules = [ 
-            
-            ./home/user.nix 
-            nix-flatpak.homeManagerModules.nix-flatpak
+            ./hosts/nixos/configuration.nix 
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit userSettings; };
+              home-manager.users."${userSettings.username}" = {
+                imports = [
+                  ./home/user.nix
+                  nix-flatpak.homeManagerModules.nix-flatpak
+                ];
+              };
+            }
           ];
         };
       };
