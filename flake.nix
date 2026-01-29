@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/";
     
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -10,7 +11,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: 
+  outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }: 
   let
         system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages.${system};
@@ -26,7 +27,10 @@
           inherit pkgs;
           # Bu satır değişkenleri home.nix (user.nix) içine gönderir
           extraSpecialArgs = { inherit userSettings; }; 
-          modules = [ ./home/user.nix ];
+          modules = [ 
+            ./home/user.nix 
+            nix-flatpak.homeManagerModules.nix-flatpak
+          ];
         };
       };
 }
