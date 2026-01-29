@@ -16,9 +16,9 @@
         pkgs = nixpkgs.legacyPackages.${system};
         
         userSettings = {
-          username = "kullanici_adin";
-          name = "Senin Adın";
-          email = "eposta@adresin.com";
+          username = "username";
+          name = "name";
+          email = "email@email.com";
           dotfilesDir = "~/.cutie-dotfiles"; 
         };
       in {

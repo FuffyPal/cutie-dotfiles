@@ -1,6 +1,5 @@
 { pkgs, userSettings, ... }: {
   
-  # Değişkenleri burada kullanıyoruz
   home.username = userSettings.username;
   home.homeDirectory = "/home/${userSettings.username}";
 
@@ -15,10 +14,12 @@
 
   programs.git = {
     enable = true;
-    # Buradaki değerler artık flake.nix'ten geliyor!
-    userName = userSettings.name;
-    userEmail = userSettings.email;
-  };
-
+    settings = {
+          user = {
+            name = userSettings.name;
+            email = userSettings.email;
+          };
+        };
+      };
   programs.home-manager.enable = true;
 }
