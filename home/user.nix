@@ -9,6 +9,7 @@
     helix
     lolcat
     bat
+    flatpak
   ];
 
   programs.bash = {
