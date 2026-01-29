@@ -10,6 +10,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  
+  services.flatpak.enable = true;
 
   users.users."${userSettings.username}" = {
     isNormalUser = true;
