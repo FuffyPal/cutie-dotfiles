@@ -7,6 +7,7 @@ RED='\033[0;31m'
 NC='\033[0m'
 
 echo -e "${BLUE}🔍 Nix Flake yapısı kontrol ediliyor...${NC}"
+git add -N .
 
 # 1. Syntax Kontrolü
 if nix flake check; then
@@ -27,3 +28,4 @@ else
 fi
 
 echo -e "${BLUE}👋 Test tamamlandı. Hiçbir sistem dosyası değiştirilmedi.${NC}"
+git reset
