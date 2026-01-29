@@ -3,13 +3,11 @@
     ./hardware.nix
     ./gnome.nix
     ../../modules/system/locale.nix
+    ../../modules/system/networking.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = systemSettings.hostname;
-  networking.networkmanager.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
