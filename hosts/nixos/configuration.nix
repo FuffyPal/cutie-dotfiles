@@ -1,0 +1,23 @@
+{ pkgs, systemSettings, userSettings, ... }: {
+  imports = [
+    ./hardware.nix
+    ./gnome.nix
+    ../../modules/system/locale.nix
+  ];
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  networking.hostName = systemSettings.hostname;
+  networking.networkmanager.enable = true;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  users.users."${userSettings.username}" = {
+    isNormalUser = true;
+    description = userSettings.name;
+    extraGroups = [ "wheel" "networkmanager" ];
+  };
+
+  system.stateVersion = "25.11";
+}
