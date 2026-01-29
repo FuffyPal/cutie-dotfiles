@@ -55,7 +55,7 @@
         "net.cozic.joplin_desktop"
       ];
       update.auto.enable = true;
-      uninstallUnmanaged = true; # Nix listesinde olmayanları siler (isteğe bağlı)
+      # uninstallUnmanaged = true; # Nix listesinde olmayanları siler (isteğe bağlı)
     };
   
   
