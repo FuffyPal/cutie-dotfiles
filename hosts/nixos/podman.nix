@@ -18,4 +18,7 @@
     "quay.io"
     "registry.fedoraproject.org"
   ];
+  virtualisation.containers.policy = {
+    default = [ { type = "insecureAcceptAnything"; } ];
+  };
 }
