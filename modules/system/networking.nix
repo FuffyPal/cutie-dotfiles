@@ -1,6 +1,47 @@
 { systemSettings, ... }: {
 
-
   networking.hostName = systemSettings.hostname;
   networking.networkmanager.enable = true;
+  services.zapret = {
+    enable = true;
+    params = [
+      "--dpi-desync=fake"
+      "--dpi-desync=fakedsplit"
+      "--dpi-desync=fake,multisplit"
+      "--dpi-desync=fakeddisorder"
+      "--dpi-desync=fake,multidisorder"
+      "--dpi-desync=fake,fakeddisorder"
+      "--dpi-desync-ttl=3"
+      "--dpi-desync-split-pos=method+2"
+      "--dpi-desync-split-pos=midsld"
+      "--dpi-desync-fake-http=0x00000000"
+    ];
+  };
+  services.resolved = {
+      enable = true;
+      dnssec = "true";
+      dnsovertls = "true";
+      extraConfig = ''
+        [Resolve]
+        DNS=1.1.1.1#cloudflare-dns.com 9.9.9.9#dns.quad9.net
+        FallbackDNS=1.0.0.1#cloudflare-dns.com 149.112.112.112#dns.quad9.net
+        MulticastDNS=no
+        LLMNR=no
+        Cache=yes
+        CacheFromLocalhost=no
+        DNSStubListener=yes
+        ReadEtcHosts=yes
+        ResolveUnicastSingleLabel=no
+        StaleRetentionSec=0
+      '';
+    };
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [
+      53317
+    ];
+    allowedUDPPorts = [
+      53317
+    ];
+  };
 }
