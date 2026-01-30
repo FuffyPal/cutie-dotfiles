@@ -17,21 +17,20 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc
-    zlib
-    fuse3
-    icu
-    nss
     stdenv.cc.cc.lib
-    libxml2
-    libsecret
-    glib
+    zlib
+    glibc
     util-linux
     openssl
     curl
-    expat
-    glibc
     glib
+    icu
+    nss
+    libxml2
+    libsecret
+    expat
     libgcc
+    fuse3
   ];
 
   boot.kernelParams = [
