@@ -4,6 +4,7 @@
     ./gnome.nix
     ../../modules/system/locale.nix
     ../../modules/system/networking.nix
+    ../../modules/system/services.nix
   ] ++ (if (systemSettings.gpuType == "hybrid") 
             then [ ./nvidia.nix ] 
             else []);
