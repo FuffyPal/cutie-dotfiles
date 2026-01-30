@@ -11,7 +11,7 @@
     ../../modules/system/locale.nix
     ../../modules/system/networking.nix
     ../../modules/system/services.nix
-    ./docker.nix
+    ./podman.nix
   ]
   ++ (if (systemSettings.gpuType == "hybrid") then [ ./nvidia.nix ] else [ ]);
 

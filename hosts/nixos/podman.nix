@@ -18,8 +18,5 @@
     "quay.io"
     "registry.fedoraproject.org"
   ];
-  virtualisation.containers.policy = {
-    default = [ { type = "insecureAcceptAnything"; } ];
-  };
-  
+  hardware.nvidia-container-toolkit.enable = true;
 }
