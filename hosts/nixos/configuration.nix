@@ -14,25 +14,6 @@
   ]
   ++ (if (systemSettings.gpuType == "hybrid") then [ ./nvidia.nix ] else [ ]);
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    stdenv.cc.cc
-    stdenv.cc.cc.lib
-    zlib
-    glibc
-    util-linux
-    openssl
-    curl
-    glib
-    icu
-    nss
-    libxml2
-    libsecret
-    expat
-    libgcc
-    fuse3
-  ];
-
   boot.kernelParams = [
     "quiet"
     "splash"
