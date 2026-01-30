@@ -12,6 +12,11 @@ with lib.hm.gvariant;
   home.sessionPath = [
     "$HOME/.nix-profile/bin"
   ];
+  
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+  };
 
   home.packages = with pkgs; [
     helix
