@@ -24,7 +24,7 @@ with lib.hm.gvariant;
     bat
     git-lfs
     git
-    zed-editor-fhs
+    zed-editor
     flatpak
     airshipper
     steam

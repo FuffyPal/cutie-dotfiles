@@ -6,29 +6,27 @@
   };
 
   environment.gnome.excludePackages = (with pkgs; [
-    gnome-tour 
-    gnome-music 
-    gnome-maps 
-    gnome-contacts 
-    gnome-clocks 
+    gnome-tour
+    gnome-music
+    gnome-maps
+    gnome-contacts
+    gnome-clocks
     gnome-calendar
     gnome-software
-    geary 
-    epiphany 
-    cheese 
+    geary
+    epiphany
+    cheese
     gnome-calculator
     simple-scan
     showtime
     snapshot
     decibels
     papers
-    gnome-console
   ]);
 
   environment.systemPackages = with pkgs; [
     gnome-tweaks
     gnome-weather
-    gnome-terminal
     gnomeExtensions.appindicator
     gnomeExtensions.battery-health-charging
     gnomeExtensions.bluetooth-battery-meter
