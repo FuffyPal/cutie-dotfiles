@@ -42,6 +42,13 @@ with lib.hm.gvariant;
     ffmpeg
     discord
     papirus-icon-theme
+    
+    # Go Development (Antigravity for LSP and tools)
+    go
+    gopls
+    delve
+    golangci-lint
+    gotools
   ];
 
   programs.bash = {
