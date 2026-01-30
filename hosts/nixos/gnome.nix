@@ -11,6 +11,7 @@
     gnome-maps 
     gnome-contacts 
     gnome-clocks 
+    gnome-calendar
     gnome-software
     geary 
     epiphany 
