@@ -65,7 +65,7 @@
   users.users."${userSettings.username}" = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "tailscale" ];
   };
 
   system.stateVersion = "25.11";

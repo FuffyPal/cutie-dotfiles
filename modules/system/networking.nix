@@ -1,4 +1,4 @@
-{ systemSettings, ... }: {
+{ systemSettings, userSettings, config, pkgs, ... }: {
 
   networking.hostName = systemSettings.hostname;
   networking.networkmanager.enable = true;
@@ -17,6 +17,10 @@
       "--dpi-desync-fake-http=0x00000000"
     ];
   };
+  services.tailscale = {
+      enable = true;
+      extraUpFlags = [ "--operator=${userSettings.username}" ];
+    };
   services.resolved = {
       enable = true;
       dnssec = "true";
@@ -37,10 +41,13 @@
     };
   networking.firewall = {
     enable = true;
+    checkReversePath = "loose";
+    trustedInterfaces = [ "tailscale0" ];
     allowedTCPPorts = [
       53317
     ];
     allowedUDPPorts = [
+      config.services.tailscale.port
       53317
     ];
   };

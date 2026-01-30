@@ -75,6 +75,7 @@ with lib.hm.gvariant;
         "de.haeckerfelix.Fragments"
         "com.spotify.Client"
         "io.ente.auth"
+        "com.github.wwmm.easyeffects"
         "net.cozic.joplin_desktop"
         "org.gnome.World.PikaBackup"
         "org.prismlauncher.PrismLauncher"
