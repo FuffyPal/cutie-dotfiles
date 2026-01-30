@@ -21,15 +21,16 @@
     fuse3
     icu
     nss
+    stdenv.cc.cc.lib
     libxml2
     libsecret
     glib
     util-linux
     openssl
     curl
-    zlib
     expat
     glibc
+    glib
     libgcc
   ];
 
