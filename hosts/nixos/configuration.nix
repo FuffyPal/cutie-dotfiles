@@ -99,6 +99,9 @@
     subUidRanges = [{ startUid = 100000; count = 65536; }];
     subGidRanges = [{ startGid = 100000; count = 65536; }];
   };
+  environment.systemPackages = [
+    pkgs.nvidia-container-toolkit
+  ];
 
   system.stateVersion = "25.11";
 }
