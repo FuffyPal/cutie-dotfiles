@@ -76,6 +76,7 @@ with lib.hm.gvariant;
         "com.spotify.Client"
         "io.ente.auth"
         "net.cozic.joplin_desktop"
+        "org.gnome.World.PikaBackup"
         "org.prismlauncher.PrismLauncher"
         "im.fluffychat.Fluffychat"
         "dev.deedles.Trayscale"

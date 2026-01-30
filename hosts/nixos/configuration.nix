@@ -58,6 +58,16 @@
     "vm.page-cluster" = 0;
   };
   
+  programs.gamemode = {
+    enable = true;
+    settings = {
+      general = {
+        initial_cpu_governor = "performance";
+        default_cpu_governor = "balanced"; 
+      };
+    };
+  };
+  
   services.flatpak.enable = true;
 
   users.users."${userSettings.username}" = {
