@@ -12,7 +12,21 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.settings.auto-optimise-store = true; 
-    
+  
+  system.activationScripts.userAvatar = {
+    text = ''
+      mkdir -p /var/lib/AccountsService/icons
+      mkdir -p /var/lib/AccountsService/users
+      
+      cp ${../../assets/images/avatar.jpg} /var/lib/AccountsService/icons/${userSettings.username}
+      
+      echo -e "[User]\nIcon=/var/lib/AccountsService/icons/${userSettings.username}\nSystemAccount=false" > /var/lib/AccountsService/users/${userSettings.username}
+      
+      chown root:root /var/lib/AccountsService/icons/${userSettings.username}
+      chmod 644 /var/lib/AccountsService/icons/${userSettings.username}
+    '';
+  };
+  
   nix.gc = {
     automatic = true;
     dates = "weekly";
