@@ -4,6 +4,10 @@
   home.homeDirectory = "/home/${userSettings.username}";
 
   home.stateVersion = "25.11"; 
+  
+  home.sessionPath = [
+    "$HOME/.nix-profile/bin"
+  ];
 
   home.packages = with pkgs; [
     helix
