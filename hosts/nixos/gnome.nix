@@ -21,6 +21,22 @@
   environment.systemPackages = with pkgs; [
     gnome-tweaks
     gnome-weather
+    gnomeExtensions.appindicator
+    gnomeExtensions.battery-health-charging
+    gnomeExtensions.bluetooth-battery-meter
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.caffeine
+    gnomeExtensions.clipboard-indicator
+    gnomeExtensions.color-picker
+    gnomeExtensions.compiz-windows-effect
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.tiling-shell
+    gnomeExtensions.gsconnect
+    gnomeExtensions.just-perfection
+    gnomeExtensions.weather-oclock
+    gnomeExtensions.quick-settings-tweaker
+    gnomeExtensions.media-controls
+    gnomeExtensions.wiggle
   ];
   xdg.portal = {
       enable = true;
