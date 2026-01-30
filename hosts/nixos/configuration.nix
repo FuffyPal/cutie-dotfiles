@@ -23,6 +23,7 @@
     nss
     openssl
     curl
+    zlib
     expat
     glibc
     libgcc
