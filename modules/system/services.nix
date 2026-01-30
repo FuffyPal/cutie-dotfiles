@@ -1,8 +1,6 @@
 { config, pkgs, systemSettings, userSettings, ... }:
-let
-  xdg = config.xdg.userDirs;
-in
 {
+
   services.syncthing = {
     enable = true;
     user = "${userSettings.username}";
@@ -11,19 +9,19 @@ in
     settings.devices."pal".id = "${systemSettings.syncthingId}";
     settings.folders = {
       "Music" = {
-        path = "${xdg.music}";
+        path = "/home/${userSettings.username}/Music";
         devices = [ "pal" ];
       };
       "Videos" = {
-        path = "${xdg.videos}";
+        path = "/home/${userSettings.username}/Videos";
         devices = [ "pal" ];
       };
       "Pictures" = {
-        path = "${xdg.pictures}";
+        path = "/home/${userSettings.username}/Pictures";
         devices = [ "pal" ];
       };
       "Documents" = {
-        path = "${xdg.documents}";
+        path = "/home/${userSettings.username}/Documents";
         devices = [ "pal" ];
       }; 
       "Joplin" = {
