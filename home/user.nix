@@ -38,7 +38,7 @@ with lib.hm.gvariant;
     mullvad-browser
     localsend
     yt-dlp
-    antigravity-fhs
+    antigravity
     ffmpeg
     discord
     papirus-icon-theme
