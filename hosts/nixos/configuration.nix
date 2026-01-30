@@ -1,4 +1,9 @@
-{ systemSettings, userSettings, ... }:
+{
+  systemSettings,
+  userSettings,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./hardware.nix
@@ -8,6 +13,20 @@
     ../../modules/system/services.nix
   ]
   ++ (if (systemSettings.gpuType == "hybrid") then [ ./nvidia.nix ] else [ ]);
+
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+    zlib
+    fuse3
+    icu
+    nss
+    openssl
+    curl
+    expat
+    glibc
+    libgcc
+  ];
 
   boot.kernelParams = [
     "quiet"
