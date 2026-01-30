@@ -94,6 +94,7 @@
       "wheel"
       "networkmanager"
       "tailscale"
+      "podman"
     ];
   };
 
