@@ -182,6 +182,29 @@ with lib.hm.gvariant;
         picture-uri = "file://${../assets/images/wallpaper.png}";
         picture-options = "zoom";
       };
+      "org/gnome/desktop/app-folders" = {
+        folder-children = [ "Utilities" "Accessories" "Core" "YaST" "Pardus" "Office" "Game" "Network" "AudioVideo" "Development" ];
+      };
+      "org/gnome/desktop/app-folders/folders/Utilities" = {
+        name = "Zubehör";
+        categories = [ "Utility" "Accessories" "Core" ];
+      };
+      "org/gnome/desktop/app-folders/folders/Game" = {
+        name = "Spiel";
+        categories = [ "Game" ];
+      };
+      "org/gnome/desktop/app-folders/folders/AudioVideo" = {
+        name = "Multimedia";
+        categories = [ "AudioVideo" "Audio" "Video" ];
+      };
+      "org/gnome/desktop/app-folders/folders/Development" = {
+        name = "Entwicklung";
+        categories = [ "Development" ];
+      };
+      "org/gnome/desktop/app-folders/folders/Office" = {
+        name = "Büro";
+        categories = [ "Office" ];
+      };
       "org/gnome/shell" = {
         disable-user-extensions = false;
         enabled-extensions = [
