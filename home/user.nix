@@ -29,6 +29,7 @@ with lib.hm.gvariant;
     bat
     git-lfs
     git
+    podman # test
     flatpak
     airshipper
     nixd
