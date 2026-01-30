@@ -29,7 +29,7 @@ with lib.hm.gvariant;
     bat
     git-lfs
     git
-    zed-editor
+    zed-editor-fhs
     flatpak
     airshipper
     nixd
