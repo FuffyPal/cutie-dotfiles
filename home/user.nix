@@ -23,6 +23,10 @@ with lib.hm.gvariant;
     createDirectories = true;
   };
 
+  home.sessionVariables = {
+    NIX_LD_LIBRARY_PATH = "/run/current-system/sw/share/nix-ld/lib";
+  };
+
   home.packages = with pkgs; [
     helix
     lolcat
