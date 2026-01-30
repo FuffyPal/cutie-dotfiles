@@ -25,8 +25,8 @@
       "--update-input" "nixpkgs"
       "--commit-lock-file"
     ];
-    dates = "04:00";
-    randomizedDelaySec = "45min";
+    dates = "11:00";
+    randomizedDelaySec = "0";
   };
   
   services.flatpak.enable = true;
