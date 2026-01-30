@@ -13,4 +13,9 @@
   environment.systemPackages = with pkgs; [
     podman-compose
   ];
+  virtualisation.containers.registries.search = [
+    "docker.io"
+    "quay.io"
+    "registry.fedoraproject.org"
+  ];
 }
