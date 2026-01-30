@@ -173,6 +173,15 @@ with lib.hm.gvariant;
         show-indicator = false;
         window-use-custom-border-color = false;
       };
+      "org/gnome/desktop/background" = {
+        picture-uri = "file://${../assets/images/wallpaper.png}";
+        picture-uri-dark = "file://${../assets/images/wallpaper.png}";
+        picture-options = "zoom";
+      };
+      "org/gnome/desktop/screensaver" = {
+        picture-uri = "file://${../assets/images/wallpaper.png}";
+        picture-options = "zoom";
+      };
       "org/gnome/shell" = {
         disable-user-extensions = false;
         enabled-extensions = [
