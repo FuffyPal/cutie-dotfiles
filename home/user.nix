@@ -30,6 +30,7 @@ with lib.hm.gvariant;
     git-lfs
     git
     flatpak
+    zed-editor
     airshipper
     nixd
     nil
