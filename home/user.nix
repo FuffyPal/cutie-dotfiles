@@ -51,6 +51,17 @@ with lib.hm.gvariant;
     gotools
   ];
 
+  xdg.configFile."containers/registries.conf".text = ''
+    [registries.search]
+    registries = ['docker.io', 'quay.io', 'registry.fedoraproject.org']
+
+    [registries.insecure]
+    registries = []
+
+    [registries.block]
+    registries = []
+  '';
+  
   programs.bash = {
     enable = true;
     enableCompletion = true;
