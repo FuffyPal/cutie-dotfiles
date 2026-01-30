@@ -27,6 +27,9 @@ with lib.hm.gvariant;
     zed-editor
     flatpak
     airshipper
+    nixd
+    nil
+    nixpkgs-fm
     steam
     mullvad-browser
     localsend
