@@ -44,11 +44,14 @@
     checkReversePath = "loose";
     trustedInterfaces = [ "tailscale0" ];
     allowedTCPPorts = [
+      22000
       53317
     ];
     allowedUDPPorts = [
       config.services.tailscale.port
       53317
+      22000
+      21027
     ];
   };
 }

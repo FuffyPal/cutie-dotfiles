@@ -24,6 +24,7 @@
           # please enter sudo lshw -c display PCI area or lspci | grep -E 'VGA|3D'
           amdgpuBusId = "PCI:5:0:0"; 
           nvidiaBusId = "PCI:1:0:0";
+          syncthingId = "None";
         };
         userSettings = {
           username = "fluffypal";
