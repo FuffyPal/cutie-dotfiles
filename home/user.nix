@@ -38,6 +38,7 @@ with lib.hm.gvariant;
     mullvad-browser
     localsend
     yt-dlp
+    vscode-fhs
     ffmpeg
     discord
     papirus-icon-theme
@@ -87,7 +88,6 @@ with lib.hm.gvariant;
       "com.spotify.Client"
       "io.ente.auth"
       "com.github.wwmm.easyeffects"
-      "dev.zed.Zed"
       "net.cozic.joplin_desktop"
       "org.gnome.World.PikaBackup"
       "org.prismlauncher.PrismLauncher"
