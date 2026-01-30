@@ -21,6 +21,10 @@
     fuse3
     icu
     nss
+    libxml2
+    libsecret
+    glib
+    util-linux
     openssl
     curl
     zlib
