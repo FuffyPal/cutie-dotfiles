@@ -1,4 +1,4 @@
-{ config, pkgs, systemSettings, userSettings, ... }:
+{ systemSettings, userSettings, ... }:
 {
 
   services.syncthing = {

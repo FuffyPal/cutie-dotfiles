@@ -1,4 +1,10 @@
-{ systemSettings, userSettings, config, pkgs, ... }: {
+{
+  systemSettings,
+  userSettings,
+  config,
+  ...
+}:
+{
 
   networking.hostName = systemSettings.hostname;
   networking.networkmanager.enable = true;
@@ -18,27 +24,27 @@
     ];
   };
   services.tailscale = {
-      enable = true;
-      extraUpFlags = [ "--operator=${userSettings.username}" ];
-    };
+    enable = true;
+    extraUpFlags = [ "--operator=${userSettings.username}" ];
+  };
   services.resolved = {
-      enable = true;
-      dnssec = "true";
-      dnsovertls = "true";
-      extraConfig = ''
-        [Resolve]
-        DNS=1.1.1.1#cloudflare-dns.com 9.9.9.9#dns.quad9.net
-        FallbackDNS=1.0.0.1#cloudflare-dns.com 149.112.112.112#dns.quad9.net
-        MulticastDNS=no
-        LLMNR=no
-        Cache=yes
-        CacheFromLocalhost=no
-        DNSStubListener=yes
-        ReadEtcHosts=yes
-        ResolveUnicastSingleLabel=no
-        StaleRetentionSec=0
-      '';
-    };
+    enable = true;
+    dnssec = "true";
+    dnsovertls = "true";
+    extraConfig = ''
+      [Resolve]
+      DNS=1.1.1.1#cloudflare-dns.com 9.9.9.9#dns.quad9.net
+      FallbackDNS=1.0.0.1#cloudflare-dns.com 149.112.112.112#dns.quad9.net
+      MulticastDNS=no
+      LLMNR=no
+      Cache=yes
+      CacheFromLocalhost=no
+      DNSStubListener=yes
+      ReadEtcHosts=yes
+      ResolveUnicastSingleLabel=no
+      StaleRetentionSec=0
+    '';
+  };
   networking.firewall = {
     enable = true;
     checkReversePath = "loose";
@@ -56,16 +62,24 @@
       27036
     ];
     allowedTCPPortRanges = [
-      { from = 1714; to = 1764; } 
-      { from = 27036; to = 27037; } 
+      {
+        from = 1714;
+        to = 1764;
+      }
+      {
+        from = 27036;
+        to = 27037;
+      }
     ];
     allowedUDPPortRanges = [
-      { 
-        from = 1714; to = 1764; 
-      } 
-      { 
-        from = 10400; to = 10401; 
-      } 
+      {
+        from = 1714;
+        to = 1764;
+      }
+      {
+        from = 10400;
+        to = 10401;
+      }
     ];
   };
 }

@@ -1,15 +1,23 @@
-{ pkgs, systemSettings, userSettings, ... }: {
+{ systemSettings, userSettings, ... }:
+{
   imports = [
     ./hardware.nix
     ./gnome.nix
     ../../modules/system/locale.nix
     ../../modules/system/networking.nix
     ../../modules/system/services.nix
-  ] ++ (if (systemSettings.gpuType == "hybrid") 
-            then [ ./nvidia.nix ] 
-            else []);
-  
-  boot.kernelParams = [ "quiet" "splash" "boot.shell_on_fail" "loglevel=3" "rd.systemd.show_status=false" "rd.udev.log_level=3" "udev.log_priority=3" ];
+  ]
+  ++ (if (systemSettings.gpuType == "hybrid") then [ ./nvidia.nix ] else [ ]);
+
+  boot.kernelParams = [
+    "quiet"
+    "splash"
+    "boot.shell_on_fail"
+    "loglevel=3"
+    "rd.systemd.show_status=false"
+    "rd.udev.log_level=3"
+    "udev.log_priority=3"
+  ];
   boot.consoleLogLevel = 0;
   boot.initrd.verbose = false;
   boot.plymouth = {
@@ -20,25 +28,28 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.configurationLimit = 10;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.auto-optimise-store = true; 
-  
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+  nix.settings.auto-optimise-store = true;
+
   nixpkgs.config.allowUnfree = true;
-  
+
   system.activationScripts.userAvatar = {
     text = ''
       mkdir -p /var/lib/AccountsService/icons
       mkdir -p /var/lib/AccountsService/users
-      
+
       cp ${../../assets/images/avatar.jpg} /var/lib/AccountsService/icons/${userSettings.username}
-      
+
       echo -e "[User]\nIcon=/var/lib/AccountsService/icons/${userSettings.username}\nSystemAccount=false" > /var/lib/AccountsService/users/${userSettings.username}
-      
+
       chown root:root /var/lib/AccountsService/icons/${userSettings.username}
       chmod 644 /var/lib/AccountsService/icons/${userSettings.username}
     '';
   };
-  
+
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -50,30 +61,34 @@
     memoryPercent = 50;
     priority = 100;
   };
-  
+
   boot.kernel.sysctl = {
     "vm.swappiness" = 180;
     "vm.watermark_boost_factor" = 0;
     "vm.watermark_scale_factor" = 125;
     "vm.page-cluster" = 0;
   };
-  
+
   programs.gamemode = {
     enable = true;
     settings = {
       general = {
         initial_cpu_governor = "performance";
-        default_cpu_governor = "balanced"; 
+        default_cpu_governor = "balanced";
       };
     };
   };
-  
+
   services.flatpak.enable = true;
 
   users.users."${userSettings.username}" = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "wheel" "networkmanager" "tailscale" ];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "tailscale"
+    ];
   };
 
   system.stateVersion = "25.11";
