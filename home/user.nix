@@ -1,10 +1,10 @@
 { pkgs, userSettings, ... }: {
-  
+
   home.username = userSettings.username;
   home.homeDirectory = "/home/${userSettings.username}";
 
-  home.stateVersion = "25.11"; 
-  
+  home.stateVersion = "25.11";
+
   home.sessionPath = [
     "$HOME/.nix-profile/bin"
   ];
@@ -14,6 +14,7 @@
     lolcat
     bat
     flatpak
+    blender
   ];
 
   programs.bash = {
@@ -25,21 +26,21 @@
         ll = "ls -lh";
         la = "ls -lha";
         cat = "lolcat";
-        hx = "helix"; 
+        hx = "helix";
         helix = "helix";
       };
-  
+
       bashrcExtra = ''
         # Sadece Nix'in otomatik yapamadığı "Görsel" ve "Dış Kaynaklı" ayarlar:
-        
+
         # Renkli Prompt (Kişisel zevk)
         PS1="\[\e[38;2;255;171;185m\]\u@\h \[\e[38;2;180;200;255m\]\w\[\e[0m\]\$ "
-  
+
         # Eğer bu dosya GitLab'da yoksa hata almamak için kontrol ekledik
         [ -f "$HOME/.alias" ] && source "$HOME/.alias"
       '';
     };
-    
+
   services.flatpak = {
       enable = true;
       remotes = [{
@@ -62,8 +63,8 @@
       update.auto.enable = true;
       # uninstallUnmanaged = true; # Nix listesinde olmayanları siler (isteğe bağlı)
     };
-  
-  
+
+
   programs.git = {
     enable = true;
     settings = {
