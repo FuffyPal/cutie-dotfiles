@@ -5,6 +5,7 @@ with lib.hm.gvariant;
 
   home.username = userSettings.username;
   home.homeDirectory = "/home/${userSettings.username}";
+  home.file.".face".source = ../assets/images/avatar.jpg;
 
   home.stateVersion = "25.11";
 
