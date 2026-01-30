@@ -21,4 +21,7 @@
   virtualisation.containers.policy = {
     default = [ { type = "insecureAcceptAnything"; } ];
   };
+  systemd.user.extraConfig = ''
+    DefaultEnvironment="PATH=/run/current-system/sw/bin:/run/wrappers/bin:${lib.makeBinPath [ pkgs.bash ]}"
+  '';
 }
