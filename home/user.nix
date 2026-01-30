@@ -210,11 +210,11 @@ with lib.hm.gvariant;
         picture-options = "zoom";
       };
       "org/gnome/desktop/app-folders" = {
-        folder-children = [ "Utilities" "Accessories" "Core" "YaST" "Pardus" "Office" "Game" "Network" "AudioVideo" "Development" ];
+        folder-children = [ "Utilities" "Settings" "Accessories" "Core" "YaST" "Pardus" "Office" "Game" "Network" "AudioVideo" "Development" ];
       };
       "org/gnome/desktop/app-folders/folders/Utilities" = {
         name = "Zubehör";
-        categories = [ "Utility" "Accessories" "Core" ];
+        categories = [ "Utility" "Accessories" "Core" "Settings" ];
       };
       "org/gnome/desktop/app-folders/folders/Game" = {
         name = "Spiel";
