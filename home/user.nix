@@ -51,6 +51,14 @@ with lib.hm.gvariant;
     gotools
   ];
 
+  xdg.configFile."containers/registries.conf".text = ''
+    [registries.search]
+    registries = ['docker.io', 'ghcr.io', 'quay.io']
+
+    [registries.short-name-mode]
+    mode = "permissive"
+  '';
+
   programs.bash = {
     enable = true;
     enableCompletion = true;
