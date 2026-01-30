@@ -178,6 +178,9 @@ with lib.hm.gvariant;
         show-indicator = false;
         window-use-custom-border-color = false;
       };
+      "org/gnome/desktop/interface" = {
+          accent-color = "pink"; 
+        };
       "org/gnome/desktop/background" = {
         picture-uri = "file://${../assets/images/wallpaper.png}";
         picture-uri-dark = "file://${../assets/images/wallpaper.png}";
