@@ -11,7 +11,7 @@
     ../../modules/system/locale.nix
     ../../modules/system/networking.nix
     ../../modules/system/services.nix
-    ./podman.nix
+    ./docker.nix
   ]
   ++ (if (systemSettings.gpuType == "hybrid") then [ ./nvidia.nix ] else [ ]);
 
@@ -94,9 +94,8 @@
       "wheel"
       "networkmanager"
       "tailscale"
+      "docker"
     ];
-    subUidRanges = [{ startUid = 100000; count = 65536; }];
-    subGidRanges = [{ startGid = 100000; count = 65536; }];
   };
 
   system.stateVersion = "25.11";
