@@ -31,7 +31,6 @@ with lib.hm.gvariant;
     git
     flatpak
     airshipper
-    zed-editor-fhs
     nixd
     nil
     nixpkgs-fmt
@@ -88,6 +87,7 @@ with lib.hm.gvariant;
       "com.spotify.Client"
       "io.ente.auth"
       "com.github.wwmm.easyeffects"
+      "dev.zed.Zed"
       "net.cozic.joplin_desktop"
       "org.gnome.World.PikaBackup"
       "org.prismlauncher.PrismLauncher"
