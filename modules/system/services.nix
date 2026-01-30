@@ -29,7 +29,7 @@
         devices = [ "pal" ];
       };
       "Joplin" = {
-
+        id = "fubt2-yerkm"
         path = "/home/${userSettings.username}/Sync/joplin";
         devices = [ "pal" ];
       };
