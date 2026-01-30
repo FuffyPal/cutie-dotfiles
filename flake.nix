@@ -23,7 +23,7 @@
         };
         userSettings = {
           username = "fluffypal";
-          name = "name";
+          name = "FluffyPal";
           email = "email@email.com";
           dotfilesDir = "~/.cutie-dotfiles"; 
         };
