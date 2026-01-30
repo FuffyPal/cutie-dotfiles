@@ -8,12 +8,18 @@
     defaultNetwork.settings.dns_enabled = true;
   };
 
-virtualisation.containers = {
+  virtualisation.containers = {
     enable = true;
-    registries.search = [
-      "docker.io"
-      "ghcr.io"
-      "quay.io"
-    ];
+    registries.search = [ "docker.io" "ghcr.io" "quay.io" ];
+    
+    # Bunu ekle:
+    policy = {
+      default = [{ type = "insecureAcceptAnything"; }];
+      transports = {
+        docker-daemon = {
+          "" = [{ type = "insecureAcceptAnything"; }];
+        };
+      };
+    };
   };
 }
