@@ -19,7 +19,7 @@
                 system = "x86_64-linux";
                 hostname = "cutie";
                 timezone = "Europe/Istanbul";
-                locale = "tr_TR.UTF-8";
+                locale = "de_DE.UTF-8";
         };
         userSettings = {
           username = "fluffypal";
