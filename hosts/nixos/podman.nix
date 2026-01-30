@@ -19,4 +19,5 @@
     "registry.fedoraproject.org"
   ];
   hardware.nvidia-container-toolkit.enable = true;
+  security.unprivilegedUsernsClone = true;
 }
