@@ -7,9 +7,7 @@
 with lib.hm.gvariant;
 
 {
-  imports = [
-    ./zed.nix
-  ];
+
   home.username = userSettings.username;
   home.homeDirectory = "/home/${userSettings.username}";
   home.file.".face".source = ../assets/images/avatar.jpg;
@@ -33,6 +31,7 @@ with lib.hm.gvariant;
     git
     flatpak
     airshipper
+    zed-editor-fhs
     nixd
     nil
     nixpkgs-fmt
