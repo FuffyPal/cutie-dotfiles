@@ -14,7 +14,7 @@
   boot.initrd.verbose = false;
   boot.plymouth = {
     enable = true;
-    theme = "spinner";
+    theme = "bgrt";
   };
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

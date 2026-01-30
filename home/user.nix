@@ -45,8 +45,7 @@ with lib.hm.gvariant;
         ll = "ls -lh";
         la = "ls -lha";
         cat = "lolcat";
-        hx = "helix";
-        helix = "helix";
+        helix = "hx"
       };
 
       bashrcExtra = ''
