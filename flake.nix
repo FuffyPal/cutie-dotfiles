@@ -16,10 +16,14 @@
         system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages.${system};
         systemSettings = {
-                system = "x86_64-linux";
-                hostname = "cutie";
-                timezone = "Europe/Istanbul";
-                locale = "de_DE.UTF-8";
+          system = "x86_64-linux";
+          hostname = "cutie";
+          timezone = "Europe/Istanbul";
+          locale = "de_DE.UTF-8";
+          gpuType = "hybrid"; # AMD + Nvidia = hybrid but Intel+Nvida=Not Support
+          # please enter sudo lshw -c display PCI area or lspci | grep -E 'VGA|3D'
+          amdgpuBusId = "PCI:5:0:0"; 
+          nvidiaBusId = "PCI:1:0:0";
         };
         userSettings = {
           username = "fluffypal";

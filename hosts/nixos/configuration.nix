@@ -4,7 +4,9 @@
     ./gnome.nix
     ../../modules/system/locale.nix
     ../../modules/system/networking.nix
-  ];
+  ] ++ (if (systemSettings.gpuType == "hybrid") 
+            then [ ./nvidia.nix ] 
+            else []);
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -33,16 +35,6 @@
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 7d";
-  };
-  system.autoUpgrade = {
-    enable = true;
-    flake = "github:FuffyPal/cutie-dotfiles";
-    flags = [
-      "--update-input" "nixpkgs"
-      "--commit-lock-file"
-    ];
-    dates = "04:00";
-    randomizedDelaySec = "45min";
   };
   zramSwap = {
     enable = true;
