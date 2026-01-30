@@ -52,6 +52,20 @@
       53317
       22000
       21027
+      27031
+      27036
+    ];
+    allowedTCPPortRanges = [
+      { from = 1714; to = 1764; } 
+      { from = 27036; to = 27037; } 
+    ];
+    allowedUDPPortRanges = [
+      { 
+        from = 1714; to = 1764; 
+      } 
+      { 
+        from = 10400; to = 10401; 
+      } 
     ];
   };
 }
