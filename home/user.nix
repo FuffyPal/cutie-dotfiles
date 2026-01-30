@@ -55,7 +55,6 @@ with lib.hm.gvariant;
         "org.localsend.localsend_app"
         "com.github.tchx84.Flatseal"
         "org.mozilla.Thunderbird"
-        "org.gnome.Loupe"
         "im.fluffychat.Fluffychat"
         "de.haeckerfelix.Fragments"
         "com.spotify.Client"

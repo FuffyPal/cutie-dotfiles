@@ -1,4 +1,4 @@
-{ systemSettings, ... }: {
+{ systemSettings, pkgs, ... }: {
   time.timeZone = systemSettings.timezone;
   i18n.defaultLocale = systemSettings.locale;
   i18n.extraLocaleSettings = {
@@ -18,6 +18,7 @@
     layout = "tr";
     variant = "";
   };
+  services.xserver.excludePackages = [ pkgs.xterm ];
   
   console.keyMap = "trq";
 }
