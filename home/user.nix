@@ -94,6 +94,7 @@ with lib.hm.gvariant;
       "org.mozilla.Thunderbird"
       "im.fluffychat.Fluffychat"
       "de.haeckerfelix.Fragments"
+      "org.vinegarhq.Sober"
       "com.spotify.Client"
       "io.ente.auth"
       "com.github.wwmm.easyeffects"
