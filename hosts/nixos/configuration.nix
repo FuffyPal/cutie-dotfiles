@@ -11,6 +11,7 @@
     ../../modules/system/locale.nix
     ../../modules/system/networking.nix
     ../../modules/system/services.nix
+    ../../modules/system/fonts.nix
     ./podman.nix
     ./virt-manager.nix
   ]
