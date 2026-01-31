@@ -12,6 +12,7 @@
     ../../modules/system/networking.nix
     ../../modules/system/services.nix
     ./podman.nix
+    ./virt-manager.nix
   ]
   ++ (if (systemSettings.gpuType == "hybrid") then [ ./nvidia.nix ] else [ ]);
 
@@ -95,6 +96,7 @@
       "networkmanager"
       "tailscale"
       "docker"
+      "libvirtd"
     ];
     subUidRanges = [{ startUid = 100000; count = 65536; }];
     subGidRanges = [{ startGid = 100000; count = 65536; }];
