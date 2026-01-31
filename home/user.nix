@@ -40,6 +40,7 @@ with lib.hm.gvariant;
     localsend
     yt-dlp
     antigravity
+    alcom
     ffmpeg
     discord
     papirus-icon-theme
