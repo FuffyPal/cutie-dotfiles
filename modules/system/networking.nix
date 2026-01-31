@@ -47,11 +47,14 @@
   };
   networking.firewall = {
     enable = true;
+    allowPing = true;
     checkReversePath = "loose";
     trustedInterfaces = [ "tailscale0" ];
     allowedTCPPorts = [
       22000
       53317
+      139
+      445
     ];
     allowedUDPPorts = [
       config.services.tailscale.port
@@ -59,7 +62,9 @@
       22000
       21027
       27031
+      137
       27036
+      138
     ];
     allowedTCPPortRanges = [
       {
