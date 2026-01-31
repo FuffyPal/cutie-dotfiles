@@ -101,6 +101,7 @@ with lib.hm.gvariant;
       "org.prismlauncher.PrismLauncher"
       "im.fluffychat.Fluffychat"
       "dev.deedles.Trayscale"
+      "com.unity.UnityHub"
     ];
     update.auto.enable = true;
     uninstallUnmanaged = true; # Nix listesinde olmayanları siler (isteğe bağlı)
