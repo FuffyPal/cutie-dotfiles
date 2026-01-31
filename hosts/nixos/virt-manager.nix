@@ -8,7 +8,7 @@
       runAsRoot = true;
       swtpm.enable = true;
     };
-    onBoot = "ignore";
+    onBoot = "start";
     onShutdown = "shutdown";
   };
   programs.virt-manager.enable = true;
