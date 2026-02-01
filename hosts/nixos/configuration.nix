@@ -108,7 +108,10 @@
     pkgs.gamescope
   ];
 
-  programs.gamescope.enable = true;
+  programs.gamescope = {
+    enable = true;
+    capSysNice
+  };
 
   system.stateVersion = "25.11";
 }
