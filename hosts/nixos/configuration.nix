@@ -105,7 +105,10 @@
   };
   environment.systemPackages = [
     pkgs.nvidia-container-toolkit
+    pkgs.gamescope
   ];
+
+  programs.gamescope.enable = true;
 
   system.stateVersion = "25.11";
 }

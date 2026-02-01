@@ -101,7 +101,6 @@ with lib.hm.gvariant;
       "net.cozic.joplin_desktop"
       "org.gnome.World.PikaBackup"
       "org.prismlauncher.PrismLauncher"
-      "im.fluffychat.Fluffychat"
       "dev.deedles.Trayscale"
       "com.unity.UnityHub"
     ];
