@@ -110,7 +110,7 @@
 
   programs.gamescope = {
     enable = true;
-    capSysNice
+    capSysNice = true;
   };
 
   system.stateVersion = "25.11";
