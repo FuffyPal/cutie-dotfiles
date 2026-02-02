@@ -111,11 +111,17 @@
     pkgs.nvidia-container-toolkit
     pkgs.gamescope
     pkgs.libnotify
+    pkgs.cudaPackages.cudatoolkit
   ];
 
   programs.gamescope = {
     enable = true;
     capSysNice = true;
+  };
+
+  environment.sessionVariables = {
+    STAGING_SHARED_MEMORY = "1";
+    PROTON_ASYNC = "1";
   };
 
   system.stateVersion = "25.11";
