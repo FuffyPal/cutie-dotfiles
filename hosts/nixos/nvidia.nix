@@ -25,5 +25,11 @@
     };
   };
 
+  environment.sessionVariables = {
+    __GL_SHADER_DISK_CACHE = "1";
+    __GL_SHADER_DISK_CACHE_SIZE = "1073741824";
+    PROTON_ENABLE_NVAPI = "1";
+    DXVK_ENABLE_NVAPI = "1";
+  };
   hardware.nvidia-container-toolkit.enable = true;
 }

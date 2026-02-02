@@ -85,6 +85,10 @@
         initial_cpu_governor = "performance";
         default_cpu_governor = "balanced";
       };
+      custom = {
+        start = "${pkgs.libnotify}/bin/notify-send 'Oyun Modu Aktif'";
+        stop = "${pkgs.libnotify}/bin/notify-send 'Oyun Modu Kapalı'";
+      };
     };
   };
 
@@ -106,6 +110,7 @@
   environment.systemPackages = [
     pkgs.nvidia-container-toolkit
     pkgs.gamescope
+    pkgs.libnotify
   ];
 
   programs.gamescope = {
