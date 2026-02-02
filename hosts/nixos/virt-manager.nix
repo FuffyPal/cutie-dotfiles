@@ -23,6 +23,11 @@
     spice-protocol
     virtio-win
     win-spice
+    looking-glass-client
+  ];
+
+  systemd.tmpfiles.rules = [
+    "f /dev/shm/looking-glass 0660 fluffypal libvirtd -"
   ];
 
   services.samba = {
