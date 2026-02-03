@@ -103,6 +103,7 @@ with lib.hm.gvariant;
       "org.prismlauncher.PrismLauncher"
       "dev.deedles.Trayscale"
       "com.unity.UnityHub"
+      "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.flatpak"
     ];
     update.auto.enable = true;
     uninstallUnmanaged = true; # Nix listesinde olmayanları siler (isteğe bağlı)
