@@ -90,6 +90,7 @@ firewall-applet
 flatpak
 vim
 gnome-tweaks
+stow
 papirus-icon-theme
 kmodtool
 mullvad-vpn
