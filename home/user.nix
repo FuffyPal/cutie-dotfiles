@@ -100,6 +100,7 @@ with lib.hm.gvariant;
       "io.ente.auth"
       "com.github.wwmm.easyeffects"
       "net.cozic.joplin_desktop"
+      "net.agalwood.Motrix"
       "org.gnome.World.PikaBackup"
       "org.prismlauncher.PrismLauncher"
       "dev.deedles.Trayscale"
