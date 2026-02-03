@@ -52,12 +52,6 @@ with lib.hm.gvariant;
     golangci-lint
     gotools
   ];
-
-  home.activation = {
-    installHytale = lib.hm.dag.entryAfter ["writeBoundary"] ''
-      $DRY_RUN_CMD ${pkgs.flatpak}/bin/flatpak install --user -y --noninteractive https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.flatpak || true
-    '';
-  };
   
   programs.bash = {
     enable = true;
