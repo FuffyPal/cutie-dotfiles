@@ -33,6 +33,7 @@ with lib.hm.gvariant;
     zed-editor
     airshipper
     nixd
+    termius
     nil
     nixpkgs-fmt
     steam
