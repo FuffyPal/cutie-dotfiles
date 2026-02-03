@@ -37,7 +37,6 @@ with lib.hm.gvariant;
     nil
     nixpkgs-fmt
     steam
-    mullvad-browser
     localsend
     yt-dlp
     antigravity
