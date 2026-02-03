@@ -103,9 +103,10 @@ with lib.hm.gvariant;
       "org.prismlauncher.PrismLauncher"
       "dev.deedles.Trayscale"
       "com.unity.UnityHub"
+      "com.hypixel.HytaleLauncher"
     ];
     update.auto.enable = true;
-    uninstallUnmanaged = true; # Nix listesinde olmayanları siler (isteğe bağlı)
+    uninstallUnmanaged = true;
   };
 
   dconf.settings = {
