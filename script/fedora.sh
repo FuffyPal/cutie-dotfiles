@@ -90,13 +90,13 @@ firewall-applet
 flatpak
 vim
 gnome-tweaks
+gnome-terminal
 stow
 papirus-icon-theme
 kmodtool
 mullvad-vpn
 mullvad-browser
 akmods
-godot
 mokutil
 openssl
 steam
@@ -117,7 +117,6 @@ lolcat
 yt-dlp
 yt-dlp-bash-completion
 ffmpeg-free
-gnome-console
 "
 
 nvidia="

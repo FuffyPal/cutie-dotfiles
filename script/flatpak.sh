@@ -46,21 +46,16 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     FPL_REAL="--user flathub
     io.gitlab.librewolf-community
     com.github.rafostar.Clapper
-    io.github.seadve.Kooha
-    org.telegram.desktop
     org.localsend.localsend_app
     io.mrarm.mcpelauncher
     it.mijorus.gearlever
     app/com.github.tchx84.Flatseal
     com.unity.UnityHub
     com.termius.Termius
-    com.github.maoschanz.drawing
-    com.bitwarden.desktop
     org.prismlauncher.PrismLauncher
     com.mattjakeman.ExtensionManager
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
-    io.github.swordpuffin.rewaita
     net.veloren.airshipper
     org.gnome.Loupe
     im.fluffychat.Fluffychat
