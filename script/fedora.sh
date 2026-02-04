@@ -137,6 +137,17 @@ else
     exit 1
 fi
 
+echo "Virt Manager Setup ..."
+sudo dnf group install --with-optional virtualization
+if [ $? -eq 0 ]; then
+    sudo systemctl enable --now libvirtd
+    sudo usermod -aG libvirt $USER
+    echo "Virt Manager Setup successful ... "
+else
+    echo "Virt Manager Setup unsuccessful !!!"
+    exit 1
+fi
+
 echo "Secure boot enable ..."
 echo "Secure boot ASCII en keybord"
 sudo kmodgenca -a
