@@ -56,7 +56,7 @@ enabled=1
 gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
-metadata_expire=1h
+me
 EOF
 if [ $? -eq 0 ]; then
     echo "vscodium repo successful ... "
@@ -106,6 +106,7 @@ git-lfs
 git
 zed
 antigravity
+gopls
 tailscale
 rustup
 rust-analyzer
@@ -194,6 +195,23 @@ if command -v lspci > /dev/null; then
         sudo dnf install -y $nvidia
         if [ $? -eq 0 ]; then
             echo "NVIDIA GPU successful ... "
+            echo "NVIDIA Container Toolkit Repo Activated..."
+            curl -s -L https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo | \
+              sudo tee /etc/yum.repos.d/nvidia-container-toolkit.repo
+            if [ $? -eq 0 ]; then
+                echo "NVIDIA Container Toolkit Repo Activated Successfully"
+                echo "NVIDIA Container Toolkit Installed ..."
+                sudo dnf install -y nvidia-container-toolkit nvidia-container-toolkit-base libnvidia-container-tools libnvidia-container1
+                if [ $? -eq 0 ]; then
+                    echo "NVIDIA Container Toolkit Installed Successfully"
+                else
+                    echo "NVIDIA Container Toolkit Installation Failed"
+                    exit 1
+                fi
+            else
+                echo "NVIDIA Container Toolkit Repo Activation Failed"
+                exit 1
+            fi
         else
             echo "NVIDIA GPU  unsuccessful !!!"
             exit 1

@@ -57,6 +57,10 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
     net.veloren.airshipper
+    org.torproject.torbrowser-launcher
+    app.zen_browser.zen
+    org.onionshare.OnionShare
+    com.heroicgameslauncher.hgl
     org.gnome.Loupe
     im.fluffychat.Fluffychat
     net.agalwood.Motrix
