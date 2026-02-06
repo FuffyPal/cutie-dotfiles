@@ -47,6 +47,15 @@ else
     exit 1
 fi
 
+echo "Enable unityhub repo"
+sudo sh -c 'echo -e "[unityhub]\nname=Unity Hub\nbaseurl=https://hub.unity3d.com/linux/repos/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://hub.unity3d.com/linux/repos/rpm/stable/repodata/repomd.xml.key\nrepo_gpgcheck=1" > /etc/yum.repos.d/unityhub.repo'
+if [ $? -eq 0 ]; then
+    echo "unityhub repo successful ... "
+else
+    echo "unityhub repo  unsuccessful !!!"
+    exit 1
+fi
+
 echo "Enable vscodium repo"
 sudo tee -a /etc/yum.repos.d/vscodium.repo << 'EOF'
 [gitlab.com_paulcarroty_vscodium_repo]
@@ -106,6 +115,7 @@ git-lfs
 git
 zed
 antigravity
+unityhub
 gopls
 tailscale
 rustup
