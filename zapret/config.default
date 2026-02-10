@@ -64,15 +64,12 @@ TPWS_SOCKS_OPT="
 --filter-tcp=443 --split-pos=1,midsld --disorder <HOSTLIST>
 "
 
-TPWS_ENABLE=0
+TPWS_ENABLE=1
 TPWS_PORTS=80,443
 # use <HOSTLIST> and <HOSTLIST_NOAUTO> placeholders to engage standard hostlists and autohostlist in ipset dir
 # hostlist markers are replaced to empty string if MODE_FILTER does not satisfy
 # <HOSTLIST_NOAUTO> appends ipset/zapret-hosts-auto.txt as normal list
-TPWS_OPT="
---filter-tcp=80 --methodeol <HOSTLIST> --new
---filter-tcp=443 --split-pos=1,midsld --disorder <HOSTLIST>
-"
+TPWS_OPT="--filter-tcp=80 --hostspell=hoSt <HOSTLIST>"
 
 NFQWS_ENABLE=1
 # redirect outgoing traffic with connbytes limiter applied in both directions.
@@ -95,16 +92,8 @@ NFQWS_UDP_PKT_IN=0
 # hostlist markers are replaced to empty string if MODE_FILTER does not satisfy
 # <HOSTLIST_NOAUTO> appends ipset/zapret-hosts-auto.txt as normal list
 NFQWS_OPT="
-	--dpi-desync=fake
-	--dpi-desync=fakedsplit
-	--dpi-desync=fake,multisplit
-	--dpi-desync=fakeddisorder
-	--dpi-desync=fake,multidisorder
-	--dpi-desync=fake,fakeddisorder
-	--dpi-desync-ttl=3
-	--dpi-desync-split-pos=method+2
-	--dpi-desync-split-pos=midsld
-	--dpi-desync-fake-http=0x00000000
+--filter-tcp=80,443 --dpi-desync=fake,multisplit --dpi-desync-split-pos=1 --dpi-desync-ttl=0 --dpi-desync-autottl=2 --dpi-desync-fooling=badsum,md5sig --dpi-desync-any-proto=1 <HOSTLIST>
+--filter-udp=443 --dpi-desync=fake --dpi-desync-ttl=0 --dpi-desync-autottl=2 --dpi-desync-fooling=badsum <HOSTLIST>
 "
 
 # none,ipset,hostlist,autohostlist
