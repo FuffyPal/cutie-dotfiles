@@ -93,7 +93,6 @@ fi
 package="
 podman
 firewalld
-discord
 firewall-config
 firewall-applet
 flatpak
@@ -110,17 +109,10 @@ mokutil
 openssl
 steam
 bzip3
-btrfs-assistant
 git-lfs
 git
 zed
-antigravity
-unityhub
-gopls
 tailscale
-rustup
-rust-analyzer
-nodejs-npm
 ptyxis
 syncthing
 helix
