@@ -3,34 +3,33 @@ echo "Flatpak installed?"
 read -p "y/n " choice
 choice=$(echo "$choice" | tr '[:upper:]' '[:lower:]')
 if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
-  echo "app list"
-  echo "
-    librewolf (firefox fork)
-    Clapper ( vlc alternative )
-    Kooha ( secrean record )
-    localsend_app
-    spotify
-    joplin_desktop ( obsidian and logseq alternative )
-    Flatseal ( flatpak manager )
-    ExtensionManager ( gnome extension manager)
-    Thunderbird
-    easyeffects
-    Fragments ( bittorrent )
-    FluffyChat
-    mcpelauncher ( minecraft bedrock launcher )
-    PrismLauncher ( minecraft java launcher )
-    bitwarden ( password manager )
-    telegram
-    rewaita
-    UnityHub
-    drawing ( alternativ to paint )
-    airshipper ( veloren launcher )
-    ente auth
-    spotify
-    gearlever (appimage luancher alternativ)
-    Trayscale ( tailscale gui )
-
-  "
+    echo "--- Current App List ---"
+      echo "
+        LibreWolf          - Privacy-focused Firefox fork
+        Clapper            - Modern media player (VLC alternative)
+        LocalSend          - Local network file sharing
+        Upscaler           - Image resolution upscaler
+        GearLever          - AppImage manager and installer
+        Flatseal           - Flatpak permission manager
+        Termius            - SSH and Telnet client
+        Prism Launcher     - Minecraft Java edition launcher
+        Extension Manager  - GNOME Shell extension manager
+        Thunderbird        - Email and calendar client
+        Easy Effects       - Audio effects for PipeWire/PulseAudio
+        Airshipper         - Veloren (RPG) launcher
+        G4Music            - Fast and fluid music player
+        Tor Browser        - Privacy and anonymity browser
+        ONLYOFFICE         - Office productivity suite
+        Blockbench         - Low-poly 3D modeling
+        Zen Browser        - Modern, minimalist web browser
+        OnionShare         - Securely share files via Tor
+        Loupe              - GNOME image viewer
+        Element (Riot)     - Matrix collaboration client
+        Vesktop            - Discord client with Vencord patches
+        Pika Backup        - Simple backups based on borg
+        Trayscale          - Tailscale GUI client
+        Ente Auth          - 2FA authenticator with cloud sync
+      "
   echo "heyy do u confirm"
   read -p "y/n " twochoice
   twochoice=$(echo "$twochoice" | tr '[:upper:]' '[:lower:]')
@@ -47,27 +46,26 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     io.gitlab.librewolf-community
     com.github.rafostar.Clapper
     org.localsend.localsend_app
-    io.mrarm.mcpelauncher
+    io.gitlab.theevilskeleton.Upscaler
     it.mijorus.gearlever
     app/com.github.tchx84.Flatseal
-    com.unity.UnityHub
     com.termius.Termius
     org.prismlauncher.PrismLauncher
     com.mattjakeman.ExtensionManager
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
     net.veloren.airshipper
+    com.github.neithern.g4music
     org.torproject.torbrowser-launcher
+    org.onlyoffice.desktopeditors
+    net.blockbench.Blockbench
     app.zen_browser.zen
     org.onionshare.OnionShare
-    com.heroicgameslauncher.hgl
     org.gnome.Loupe
-    im.fluffychat.Fluffychat
-    net.agalwood.Motrix
-    com.spotify.Client
+    im.riot.Riot
+    dev.vencord.Vesktop
     org.gnome.World.PikaBackup
     dev.deedles.Trayscale
-    net.cozic.joplin_desktop
     io.ente.auth
     "
     echo "Flatpak repolarrı ekleniyor"
