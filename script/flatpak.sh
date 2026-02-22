@@ -60,6 +60,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.onlyoffice.desktopeditors
     net.blockbench.Blockbench
     app.zen_browser.zen
+    org.remmina.Remmina
     org.onionshare.OnionShare
     org.gnome.Loupe
     im.riot.Riot
