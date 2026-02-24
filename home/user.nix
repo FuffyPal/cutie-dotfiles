@@ -24,35 +24,47 @@ with lib.hm.gvariant;
   };
 
   home.packages = with pkgs; [
+    # --- Editors ---
     helix
-    lolcat
-    bat
-    git-lfs
-    git
-    flatpak
     zed-editor
-    airshipper
-    nixd
-    termius
-    nil
-    nixpkgs-fmt
-    steam
-    localsend
-    yt-dlp
-    antigravity
-    alcom
-    ffmpeg
-    discord
-    papirus-icon-theme
-    
-    # Go Development (Antigravity for LSP and tools)
+
+    # --- Nix Development & LSPs ---
+    nixd                # Nix LSP
+    nil                 # Nix LSP (Alternative)
+    nixpkgs-fmt         # Formatter
+    statix              # Linter (Opsiyonel, Nix kodunu kontrol eder)
+
+    # --- Go Development ---
     go
-    gopls
-    delve
-    golangci-lint
+    gopls               # Go LSP
+    delve               # Debugger
+    golangci-lint       # Linter
     gotools
+    antigravity         # Go-related tool
+
+    # --- Version Control ---
+    git
+    git-lfs
+
+    # --- Media & Internet ---
+    discord
+    ffmpeg
+    yt-dlp
+    localsend
+
+    # --- System & Gaming ---
+    steam
+    airshipper
+    flatpak
+    termius
+    alcom
+    papirus-icon-theme
+
+    # --- CLI Fun & Utilities ---
+    bat
+    lolcat
   ];
-  
+
   programs.bash = {
     enable = true;
     enableCompletion = true;
