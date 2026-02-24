@@ -27,7 +27,7 @@ fi
 fi
 
 echo "enable terra repo"
-sudo dnf install -y --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
+sudo dnf install --nogpgcheck --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' terra-release
 if [ $? -eq 0 ]; then
     echo "terra repo successful ... "
 else
