@@ -1,8 +1,7 @@
-{
-  pkgs,
-  userSettings,
-  lib,
-  ...
+{ pkgs
+, userSettings
+, lib
+, ...
 }:
 with lib.hm.gvariant;
 
@@ -22,25 +21,23 @@ with lib.hm.gvariant;
     enable = true;
     createDirectories = true;
   };
-
   home.packages = with pkgs; [
     # --- Editors ---
     helix
-    zed-editor
+    antigravity
 
     # --- Nix Development & LSPs ---
-    nixd                # Nix LSP
-    nil                 # Nix LSP (Alternative)
-    nixpkgs-fmt         # Formatter
-    statix              # Linter (Opsiyonel, Nix kodunu kontrol eder)
+    nixd # Nix LSP
+    nil # Nix LSP (Alternative)
+    nixpkgs-fmt # Formatter
+    statix # Linter (Opsiyonel, Nix kodunu kontrol eder)
 
     # --- Go Development ---
     go
-    gopls               # Go LSP
-    delve               # Debugger
-    golangci-lint       # Linter
+    gopls # Go LSP
+    delve # Debugger
+    golangci-lint # Linter
     gotools
-    antigravity         # Go-related tool
 
     # --- Version Control ---
     git
@@ -56,8 +53,6 @@ with lib.hm.gvariant;
     steam
     airshipper
     flatpak
-    termius
-    alcom
     papirus-icon-theme
 
     # --- CLI Fun & Utilities ---
@@ -81,12 +76,8 @@ with lib.hm.gvariant;
     };
 
     bashrcExtra = ''
-      # Sadece Nix'in otomatik yapamadığı "Görsel" ve "Dış Kaynaklı" ayarlar:
-
-      # Renkli Prompt (Kişisel zevk)
       PS1="\[\e[38;2;255;171;185m\]\u@\h \[\e[38;2;180;200;255m\]\w\[\e[0m\]\$ "
 
-      # Eğer bu dosya GitLab'da yoksa hata almamak için kontrol ekledik
       [ -f "$HOME/.alias" ] && source "$HOME/.alias"
     '';
   };
@@ -104,13 +95,12 @@ with lib.hm.gvariant;
       "com.github.rafostar.Clapper"
       "org.localsend.localsend_app"
       "io.gitlab.theevilskeleton.Upscaler"
-      "it.mijorus.gearlever"
       "com.github.tchx84.Flatseal"
       "com.termius.Termius"
       "org.prismlauncher.PrismLauncher"
-      "com.mattjakeman.ExtensionManager"
       "org.mozilla.Thunderbird"
       "com.github.wwmm.easyeffects"
+      "io.podman_desktop.PodmanDesktop"
       "net.veloren.airshipper"
       "com.github.neithern.g4music"
       "org.torproject.torbrowser-launcher"
