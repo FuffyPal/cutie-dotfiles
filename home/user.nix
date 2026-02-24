@@ -10,7 +10,6 @@ with lib.hm.gvariant;
   home.username = userSettings.username;
   home.homeDirectory = "/home/${userSettings.username}";
   home.file.".face".source = ../assets/images/avatar.jpg;
-
   home.stateVersion = "25.11";
 
   home.sessionPath = [
@@ -30,7 +29,7 @@ with lib.hm.gvariant;
     nixd # Nix LSP
     nil # Nix LSP (Alternative)
     nixpkgs-fmt # Formatter
-    statix # Linter (Opsiyonel, Nix kodunu kontrol eder)
+    statix # Linter
 
     # --- Go Development ---
     go
@@ -58,12 +57,13 @@ with lib.hm.gvariant;
     # --- CLI Fun & Utilities ---
     bat
     lolcat
+    btop
   ];
 
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    historySize = 1000;
+    historySize = 10000;
     historyControl = [
       "ignoredups"
       "erasedups"
@@ -73,6 +73,7 @@ with lib.hm.gvariant;
       la = "ls -lha";
       cat = "lolcat";
       helix = "hx";
+      top = "btop";
     };
 
     bashrcExtra = ''
