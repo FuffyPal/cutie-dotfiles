@@ -27,7 +27,7 @@
   ];
 
   systemd.tmpfiles.rules = [
-    "f /dev/shm/looking-glass 0660 fluffypal libvirtd -"
+    "f /dev/shm/looking-glass 0660 fluffypal libvirtd 32M"
   ];
 
   services.samba = {
