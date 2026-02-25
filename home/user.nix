@@ -43,8 +43,8 @@ with lib.hm.gvariant;
     git-lfs
 
     # --- Media & Internet ---
-    discord
     ffmpeg
+    vesktop
     yt-dlp
     localsend
 
@@ -112,7 +112,6 @@ with lib.hm.gvariant;
       "org.onionshare.OnionShare"
       "org.gnome.Loupe"
       "im.riot.Riot"
-      "dev.vencord.Vesktop"
       "org.gnome.World.PikaBackup"
       "dev.deedles.Trayscale"
       "io.ente.auth"
