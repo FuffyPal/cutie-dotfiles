@@ -45,6 +45,7 @@ with lib.hm.gvariant;
     # --- Media & Internet ---
     ffmpeg
     vesktop
+    arrpc
     yt-dlp
     localsend
 
