@@ -24,6 +24,7 @@ with lib.hm.gvariant;
     # --- Editors ---
     helix
     antigravity
+    zed-editor
 
     # --- Nix Development & LSPs ---
     nixd # Nix LSP
