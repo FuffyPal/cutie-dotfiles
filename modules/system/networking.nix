@@ -1,8 +1,7 @@
-{
-  systemSettings,
-  userSettings,
-  config,
-  ...
+{ systemSettings
+, userSettings
+, config
+, ...
 }:
 {
 
@@ -12,15 +11,9 @@
     enable = true;
     params = [
       "--dpi-desync=fake"
-      "--dpi-desync=fakedsplit"
-      "--dpi-desync=fake,multisplit"
-      "--dpi-desync=fakeddisorder"
-      "--dpi-desync=fake,multidisorder"
-      "--dpi-desync=fake,fakeddisorder"
-      "--dpi-desync-ttl=3"
-      "--dpi-desync-split-pos=method+2"
-      "--dpi-desync-split-pos=midsld"
-      "--dpi-desync-fake-http=0x00000000"
+      "--dpi-desync-ttl=1"
+      "--dpi-desync-fooling=badsum,md5sig"
+      "--dpi-desync-autottl=-1"
     ];
   };
   services.tailscale = {

@@ -17,7 +17,11 @@
   virtualisation.containers.registries.search = [
     "docker.io"
     "quay.io"
+    "ghcr.io"
+    "gcr.io"
+    "registry.gitlab.com"
     "registry.fedoraproject.org"
+    "registry.access.redhat.com"
   ];
   hardware.nvidia-container-toolkit.enable = true;
   security.unprivilegedUsernsClone = true;
