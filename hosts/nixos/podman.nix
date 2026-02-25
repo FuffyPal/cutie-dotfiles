@@ -13,6 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     podman-compose
+    kubectl
   ];
   virtualisation.containers.registries.search = [
     "docker.io"
