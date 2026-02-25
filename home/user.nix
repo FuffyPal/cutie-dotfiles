@@ -43,6 +43,7 @@ with lib.hm.gvariant;
     git-lfs
 
     # --- Media & Internet ---
+    google-chrome
     ffmpeg
     vesktop
     arrpc
