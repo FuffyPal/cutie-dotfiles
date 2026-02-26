@@ -24,11 +24,8 @@ with lib.hm.gvariant;
   home.packages = with pkgs; [
     # --- Editors ---
     helix
-    antigravity
-    zed-editor
     gemini-cli
     codex
-    vscode
     opencode
     code-cursor
 
@@ -101,6 +98,7 @@ with lib.hm.gvariant;
       }
     ];
     packages = [
+      "com.usebottles.bottles"
       "io.gitlab.librewolf-community"
       "com.github.rafostar.Clapper"
       "org.localsend.localsend_app"
