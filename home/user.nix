@@ -114,6 +114,7 @@ with lib.hm.gvariant;
       "net.blockbench.Blockbench"
       "app.zen_browser.zen"
       "org.remmina.Remmina"
+      "com.vysp3r.ProtonPlus"
       "org.onionshare.OnionShare"
       "org.gnome.Loupe"
       "im.riot.Riot"
