@@ -12,7 +12,6 @@
     ../../modules/system/networking.nix
     ../../modules/system/services.nix
     ../../modules/system/fonts.nix
-    ../../modules/system/cockpit.nix
     ./podman.nix
     ./virt-manager.nix
   ]
