@@ -1,7 +1,8 @@
-{ pkgs
-, userSettings
-, lib
-, ...
+{
+  pkgs,
+  userSettings,
+  lib,
+  ...
 }:
 with lib.hm.gvariant;
 
@@ -25,6 +26,7 @@ with lib.hm.gvariant;
     helix
     antigravity
     zed-editor
+    gemini-cli
 
     # --- Nix Development & LSPs ---
     nixd # Nix LSP
