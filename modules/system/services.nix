@@ -38,6 +38,11 @@
         path = "/home/${userSettings.username}/Sync/sec";
         devices = [ "pal" ];
       };
+      "Blender" = {
+        id = "eq32t-5f9ss";
+        path = "/home/${userSettings.username}/Projects/Blender";
+        devices = [ "pal" ];
+      };
     };
   };
   system.activationScripts.syncthingDirs = {
