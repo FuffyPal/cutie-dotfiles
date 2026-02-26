@@ -5,10 +5,11 @@
     openFirewall = true;
     port = 9090;
     showBanner = true;
-    allowedOrigins = [
-      "http://localhost:9090"
-      "http://127.0.0.1:9090"
-    ];
+    settings = {
+      WebService = {
+        Origins = "http://localhost:9090 http://127.0.0.1:9090";
+      };
+    };
 
   };
 }
