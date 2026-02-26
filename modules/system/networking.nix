@@ -15,6 +15,10 @@
       "--dpi-desync-fooling=badsum,md5sig"
       "--dpi-desync-autottl=-1"
     ];
+    whitelist = [
+      "discord.com"
+      "fluffypal.me"
+    ];
   };
   services.tailscale = {
     enable = true;
