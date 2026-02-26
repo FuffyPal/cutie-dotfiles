@@ -27,6 +27,7 @@ with lib.hm.gvariant;
     antigravity
     zed-editor
     gemini-cli
+    codex
 
     # --- Nix Development & LSPs ---
     nixd # Nix LSP
