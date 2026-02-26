@@ -28,6 +28,7 @@ with lib.hm.gvariant;
     zed-editor
     gemini-cli
     codex
+    vscode
 
     # --- Nix Development & LSPs ---
     nixd # Nix LSP
