@@ -99,6 +99,7 @@ with lib.hm.gvariant;
     ];
     packages = [
       "com.usebottles.bottles"
+      "net.agalwood.Motrix"
       "io.gitlab.librewolf-community"
       "com.github.rafostar.Clapper"
       "org.localsend.localsend_app"
