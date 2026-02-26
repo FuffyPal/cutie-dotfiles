@@ -57,7 +57,6 @@ with lib.hm.gvariant;
     steam
     airshipper
     flatpak
-    cockpit
     papirus-icon-theme
 
     # --- CLI Fun & Utilities ---

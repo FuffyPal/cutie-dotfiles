@@ -1,7 +1,8 @@
-{ systemSettings
-, userSettings
-, pkgs
-, ...
+{
+  systemSettings,
+  userSettings,
+  pkgs,
+  ...
 }:
 {
   imports = [
@@ -11,6 +12,7 @@
     ../../modules/system/networking.nix
     ../../modules/system/services.nix
     ../../modules/system/fonts.nix
+    ../../modules/system/cockpit.nix
     ./podman.nix
     ./virt-manager.nix
   ]
@@ -104,8 +106,18 @@
       "libvirtd"
       "kvm"
     ];
-    subUidRanges = [{ startUid = 100000; count = 65536; }];
-    subGidRanges = [{ startGid = 100000; count = 65536; }];
+    subUidRanges = [
+      {
+        startUid = 100000;
+        count = 65536;
+      }
+    ];
+    subGidRanges = [
+      {
+        startGid = 100000;
+        count = 65536;
+      }
+    ];
   };
   environment.systemPackages = [
     pkgs.nvidia-container-toolkit
