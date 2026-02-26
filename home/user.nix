@@ -29,6 +29,7 @@ with lib.hm.gvariant;
     gemini-cli
     codex
     vscode
+    opencode
 
     # --- Nix Development & LSPs ---
     nixd # Nix LSP
