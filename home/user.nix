@@ -30,6 +30,7 @@ with lib.hm.gvariant;
     codex
     vscode
     opencode
+    code-cursor
 
     # --- Nix Development & LSPs ---
     nixd # Nix LSP
