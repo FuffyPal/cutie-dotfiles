@@ -50,7 +50,6 @@ with lib.hm.gvariant;
     google-chrome
     ffmpeg
     vesktop
-    gpu-screen-recorder-gtk
     arrpc
     yt-dlp
     localsend
@@ -119,6 +118,7 @@ with lib.hm.gvariant;
       "net.blockbench.Blockbench"
       "app.zen_browser.zen"
       "org.remmina.Remmina"
+      "com.dec05eba.gpu_screen_recorder"
       "com.vysp3r.ProtonPlus"
       "org.onionshare.OnionShare"
       "org.gnome.Loupe"
