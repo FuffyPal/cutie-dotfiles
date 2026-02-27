@@ -78,6 +78,17 @@
     "vm.admin_reserve_kbytes" = 262144;
   };
 
+  system.autoUpgrade = {
+  enable = true;
+  flake = "/home/${userSettings.username}/cutie-dotfiles"; 
+  flags = [
+    "--update-input" "nixpkgs"
+    "--commit-lock-file"
+  ];
+  dates = "weekly";
+  randomizedDelaySec = "45min";
+  };
+
   programs.gamemode = {
     enable = true;
     settings = {
