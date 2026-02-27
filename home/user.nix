@@ -50,6 +50,7 @@ with lib.hm.gvariant;
     google-chrome
     ffmpeg
     vesktop
+    gpu-screen-recorder-gtk
     arrpc
     yt-dlp
     localsend
