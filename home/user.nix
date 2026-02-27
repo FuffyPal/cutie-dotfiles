@@ -100,6 +100,8 @@ with lib.hm.gvariant;
     packages = [
       "com.usebottles.bottles"
       "de.haeckerfelix.Fragments"
+      "org.vinegarhq.Sober"
+      "org.vinegarhq.Vinegar"
       "io.gitlab.librewolf-community"
       "com.github.rafostar.Clapper"
       "org.localsend.localsend_app"
