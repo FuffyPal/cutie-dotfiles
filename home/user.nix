@@ -101,7 +101,6 @@ with lib.hm.gvariant;
       "com.usebottles.bottles"
       "de.haeckerfelix.Fragments"
       "org.vinegarhq.Sober"
-      "io.github.astralvixen.geforce-infinity"
       "org.vinegarhq.Vinegar"
       "io.gitlab.librewolf-community"
       "com.github.rafostar.Clapper"
