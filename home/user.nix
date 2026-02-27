@@ -107,7 +107,6 @@ with lib.hm.gvariant;
       "org.localsend.localsend_app"
       "io.gitlab.theevilskeleton.Upscaler"
       "com.github.tchx84.Flatseal"
-      "com.termius.Termius"
       "org.prismlauncher.PrismLauncher"
       "org.mozilla.Thunderbird"
       "com.github.wwmm.easyeffects"
