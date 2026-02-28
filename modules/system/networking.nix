@@ -26,8 +26,8 @@
   };
   services.resolved = {
     enable = true;
-    dnssec = "true";
-    dnsovertls = "true";
+    dnssec = "allow-downgrade";
+    dnsovertls = "opportunistic";
     extraConfig = ''
       [Resolve]
       DNS=1.1.1.1#cloudflare-dns.com 9.9.9.9#dns.quad9.net
