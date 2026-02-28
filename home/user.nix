@@ -50,6 +50,7 @@ with lib.hm.gvariant;
     google-chrome
     ffmpeg
     vesktop
+    mattermost-desktop
     vrcx
     arrpc
     yt-dlp
@@ -122,7 +123,6 @@ with lib.hm.gvariant;
       "com.vysp3r.ProtonPlus"
       "org.onionshare.OnionShare"
       "org.gnome.Loupe"
-      "im.riot.Riot"
       "org.gnome.World.PikaBackup"
       "dev.deedles.Trayscale"
       "io.ente.auth"
