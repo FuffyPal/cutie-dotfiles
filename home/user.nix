@@ -51,6 +51,7 @@ with lib.hm.gvariant;
     ffmpeg
     vesktop
     mattermost-desktop
+    nextcloud-client
     vrcx
     arrpc
     yt-dlp
