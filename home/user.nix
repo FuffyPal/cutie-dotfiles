@@ -67,6 +67,9 @@ with lib.hm.gvariant;
     bat
     lolcat
     btop
+    libwebp
+    libjxl
+    imagemagick
   ];
 
   programs.bash = {
