@@ -70,6 +70,8 @@ with lib.hm.gvariant;
     libwebp
     libjxl
     imagemagick
+    fdupes
+    exiftool
   ];
 
   programs.bash = {
