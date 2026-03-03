@@ -10,6 +10,8 @@
     '')
   ];
 
+  boot.plymouth.logo = ../../assets/images/logo.png;
+
   environment.etc."os-release".text = lib.mkForce ''
     NAME="Pix"
     ID=pix
