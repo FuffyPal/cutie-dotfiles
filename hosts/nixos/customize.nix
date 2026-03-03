@@ -10,7 +10,7 @@
     '')
   ];
 
-  boot.plymouth.logo = ../../assets/images/logo2.png;
+  boot.plymouth.logo = ../../assets/images/logo3.png;
 
   environment.etc."os-release".text = lib.mkForce ''
     NAME="Pix"
