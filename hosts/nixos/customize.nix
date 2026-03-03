@@ -33,7 +33,5 @@
     tags = [ "flowery" ];
     codeName = "Flowery";
     variantName = "Flowery Edition";
-    variantId = "flowery";
-
   };
 }
