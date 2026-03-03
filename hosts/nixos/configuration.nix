@@ -43,6 +43,8 @@
   ];
   nix.settings.auto-optimise-store = true;
 
+  virtualisation.waydroid.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   system.activationScripts.userAvatar = {

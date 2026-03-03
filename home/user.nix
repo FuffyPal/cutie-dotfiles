@@ -61,7 +61,6 @@ with lib.hm.gvariant;
     steam
     airshipper
     flatpak
-    waydroid
     waydroid-helper
     papirus-icon-theme
 
