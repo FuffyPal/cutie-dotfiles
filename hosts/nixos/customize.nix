@@ -27,9 +27,4 @@
     DISTRIB_RELEASE=0.1
     DISTRIB_DESCRIPTION="Pix OS Flowery Edition (Independent Nix-based Distro)"
   '';
-  services.xserver.displayManager.gdm.settings = {
-  "org/gnome/login-screen" = {
-    logo = "../../assets/images/logo5.png"; 
-  };
-};
 }
