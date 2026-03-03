@@ -14,6 +14,7 @@
     ../../modules/system/fonts.nix
     ./podman.nix
     ./virt-manager.nix
+    ./customize.nix
   ]
   ++ (if (systemSettings.gpuType == "hybrid") then [ ./nvidia.nix ] else [ ]);
 
