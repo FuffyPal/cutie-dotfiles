@@ -10,7 +10,7 @@
     '')
   ];
 
-  boot.plymouth.logo = ../../assets/images/logo4.png;
+  boot.plymouth.logo = ../../assets/images/logo5.png;
 
   environment.etc."os-release".text = lib.mkForce ''
     NAME="Pix"
@@ -27,4 +27,9 @@
     DISTRIB_RELEASE=0.1
     DISTRIB_DESCRIPTION="Pix OS Flowery Edition (Independent Nix-based Distro)"
   '';
+  services.xserver.displayManager.gdm.settings = {
+  "org/gnome/login-screen" = {
+    logo = "../../assets/images/logo5.png"; 
+  };
+};
 }
