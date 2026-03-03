@@ -61,7 +61,6 @@ with lib.hm.gvariant;
     steam
     airshipper
     flatpak
-    waydroid-helper
     papirus-icon-theme
 
     # --- CLI Fun & Utilities ---
