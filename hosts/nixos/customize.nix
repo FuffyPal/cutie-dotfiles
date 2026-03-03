@@ -27,4 +27,13 @@
     DISTRIB_RELEASE=0.1
     DISTRIB_DESCRIPTION="Pix OS Flowery Edition (Independent Nix-based Distro)"
   '';
+  system.nixos = {
+    release = "0.1";
+    label = "Flowery";
+    tags = [ "flowery" ];
+    codeName = "Flowery";
+    variantName = "Flowery Edition";
+    variantId = "flowery";
+
+  };
 }
