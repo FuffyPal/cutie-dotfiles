@@ -81,6 +81,8 @@
     "vm.admin_reserve_kbytes" = 262144;
   };
 
+  services.bpftune.enable = true;
+  
   system.autoUpgrade = {
   enable = true;
   flake = "/home/${userSettings.username}/cutie-dotfiles"; 
