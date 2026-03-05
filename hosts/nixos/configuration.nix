@@ -13,6 +13,7 @@
     ../../modules/system/services.nix
     ../../modules/system/fonts.nix
     ../../modules/system/ananicy.nix
+    ../../modules/system/systemd-oomd.nix
     ./podman.nix
     ./virt-manager.nix
     ./customize.nix
