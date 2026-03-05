@@ -28,6 +28,9 @@
     "rd.systemd.show_status=false"
     "rd.udev.log_level=3"
     "udev.log_priority=3"
+    "transparent_hugepages=always"
+    "split_lock_detect=off"  
+    "preempt=full"
   ];
   boot.consoleLogLevel = 0;
   boot.initrd.verbose = false;
