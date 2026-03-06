@@ -1,7 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, userSettings , ... }: {
   services.xserver.enable = true;
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "${userSettings.username}";
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour

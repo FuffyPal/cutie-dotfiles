@@ -8,7 +8,6 @@ git add -N .
 
 echo -e "${BLUE}🔍 Nix Flake yapısı kontrol ediliyor...${NC}"
 
-# 1. Syntax Kontrolü
 if nix flake check; then
     echo -e "${GREEN}✅ Kod yapısı (Syntax) doğru.${NC}"
 else
@@ -19,8 +18,6 @@ fi
 
 echo -e "${BLUE}🛠️  Tüm sistem inşa ediliyor (Dry-run)...${NC}"
 
-# 2. İnşa Testi (Artık nixosConfigurations üzerinden test ediyoruz)
-# 'cutie' senin hostname'in, flake.nix ile aynı olmalı
 if nix build .#nixosConfigurations.cutie.config.system.build.toplevel --dry-run; then
     echo -e "${GREEN}✅ İnşa başarılı! Hem sistem hem kullanıcı ayarları uyumlu.${NC}"
 else

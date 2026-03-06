@@ -32,4 +32,5 @@
     DXVK_ENABLE_NVAPI = "1";
   };
   hardware.nvidia-container-toolkit.enable = true;
+  hardware.nvidia-container-toolkit.suppressNvidiaDriverAssertion = true;
 }
