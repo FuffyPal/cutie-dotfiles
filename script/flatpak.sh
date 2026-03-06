@@ -68,6 +68,12 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.gnome.World.PikaBackup
     dev.deedles.Trayscale
     io.ente.auth
+    com.usebottles.bottles
+    de.haeckerfelix.Fragments
+    org.vinegarhq.Sober
+    org.vinegarhq.Vinegar
+    io.podman_desktop.PodmanDesktop
+    com.vysp3r.ProtonPlus
     "
     echo "Flatpak repolarrı ekleniyor"
     ${FLATPAK_REPO_ADD} ${FRL_FLATHUB}
