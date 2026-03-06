@@ -1,6 +1,6 @@
 echo "helloowww it is flatpak setup and flatpak app installing"
 echo "Flatpak installed?"
-read -p "y/n " choice
+read -r -p "y/n " choice
 choice=$(echo "$choice" | tr '[:upper:]' '[:lower:]')
 if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     echo "--- Current App List ---"
@@ -31,7 +31,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
         Ente Auth          - 2FA authenticator with cloud sync
       "
   echo "heyy do u confirm"
-  read -p "y/n " twochoice
+  read -r -p "y/n " twochoice
   twochoice=$(echo "$twochoice" | tr '[:upper:]' '[:lower:]')
   if [[ "$twochoice" == "y" || "$twochoice" == "yes" ]]; then
     #FLATPAK DEFUALT
@@ -79,7 +79,7 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     ${FLATPAK_REPO_ADD} ${FRL_FLATHUB}
     echo "flatpak uygulamaları yükleniyor"
     ${FLATPAK_INSTALL} ${FPL_REAL}
-    exit 1
+    exit 0
   else
         echo "byyyy ... "
         exit 1

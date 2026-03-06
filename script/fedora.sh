@@ -14,7 +14,8 @@ else
     exit 1
 fi
 
-if command -v rpm -E %fedora < 42; then
+fedora_ver="$(rpm -E %fedora)"
+if [ "$fedora_ver" -lt 42 ]; then
     echo "Mullvad repo Enable"
     sudo dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
     if [ $? -eq 0 ]; then
@@ -65,7 +66,6 @@ enabled=1
 gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg
-me
 EOF
 if [ $? -eq 0 ]; then
     echo "vscodium repo successful ... "
@@ -98,12 +98,9 @@ firewall-applet
 flatpak
 vim
 gnome-tweaks
-gnome-terminal
 stow
 papirus-icon-theme
 kmodtool
-mullvad-vpn
-mullvad-browser
 akmods
 mokutil
 openssl
@@ -111,10 +108,9 @@ steam
 bzip3
 git-lfs
 git
-zed
 tailscale
+nextcloud-client
 ptyxis
-syncthing
 helix
 lolcat
 yt-dlp
@@ -141,7 +137,7 @@ else
 fi
 
 echo "Virt Manager Setup ..."
-sudo dnf group install --with-optional virtualization
+sudo dnf group install -y --with-optional virtualization
 if [ $? -eq 0 ]; then
     sudo systemctl enable --now libvirtd
     sudo usermod -aG libvirt $USER
