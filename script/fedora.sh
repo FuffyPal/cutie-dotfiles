@@ -92,6 +92,8 @@ fi
 
 package="
 podman
+podman-docker
+podman-compose
 firewalld
 firewall-config
 firewall-applet

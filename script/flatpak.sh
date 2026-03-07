@@ -43,13 +43,10 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     FRL_FLATHUB="flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
     #FLATPAK APP LIST
     FPL_REAL="--user flathub
-    io.gitlab.librewolf-community
     com.github.rafostar.Clapper
     org.localsend.localsend_app
     io.gitlab.theevilskeleton.Upscaler
-    it.mijorus.gearlever
     app/com.github.tchx84.Flatseal
-    com.termius.Termius
     org.prismlauncher.PrismLauncher
     com.mattjakeman.ExtensionManager
     org.mozilla.Thunderbird
@@ -63,7 +60,6 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.remmina.Remmina
     org.onionshare.OnionShare
     org.gnome.Loupe
-    im.riot.Riot
     dev.vencord.Vesktop
     org.gnome.World.PikaBackup
     dev.deedles.Trayscale
