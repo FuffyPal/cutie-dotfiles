@@ -29,7 +29,7 @@ with lib.hm.gvariant;
         gemini-cli
         codex
         opencode
-        code-cursor
+        zed-editor
 
         # --- Nix Development & LSPs ---
         nixd # Nix LSP
@@ -80,7 +80,7 @@ with lib.hm.gvariant;
         gemini-cli
         codex
         opencode
-        code-cursor
+        zed-editor
 
         # Version Control
         git
@@ -153,6 +153,9 @@ with lib.hm.gvariant;
       "com.github.neithern.g4music"
       "org.torproject.torbrowser-launcher"
       "org.onlyoffice.desktopeditors"
+      "re.sonny.Workbench"
+      "net.ankiweb.Anki"
+      "ar.xjuan.Cambalache"
       "net.blockbench.Blockbench"
       "app.zen_browser.zen"
       "org.remmina.Remmina"
