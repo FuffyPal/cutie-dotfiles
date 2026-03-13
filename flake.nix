@@ -56,7 +56,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak";
-              home-manager.extraSpecialArgs = { inherit userSettings; systemSettings = cutieSettings;};
+              home-manager.extraSpecialArgs = { inherit userSettings; systemSettings = cutieSettings; };
               home-manager.users."${userSettings.username}" = {
                 imports = [
                   ./home/user.nix
@@ -67,26 +67,26 @@
           ];
         };
 
-        # "${retrexSettings.hostname}" = nixpkgs.lib.nixosSystem {
-        #   specialArgs = { systemSettings = retrexSettings; inherit userSettings; inherit system;};
-        #   modules = [
-        #     ./hosts/nixos/configuration.nix
-        #     nix-flatpak.nixosModules.nix-flatpak
-        #     home-manager.nixosModules.home-manager
-        #     {
-        #       home-manager.useGlobalPkgs = true;
-        #       home-manager.useUserPackages = true;
-        #       home-manager.backupFileExtension = "bak";
-        #       home-manager.extraSpecialArgs = { inherit userSettings; };
-        #       home-manager.users."${userSettings.username}" = {
-        #         imports = [
-        #           ./home/user.nix
-        #           nix-flatpak.homeManagerModules.nix-flatpak
-        #         ];
-        #       };
-        #     }
-        #   ];
-        # };
+        "${retrexSettings.hostname}" = nixpkgs.lib.nixosSystem {
+          specialArgs = { systemSettings = retrexSettings; inherit userSettings; inherit system;};
+          modules = [
+            ./hosts/nixos/configuration.nix
+            nix-flatpak.nixosModules.nix-flatpak
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "bak";
+              home-manager.extraSpecialArgs = { inherit userSettings; systemSettings = retrexSettings; };
+              home-manager.users."${userSettings.username}" = {
+                imports = [
+                  ./home/user.nix
+                  nix-flatpak.homeManagerModules.nix-flatpak
+                ];
+              };
+            }
+          ];
+        };
 
       };
     };
