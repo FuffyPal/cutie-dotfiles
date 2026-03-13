@@ -40,9 +40,7 @@
     gnomeExtensions.gsconnect
     gnomeExtensions.just-perfection
     gnomeExtensions.weather-oclock
-    gnomeExtensions.quick-settings-tweaker
     gnomeExtensions.media-controls
-    gnomeExtensions.wiggle
     gnomeExtensions.quick-settings-audio-panel
   ];
   xdg.portal = {
