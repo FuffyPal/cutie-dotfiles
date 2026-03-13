@@ -1,6 +1,7 @@
 {
   pkgs,
   userSettings,
+  systemSettings,
   lib,
   ...
 }:
@@ -21,58 +22,86 @@ with lib.hm.gvariant;
     enable = true;
     createDirectories = true;
   };
-  home.packages = with pkgs; [
-    # --- Editors ---
-    helix
-    gemini-cli
-    codex
-    opencode
-    code-cursor
+  home.packages = with pkgs;
+      if systemSettings.hostname == "cutie" then [
+        # --- Editors ---
+        helix
+        gemini-cli
+        codex
+        opencode
+        code-cursor
 
-    # --- Nix Development & LSPs ---
-    nixd # Nix LSP
-    nil # Nix LSP (Alternative)
-    nixpkgs-fmt # Formatter
-    statix # Linter
+        # --- Nix Development & LSPs ---
+        nixd # Nix LSP
+        nil # Nix LSP (Alternative)
+        nixpkgs-fmt # Formatter
+        statix # Linter
 
-    # --- Go Development ---
-    go
-    gopls # Go LSP
-    delve # Debugger
-    golangci-lint # Linter
-    gotools
+        # --- Go Development ---
+        go
+        gopls # Go LSP
+        delve # Debugger
+        golangci-lint # Linter
+        gotools
 
-    # --- Version Control ---
-    git
-    git-lfs
+        # --- Version Control ---
+        git
+        git-lfs
 
-    # --- Media & Internet ---
-    google-chrome
-    ffmpeg
-    vesktop
-    mattermost-desktop
-    nextcloud-client
-    vrcx
-    arrpc
-    yt-dlp
-    localsend
+        # --- Media & Internet ---
+        google-chrome
+        ffmpeg
+        vesktop
+        mattermost-desktop
+        nextcloud-client
+        vrcx
+        arrpc
+        yt-dlp
+        localsend
 
-    # --- System & Gaming ---
-    steam
-    airshipper
-    flatpak
-    papirus-icon-theme
+        # --- System & Gaming ---
+        steam
+        airshipper
+        flatpak
+        papirus-icon-theme
 
-    # --- CLI Fun & Utilities ---
-    bat
-    lolcat
-    btop
-    libwebp
-    libjxl
-    imagemagick
-    fdupes
-    exiftool
-  ];
+        # --- CLI Fun & Utilities ---
+        bat
+        lolcat
+        btop
+        libwebp
+        libjxl
+        imagemagick
+        fdupes
+        exiftool
+      ] else if systemSettings.hostname == "retrex" then [
+        # Editors
+        helix
+        gemini-cli
+        codex
+        opencode
+        code-cursor
+
+        # Version Control
+        git
+        git-lfs
+
+        # Media & Internet
+        google-chrome
+        ffmpeg
+        vesktop
+        vrcx
+
+        # System & Gaming
+        steam
+        flatpak
+        papirus-icon-theme
+
+        # CLI Utilities
+        bat
+        lolcat
+        btop
+      ] else [ ];
 
   programs.bash = {
     enable = true;
@@ -105,7 +134,8 @@ with lib.hm.gvariant;
         location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
       }
     ];
-    packages = [
+  packages =
+    if systemSettings.hostname == "cutie" then [
       "com.usebottles.bottles"
       "de.haeckerfelix.Fragments"
       "org.vinegarhq.Sober"
@@ -132,7 +162,20 @@ with lib.hm.gvariant;
       "org.gnome.World.PikaBackup"
       "dev.deedles.Trayscale"
       "io.ente.auth"
-    ];
+    ] else if systemSettings.hostname == "retrex" then [
+      "com.usebottles.bottles"
+      "org.vinegarhq.Sober"
+      "org.vinegarhq.Vinegar"
+      "com.github.rafostar.Clapper"
+      "com.github.tchx84.Flatseal"
+      "com.github.wwmm.easyeffects"
+      "org.onlyoffice.desktopeditors"
+      "net.blockbench.Blockbench"
+      "com.vysp3r.ProtonPlus"
+      "app.zen_browser.zen"
+      "org.gnome.Loupe"
+      "dev.deedles.Trayscale"
+    ] else [ ];
     update.auto.enable = true;
     uninstallUnmanaged = true;
   };

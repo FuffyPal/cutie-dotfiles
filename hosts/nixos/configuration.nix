@@ -1,6 +1,7 @@
 {
   systemSettings,
   userSettings,
+  system,
   pkgs,
   ...
 }:
@@ -12,13 +13,25 @@
     ../../modules/system/networking.nix
     ../../modules/system/services.nix
     ../../modules/system/fonts.nix
-    ../../modules/system/ananicy.nix
-    ../../modules/system/systemd-oomd.nix
-    ./podman.nix
-    ./virt-manager.nix
     ./customize.nix
   ]
-  ++ (if (systemSettings.gpuType == "hybrid") then [ ./nvidia.nix ] else [ ]);
+  ++ (
+    if systemSettings.gpuType == "hybrid" then
+      [ ./nvidia_hybrit.nix ]
+    else if systemSettings.gpuType == "nvidia" then
+      [ ./nvidia.nix ]
+    else
+      [ ]
+  )
+  ++ (if (systemSettings.hostname == "cutie")
+    then [
+      ../../modules/system/ananicy.nix
+      ../../modules/system/systemd-oomd.nix
+      ./virt-manager.nix
+      ./podman.nix
+    ]
+    else [ ]);
+
 
   boot.kernelParams = [
     "quiet"
@@ -29,7 +42,7 @@
     "rd.udev.log_level=3"
     "udev.log_priority=3"
     "transparent_hugepages=always"
-    "split_lock_detect=off"  
+    "split_lock_detect=off"
     "preempt=full"
   ];
   boot.consoleLogLevel = 0;
@@ -85,10 +98,10 @@
   };
 
   services.bpftune.enable = true;
-  
+
   system.autoUpgrade = {
   enable = true;
-  flake = "/home/${userSettings.username}/cutie-dotfiles"; 
+  flake = "/home/${userSettings.username}/cutie-dotfiles";
   flags = [
     "--update-input" "nixpkgs"
     "--commit-lock-file"

@@ -12,13 +12,13 @@
       LC_TELEPHONE = systemSettings.locale;
       LC_TIME = systemSettings.locale;
     };
-  
+
   # Klavye düzeni
   services.xserver.xkb = {
     layout = "tr";
     variant = "";
   };
   services.xserver.excludePackages = [ pkgs.xterm ];
-  
+
   console.keyMap = "trq";
 }
