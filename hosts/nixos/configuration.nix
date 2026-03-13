@@ -61,7 +61,6 @@
   ];
   nix.settings.auto-optimise-store = true;
 
-  hardware.enableRedistributableFirmware = true;
   nixpkgs.config.allowUnfree = true;
 
   system.activationScripts.userAvatar = {
