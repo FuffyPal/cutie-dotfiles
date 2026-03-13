@@ -20,8 +20,8 @@
     VERSION="0.1"
     VERSION_ID="0.1"
     HOME_URL="https://links.fluffypal.me/@fluffypal"
-    SUPPORT_URL="https://gitlab.com/FluffyPal/Pal_linux"
-    BUG_REPORT_URL="https://gitlab.com/FluffyPal/Pal_linux/issues"
+    SUPPORT_URL="https://gitlab.com/FluffyPal/cutie-dotfiles/-/tree/nix-main?ref_type=heads"
+    BUG_REPORT_URL="https://gitlab.com/FluffyPal/cutie-dotfiles/issues"
     LOGO="pix-logo"
     DISTRIB_ID=pix
     DISTRIB_RELEASE=0.1
