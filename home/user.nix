@@ -410,7 +410,7 @@ with lib.hm.gvariant;
       ];
     };
   };
-  "/org/gnome/desktop/interface" = {
+  "org/gnome/desktop/interface" = {
     icon-theme = "Papirus";
   };
 
