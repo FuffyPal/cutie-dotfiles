@@ -408,8 +408,10 @@ with lib.hm.gvariant;
         "org.mozilla.Thunderbird.desktop"
         "org.gnome.World.PikaBackup.desktop"
       ];
-      icon-theme = "Papirus";
     };
+  };
+  "/org/gnome/desktop/interface" = {
+    icon-theme = "Papirus";
   };
 
   programs.git = {
