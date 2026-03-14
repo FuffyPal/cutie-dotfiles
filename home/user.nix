@@ -374,16 +374,14 @@ with lib.hm.gvariant;
       name = "Büro";
       categories = [ "Office" ];
     };
-    "org/gnome/shell/" = {
-      favorite-apps = [
-        "app.zen_browser.zen.desktop"
-        "org.gnome.Console.desktop"
-        "org.gnome.Nautilus.desktop"
-        "vesktop.desktop"
-        "Mattermost.desktop"
-        "org.mozilla.Thunderbird.desktop"
-        "org.gnome.World.PikaBackup.desktop"
-      ];
+    "org/gnome/shell/favorite-apps" = {
+      "app.zen_browser.zen.desktop"
+      "org.gnome.Console.desktop"
+      "org.gnome.Nautilus.desktop"
+      "vesktop.desktop"
+      "Mattermost.desktop"
+      "org.mozilla.Thunderbird.desktop"
+      "org.gnome.World.PikaBackup.desktop"
     };
     "org/gnome/shell" = {
       disable-user-extensions = false;
