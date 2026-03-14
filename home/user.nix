@@ -89,6 +89,10 @@ with lib.hm.gvariant;
       ]
     else if systemSettings.hostname == "retrex" then
       [
+        # VR
+        alvr
+        sidequest
+
         # Editors
         helix
         gemini-cli

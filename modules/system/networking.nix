@@ -35,6 +35,7 @@
     extraUpFlags = [
       "--operator=${userSettings.username}"
       "--ssh"
+      "--exit-node-allow-lan-access"
     ];
   };
 
