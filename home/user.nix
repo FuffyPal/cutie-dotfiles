@@ -374,7 +374,7 @@ with lib.hm.gvariant;
       name = "Büro";
       categories = [ "Office" ];
     };
-    "org/gnome/shell/favorite-apps" = {
+    "org/gnome/shell/" = {
       favorite-apps = [
         "app.zen_browser.zen.desktop"
         "org.gnome.Console.desktop"
