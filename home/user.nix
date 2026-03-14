@@ -375,18 +375,6 @@ with lib.hm.gvariant;
       categories = [ "Office" ];
     };
     "org/gnome/shell" = {
-      favorite-apps = [
-        "app.zen_browser.zen.desktop"
-        "org.gnome.Console.desktop"
-        "org.gnome.Nautilus.desktop"
-        "vesktop.desktop"
-        "Mattermost.desktop"
-        "org.mozilla.Thunderbird.desktop"
-        "org.gnome.World.PikaBackup.desktop"
-      ];
-      icon-theme = "Papirus";
-    };
-    "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
@@ -411,6 +399,16 @@ with lib.hm.gvariant;
         "mediacontrols@cliffniff.github.com"
         "wiggle@meghatsh.github.com"
       ];
+      favorite-apps = [
+        "app.zen_browser.zen.desktop"
+        "org.gnome.Console.desktop"
+        "org.gnome.Nautilus.desktop"
+        "vesktop.desktop"
+        "Mattermost.desktop"
+        "org.mozilla.Thunderbird.desktop"
+        "org.gnome.World.PikaBackup.desktop"
+      ];
+      icon-theme = "Papirus";
     };
   };
 
