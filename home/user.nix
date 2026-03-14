@@ -354,9 +354,6 @@ with lib.hm.gvariant;
         "Settings"
       ];
     };
-    "org/gnome/desktop/interface/icon-theme" = {
-      "Papirus"
-    };
     "org/gnome/desktop/app-folders/folders/Game" = {
       name = "Spiel";
       categories = [ "Game" ];
