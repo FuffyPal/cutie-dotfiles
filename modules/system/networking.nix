@@ -1,7 +1,8 @@
-{ systemSettings
-, userSettings
-, config
-, ...
+{
+  systemSettings,
+  userSettings,
+  config,
+  ...
 }:
 {
 
@@ -20,9 +21,21 @@
       "fluffypal.me"
     ];
   };
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = true;
+      KbdInteractiveAuthentication = true;
+      PermitRootLogin = "no";
+    };
+    openFirewall = false;
+  };
   services.tailscale = {
     enable = true;
-    extraUpFlags = [ "--operator=${userSettings.username}" ];
+    extraUpFlags = [
+      "--operator=${userSettings.username}"
+      "--ssh"
+    ];
   };
   services.resolved = {
     enable = true;
