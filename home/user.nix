@@ -409,9 +409,9 @@ with lib.hm.gvariant;
         "org.gnome.World.PikaBackup.desktop"
       ];
     };
-  };
-  "org/gnome/desktop/interface" = {
+    "org/gnome/desktop/interface" = {
     icon-theme = "Papirus";
+    };
   };
 
   programs.git = {
