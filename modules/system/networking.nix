@@ -11,10 +11,19 @@
   services.zapret = {
     enable = true;
     params = [
-      "--dpi-desync=fake"
-      "--dpi-desync-ttl=1"
-      "--dpi-desync-fooling=badsum,md5sig"
-      "--dpi-desync-autottl=-1"
+      if systemSettings.hostname == "cutie" then
+        [
+          "--dpi-desync=fake",
+          "--dpi-desync-ttl=1",
+          "--dpi-desync-fooling=badsum,md5sig",
+          "--dpi-desync-autottl=-1",
+          "--dpi-desync-split-pos=1"
+        ]
+      else if systemSettings.hostname == "retrex" then
+        [
+
+        ]
+      else [ ];
     ];
     whitelist = [
       "fluffypal.me"
