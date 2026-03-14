@@ -70,6 +70,8 @@
     '';
   };
   programs.alvr.openFirewall = true;
+  programs.steam.remotePlay.openFirewall = true;
+  programs.steam.dedicatedServer.openFirewall = true;
   networking.firewall = {
     enable = true;
     allowPing = true;
