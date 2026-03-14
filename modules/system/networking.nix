@@ -69,6 +69,7 @@
       StaleRetentionSec=0
     '';
   };
+  programs.alvr.openFirewall = true;
   networking.firewall = {
     enable = true;
     allowPing = true;
