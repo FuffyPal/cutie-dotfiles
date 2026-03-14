@@ -22,8 +22,10 @@ with lib.hm.gvariant;
     enable = true;
     createDirectories = true;
   };
-  home.packages = with pkgs;
-      if systemSettings.hostname == "cutie" then [
+  home.packages =
+    with pkgs;
+    if systemSettings.hostname == "cutie" then
+      [
         # --- Editors ---
         helix
         gemini-cli
@@ -37,6 +39,9 @@ with lib.hm.gvariant;
         nixpkgs-fmt # Formatter
         statix # Linter
 
+        # Windows
+        winboat
+        freerdp
         # --- Go Development ---
         go
         gopls # Go LSP
@@ -74,7 +79,9 @@ with lib.hm.gvariant;
         imagemagick
         fdupes
         exiftool
-      ] else if systemSettings.hostname == "retrex" then [
+      ]
+    else if systemSettings.hostname == "retrex" then
+      [
         # Editors
         helix
         gemini-cli
@@ -101,7 +108,9 @@ with lib.hm.gvariant;
         bat
         lolcat
         btop
-      ] else [ ];
+      ]
+    else
+      [ ];
 
   programs.bash = {
     enable = true;
@@ -134,51 +143,56 @@ with lib.hm.gvariant;
         location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
       }
     ];
-  packages =
-    if systemSettings.hostname == "cutie" then [
-      "com.usebottles.bottles"
-      "de.haeckerfelix.Fragments"
-      "org.vinegarhq.Sober"
-      "org.vinegarhq.Vinegar"
-      "io.gitlab.librewolf-community"
-      "com.github.rafostar.Clapper"
-      "org.localsend.localsend_app"
-      "io.gitlab.theevilskeleton.Upscaler"
-      "com.github.tchx84.Flatseal"
-      "org.prismlauncher.PrismLauncher"
-      "org.mozilla.Thunderbird"
-      "com.github.wwmm.easyeffects"
-      "io.podman_desktop.PodmanDesktop"
-      "net.veloren.airshipper"
-      "com.github.neithern.g4music"
-      "org.torproject.torbrowser-launcher"
-      "org.onlyoffice.desktopeditors"
-      "re.sonny.Workbench"
-      "net.ankiweb.Anki"
-      "ar.xjuan.Cambalache"
-      "net.blockbench.Blockbench"
-      "app.zen_browser.zen"
-      "org.remmina.Remmina"
-      "com.vysp3r.ProtonPlus"
-      "org.onionshare.OnionShare"
-      "org.gnome.Loupe"
-      "org.gnome.World.PikaBackup"
-      "dev.deedles.Trayscale"
-      "io.ente.auth"
-    ] else if systemSettings.hostname == "retrex" then [
-      "com.usebottles.bottles"
-      "org.vinegarhq.Sober"
-      "org.vinegarhq.Vinegar"
-      "com.github.rafostar.Clapper"
-      "com.github.tchx84.Flatseal"
-      "com.github.wwmm.easyeffects"
-      "org.onlyoffice.desktopeditors"
-      "net.blockbench.Blockbench"
-      "com.vysp3r.ProtonPlus"
-      "app.zen_browser.zen"
-      "org.gnome.Loupe"
-      "dev.deedles.Trayscale"
-    ] else [ ];
+    packages =
+      if systemSettings.hostname == "cutie" then
+        [
+          "com.usebottles.bottles"
+          "de.haeckerfelix.Fragments"
+          "org.vinegarhq.Sober"
+          "org.vinegarhq.Vinegar"
+          "io.gitlab.librewolf-community"
+          "com.github.rafostar.Clapper"
+          "org.localsend.localsend_app"
+          "io.gitlab.theevilskeleton.Upscaler"
+          "com.github.tchx84.Flatseal"
+          "org.prismlauncher.PrismLauncher"
+          "org.mozilla.Thunderbird"
+          "com.github.wwmm.easyeffects"
+          "io.podman_desktop.PodmanDesktop"
+          "net.veloren.airshipper"
+          "com.github.neithern.g4music"
+          "org.torproject.torbrowser-launcher"
+          "org.onlyoffice.desktopeditors"
+          "re.sonny.Workbench"
+          "net.ankiweb.Anki"
+          "ar.xjuan.Cambalache"
+          "net.blockbench.Blockbench"
+          "app.zen_browser.zen"
+          "org.remmina.Remmina"
+          "com.vysp3r.ProtonPlus"
+          "org.onionshare.OnionShare"
+          "org.gnome.Loupe"
+          "org.gnome.World.PikaBackup"
+          "dev.deedles.Trayscale"
+          "io.ente.auth"
+        ]
+      else if systemSettings.hostname == "retrex" then
+        [
+          "com.usebottles.bottles"
+          "org.vinegarhq.Sober"
+          "org.vinegarhq.Vinegar"
+          "com.github.rafostar.Clapper"
+          "com.github.tchx84.Flatseal"
+          "com.github.wwmm.easyeffects"
+          "org.onlyoffice.desktopeditors"
+          "net.blockbench.Blockbench"
+          "com.vysp3r.ProtonPlus"
+          "app.zen_browser.zen"
+          "org.gnome.Loupe"
+          "dev.deedles.Trayscale"
+        ]
+      else
+        [ ];
     update.auto.enable = true;
     uninstallUnmanaged = true;
   };
