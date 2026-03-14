@@ -204,6 +204,7 @@ with lib.hm.gvariant;
           "app.zen_browser.zen"
           "org.gnome.Loupe"
           "dev.deedles.Trayscale"
+          "org.freedesktop.Platform.GL32.nvidia-580-119-02"
         ]
       else
         [ ];
