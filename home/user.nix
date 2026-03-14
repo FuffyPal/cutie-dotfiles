@@ -188,6 +188,7 @@ with lib.hm.gvariant;
           "org.gnome.World.PikaBackup"
           "dev.deedles.Trayscale"
           "io.ente.auth"
+          "org.freedesktop.Platform.GL32.nvidia-580-119-02"
         ]
       else if systemSettings.hostname == "retrex" then
         [
@@ -286,7 +287,9 @@ with lib.hm.gvariant;
       controls-manager-spacing-size = 22;
       dash = true;
       double-super-to-appgrid = false;
+      notification-banner-position = 1;
       osd = true;
+      osd-position = 1;
       panel = true;
       panel-size = 23;
       ripple-box = false;
