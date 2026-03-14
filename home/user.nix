@@ -384,7 +384,7 @@ with lib.hm.gvariant;
         "org.mozilla.Thunderbird.desktop"
         "org.gnome.World.PikaBackup.desktop"
       ];
-    }
+    };
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
