@@ -29,6 +29,7 @@
     };
     openFirewall = false;
   };
+
   services.tailscale = {
     enable = true;
     extraUpFlags = [
@@ -36,6 +37,7 @@
       "--ssh"
     ];
   };
+
   services.resolved = {
     enable = true;
     dnssec = "allow-downgrade";
