@@ -17,7 +17,6 @@
       "--dpi-desync-autottl=-1"
     ];
     whitelist = [
-      "discord.com"
       "fluffypal.me"
     ];
   };
