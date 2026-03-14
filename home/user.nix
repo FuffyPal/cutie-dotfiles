@@ -73,7 +73,6 @@ with lib.hm.gvariant;
         localsend
 
         # --- System & Gaming ---
-        steam
         airshipper
         flatpak
         papirus-icon-theme
@@ -114,7 +113,6 @@ with lib.hm.gvariant;
         vrcx
 
         # System & Gaming
-        steam
         flatpak
         papirus-icon-theme
 

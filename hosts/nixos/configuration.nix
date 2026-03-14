@@ -63,6 +63,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.steam.enable = true;
+  
   system.activationScripts.userAvatar = {
     text = ''
       mkdir -p /var/lib/AccountsService/icons
