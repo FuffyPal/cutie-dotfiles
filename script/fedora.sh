@@ -103,6 +103,7 @@ gnome-tweaks
 stow
 papirus-icon-theme
 kmodtool
+antigravity
 akmods
 mokutil
 openssl
