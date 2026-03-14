@@ -42,12 +42,18 @@ with lib.hm.gvariant;
         # Windows
         winboat
         freerdp
+
         # --- Go Development ---
         go
         gopls # Go LSP
         delve # Debugger
         golangci-lint # Linter
         gotools
+
+        # --- Rust Development ---
+        rustc
+        cargo
+        rust-analyzer
 
         # --- Version Control ---
         git
