@@ -93,6 +93,7 @@ with lib.hm.gvariant;
         # VR
         alvr
         sidequest
+        libcap
 
         # Editors
         helix
