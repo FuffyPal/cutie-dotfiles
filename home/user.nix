@@ -31,7 +31,8 @@ with lib.hm.gvariant;
         gemini-cli
         codex
         opencode
-        zed-editor
+        cursor-cli
+        code-cursor
 
         # --- Nix Development & LSPs ---
         nixd # Nix LSP
@@ -98,7 +99,8 @@ with lib.hm.gvariant;
         gemini-cli
         codex
         opencode
-        zed-editor
+        cursor-cli
+        code-cursor
 
         # Version Control
         git
