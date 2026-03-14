@@ -299,7 +299,7 @@ with lib.hm.gvariant;
       theme = false;
       window-demands-attention-focus = true;
       window-picker-icon = false;
-      window-preview-caption = true;
+      window-preview-caption = false;
       window-preview-close-button = true;
       workspace = false;
       workspace-background-corner-size = 15;
