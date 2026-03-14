@@ -54,6 +54,7 @@ with lib.hm.gvariant;
         rustc
         cargo
         rust-analyzer
+        pkg-config
 
         # --- Version Control ---
         git
