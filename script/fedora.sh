@@ -97,6 +97,9 @@ podman-compose
 firewalld
 firewall-config
 firewall-applet
+HandBrake
+HandBrake-gui
+google-chrome-stable
 flatpak
 vim
 gnome-tweaks

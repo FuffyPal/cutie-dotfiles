@@ -17,12 +17,10 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
         Thunderbird        - Email and calendar client
         Easy Effects       - Audio effects for PipeWire/PulseAudio
         Airshipper         - Veloren (RPG) launcher
-        G4Music            - Fast and fluid music player
         Tor Browser        - Privacy and anonymity browser
         ONLYOFFICE         - Office productivity suite
         Blockbench         - Low-poly 3D modeling
         Zen Browser        - Modern, minimalist web browser
-        OnionShare         - Securely share files via Tor
         Loupe              - GNOME image viewer
         Element (Riot)     - Matrix collaboration client
         Vesktop            - Discord client with Vencord patches
@@ -52,13 +50,12 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
     net.veloren.airshipper
-    com.github.neithern.g4music
     org.torproject.torbrowser-launcher
     org.onlyoffice.desktopeditors
     net.blockbench.Blockbench
     app.zen_browser.zen
     org.remmina.Remmina
-    org.onionshare.OnionShare
+    it.mijorus.gearlever
     org.gnome.Loupe
     dev.vencord.Vesktop
     org.gnome.World.PikaBackup
