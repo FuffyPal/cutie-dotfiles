@@ -1,0 +1,1 @@
+sudo dnf remove gnome-calendar gnome-contacts gnome-calculator gnome-clocks mediawriter totem sushi evince simple-scan snapshot gnome-maps gnome-boxes libreoffice-\* gnome-characters gnome-connections loupe gnome-tour rhythmbox firefox showtime decibels papers gnome-terminals -y
