@@ -65,10 +65,14 @@
      - Color Picker
      - Compiz windows effect
      - Dash to Dock
-     - Tiling shell
+     - Tiling shell(not requirement with Forge)
+     - Forge (not requirement with Tiling shell)
      - GSConnect
      - Just Perfection
      - Weather O'clock
-     - Quick Settings Tweaks
+     - Quick Settings Tweaks ( gnome 48 )
+     - Quick Settings Audio Panel ( gnome 49 )
+     - Quick Settings Touchpad Toggle ( gnome 49 )
      - Media Controls
-     - wiggle
+     - wiggle ( gnome 48 )
+     - wiggly ( gnome 49 )
