@@ -115,7 +115,7 @@ bzip3
 git-lfs
 git
 tailscale
-nextcloud-client
+rclone
 ptyxis
 helix
 lolcat
