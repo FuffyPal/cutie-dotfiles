@@ -31,3 +31,4 @@ bloatware=(
 )
 
 sudo zypper rm -u "${bloatware[@]}"
+sudo zypper al "${bloatware[@]}"
