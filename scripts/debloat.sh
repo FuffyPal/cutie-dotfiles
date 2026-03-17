@@ -30,6 +30,7 @@ bloatware=(
     "MozillaFirefox"
     "MozillaFirefox-branding-openSUSE"
     "lftp"
+    "vinagre"
 
 )
 
