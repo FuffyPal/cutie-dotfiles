@@ -23,6 +23,10 @@ bloatware=(
     "polari"
     "quadrapassel"
     "swell-foop"
+    "lightsoff"
+    "system-config-printer"
+    "cups"
+    "dconf-editor"
 
 )
 
