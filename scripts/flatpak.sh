@@ -10,7 +10,6 @@ flatpak_packages=(
     net.blockbench.Blockbench
     org.libreoffice.LibreOffice
     app.zen_browser.zen
-    org.remmina.Remmina
     org.gnome.Loupe
     dev.vencord.Vesktop
     #org.gnome.World.PikaBackup

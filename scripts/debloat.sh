@@ -29,6 +29,7 @@ bloatware=(
     "dconf-editor"
     "MozillaFirefox"
     "MozillaFirefox-branding-openSUSE"
+    "lftp"
 
 )
 
