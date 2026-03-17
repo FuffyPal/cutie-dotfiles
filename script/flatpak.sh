@@ -60,6 +60,8 @@ if [[ "$choice" == "y" || "$choice" == "yes" ]]; then
     dev.vencord.Vesktop
     org.gnome.World.PikaBackup
     dev.deedles.Trayscale
+    org.kde.krita
+    io.github.electronstudio.WeylusCommunityEdition
     io.ente.auth
     com.usebottles.bottles
     de.haeckerfelix.Fragments
