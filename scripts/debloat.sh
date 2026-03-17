@@ -8,12 +8,22 @@ bloatware=(
     "gnome-chess"
     "gnome-clocks"
     "gnome-contacts"
-    "gnome-extensions-app"
+    "gnome-extensions"
     "gnome-mahjongg"
     "gnome-mines"
     "gnome-music"
     "gnome-sudoku"
-    
+    "transmission-gtk"
+    "transmission"
+    "sushi"
+    "libreoffice"
+    "gimp"
+    "totem"
+    "simple-scan"
+    "polari"
+    "quadrapassel"
+    "swell-foop"
+
 )
 
 sudo zypper rm -u "${bloatware[@]}"
