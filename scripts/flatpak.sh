@@ -7,8 +7,8 @@ flatpak_packages=(
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
     org.torproject.torbrowser-launcher
-    org.onlyoffice.desktopeditors
     net.blockbench.Blockbench
+    org.libreoffice.LibreOffice
     app.zen_browser.zen
     org.remmina.Remmina
     org.gnome.Loupe

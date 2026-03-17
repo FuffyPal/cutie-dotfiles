@@ -1,1 +1,1 @@
-sudo zypper dup -y
+sudo zypper dup --no-recommends -y 

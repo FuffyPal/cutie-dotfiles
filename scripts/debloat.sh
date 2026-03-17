@@ -27,6 +27,8 @@ bloatware=(
     "system-config-printer"
     "cups"
     "dconf-editor"
+    "MozillaFirefox"
+    "MozillaFirefox-branding-openSUSE"
 
 )
 
