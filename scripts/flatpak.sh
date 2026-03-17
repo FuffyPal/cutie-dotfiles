@@ -12,6 +12,7 @@ flatpak_packages=(
     app.zen_browser.zen
     org.gnome.Loupe
     dev.vencord.Vesktop
+    com.protonvpn.www
     #org.gnome.World.PikaBackup
     #dev.deedles.Trayscale
     io.ente.auth
