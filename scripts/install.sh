@@ -67,6 +67,35 @@ else
     echo "lspci command not found"
 fi
 
+sudo kmodgenca -a
+if [ $? -eq 0 ]; then
+	echo "Secure boot import"
+	sudo mokutil --import /etc/pki/akmods/certs/public_key.der
+	if [ $? -eq 0 ]; then
+		echo "secure boot successfull ..."
+	else
+		echo "secure boot unsuccessfull ... error import area"
+		exit 1
+	fi
+else
+	echo "sucre boot unseccesfull ... error generade"
+	sudo kmodgenca -a --force
+	if [ $? -eq 0 ]; then
+		echo "secure boot import"
+		sudo mokutil --import /etc/pki/akmods/certs/public_key.der
+		if  [ $? -eq 0 ]; then
+			echo "sucre boot successfull ... but force mod"
+		else
+			echo "secure boot unseccessfull .. error import area"
+			exit 1
+		fi
+	else
+		echo "secure boot unseccesfull ... error gnerade force mode"
+		exit 1
+	fi
+fi
+
+
 wget https://github.com/cjpais/Handy/releases/download/v0.7.11/Handy-0.7.11-1.x86_64.rpm
 sudo dnf install -y ./Handy-0.7.11-1.x86_64.rpm
 rm Handy-0.7.11-1.x86_64.rpm
