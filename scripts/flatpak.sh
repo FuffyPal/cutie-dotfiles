@@ -11,7 +11,6 @@ flatpak_packages=(
     org.libreoffice.LibreOffice
     app.zen_browser.zen
     org.gnome.Loupe
-    com.protonvpn.www
     io.ente.auth
     com.usebottles.bottles
 )

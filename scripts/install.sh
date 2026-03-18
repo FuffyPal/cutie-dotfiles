@@ -102,3 +102,12 @@ rm Handy-0.7.11-1.x86_64.rpm
 wget https://github.com/TheAssassin/AppImageLauncher/releases/download/v3.0.0-beta-3/appimagelauncher_3.0.0-beta-2-gha287.96cb937_amd64.deb
 sudo dnf install -y ./appimagelauncher_3.0.0-beta-2-gha287.96cb937_amd64.deb
 rm appimagelauncher_3.0.0-beta-2-gha287.96cb937_amd64.deb
+sudo rpm -e 'gpg-pubkey(4fa1c3ba-61abda35)' && sudo rpm --import https://pkg.cloudflareclient.com/pubkey.gpg
+curl -fsSl https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo | sudo tee /etc/yum.repos.d/cloudflare-warp.repo
+sudo dnf install -y cloudflare-warp
+warp-cli registration new
+warp-cli connect
+wget "https://repo.protonvpn.com/fedora-$(cat /etc/fedora-release | cut -d' ' -f 3)-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.3-1.noarch.rpm"
+sudo dnf install ./protonvpn-stable-release-1.0.3-1.noarch.rpm 
+rm protonvpn-stable-release-1.0.3-1.noarch.rpm
+sudo dnf install proton-vpn-gnome-desktop 
