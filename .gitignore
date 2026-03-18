@@ -1,2 +1,4 @@
 *.rpm
 *.appimage
+*.tar.gz
+zapret-*
