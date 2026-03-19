@@ -44,6 +44,8 @@ wtype
 steam-devices
 gtk-layer-shell
 fuse-libs
+freerdp
+btop
 "
 
 nvidia="

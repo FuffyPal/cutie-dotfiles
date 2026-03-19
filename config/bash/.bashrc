@@ -30,6 +30,7 @@ alias helix="/bin/hx"
 alias hx="/bin/hx"
 alias up="sudo dnf update -y && flatpak update -y"
 alias cat="/bin/lolcat"
+alias top="/bin/btop"
 
 # Paths
 export PATH="$HOME/.local/bin:$PATH"

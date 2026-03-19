@@ -3,6 +3,7 @@ RESOLVED_CONF="/etc/systemd/resolved.conf.d/fluffy.conf"
 NEW_CONFIG="
 [Resolve]
 DNS=1.1.1.1#cloudflare-dns.com 9.9.9.9#dns.quad9.net 1.0.0.1#cloudflare-dns.com
+Domains=~.
 FallbackDNS=149.112.112.112#dns.quad9.net 8.8.8.8#dns.google
 DNSSEC=yes
 DNSOverTLS=yes
