@@ -102,9 +102,6 @@ else
 fi
 
 
-wget https://github.com/cjpais/Handy/releases/download/v0.7.11/Handy-0.7.11-1.x86_64.rpm
-sudo dnf install -y ./Handy-0.7.11-1.x86_64.rpm
-rm Handy-0.7.11-1.x86_64.rpm
 wget https://github.com/TheAssassin/AppImageLauncher/releases/download/v3.0.0-beta-3/appimagelauncher_3.0.0-beta-2-gha287.96cb937_x86_64.rpm
 sudo dnf install -y ./appimagelauncher_3.0.0-beta-2-gha287.96cb937_x86_64.rpm
 rm appimagelauncher_3.0.0-beta-2-gha287.96cb937_x86_64.rpm
@@ -118,3 +115,7 @@ sudo dnf install -y proton-vpn-gnome-desktop
 wget https://github.com/TibixDev/winboat/releases/download/v0.9.0/winboat-0.9.0-x86_64.AppImage
 chmod +x winboat-0.9.0-x86_64.AppImage
 ./winboat-0.9.0-x86_64.AppImage
+echo "you not forget pls /path/to/handy(appimage) --toggle-transcription"
+wget https://github.com/cjpais/Handy/releases/download/v0.7.12/Handy_0.7.12_amd64.AppImage
+chmod +x Handy_0.7.12_amd64.AppImage
+./Handy_0.7.12_amd64.AppImage
