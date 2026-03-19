@@ -13,6 +13,7 @@ flatpak_packages=(
     org.gnome.Loupe
     io.ente.auth
     com.usebottles.bottles
+    md.obsidian.Obsidian
 )
 
 flatpak_repo_user="flatpak --user remote-add --if-not-exists flathub_user https://dl.flathub.org/repo/flathub.flatpakrepo"
