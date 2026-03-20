@@ -11,14 +11,10 @@ flatpak_packages=(
     org.libreoffice.LibreOffice
     app.zen_browser.zen
     org.gnome.Loupe
-    dev.vencord.Vesktop
-    com.protonvpn.www
-    #org.gnome.World.PikaBackup
-    #dev.deedles.Trayscale
     io.ente.auth
     com.usebottles.bottles
-    #de.haeckerfelix.Fragments
-    #io.podman_desktop.PodmanDesktop
+    md.obsidian.Obsidian
+    im.fluffychat.Fluffychat
 )
 
 flatpak_repo_user="flatpak --user remote-add --if-not-exists flathub_user https://dl.flathub.org/repo/flathub.flatpakrepo"
