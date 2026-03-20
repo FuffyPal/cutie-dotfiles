@@ -14,6 +14,7 @@ flatpak_packages=(
     io.ente.auth
     com.usebottles.bottles
     md.obsidian.Obsidian
+    im.fluffychat.Fluffychat
 )
 
 flatpak_repo_user="flatpak --user remote-add --if-not-exists flathub_user https://dl.flathub.org/repo/flathub.flatpakrepo"
