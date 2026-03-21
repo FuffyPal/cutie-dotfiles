@@ -28,64 +28,27 @@ with lib.hm.gvariant;
       [
         # --- Editors ---
         helix
-        gemini-cli
-        codex
-        opencode
-        cursor-cli
-        code-cursor
-
-        # --- Nix Development & LSPs ---
-        nixd # Nix LSP
-        nil # Nix LSP (Alternative)
-        nixpkgs-fmt # Formatter
-        statix # Linter
+        antigravity
 
         # Windows
         winboat
         freerdp
-
-        # --- Go Development ---
-        go
-        gopls # Go LSP
-        delve # Debugger
-        golangci-lint # Linter
-        gotools
-
-        # --- Rust Development ---
-        rustc
-        cargo
-        rust-analyzer
-        pkg-config
 
         # --- Version Control ---
         git
         git-lfs
 
         # --- Media & Internet ---
-        google-chrome
-        ffmpeg
-        vesktop
-        mattermost-desktop
-        nextcloud-client
         vrcx
-        arrpc
-        yt-dlp
         localsend
 
         # --- System & Gaming ---
-        airshipper
         flatpak
         papirus-icon-theme
 
         # --- CLI Fun & Utilities ---
-        bat
         lolcat
         btop
-        libwebp
-        libjxl
-        imagemagick
-        fdupes
-        exiftool
       ]
     else if systemSettings.hostname == "retrex" then
       [
@@ -159,35 +122,23 @@ with lib.hm.gvariant;
       if systemSettings.hostname == "cutie" then
         [
           "com.usebottles.bottles"
-          "de.haeckerfelix.Fragments"
-          "org.vinegarhq.Sober"
-          "org.vinegarhq.Vinegar"
-          "io.gitlab.librewolf-community"
           "com.github.rafostar.Clapper"
           "org.localsend.localsend_app"
           "io.gitlab.theevilskeleton.Upscaler"
           "com.github.tchx84.Flatseal"
-          "org.prismlauncher.PrismLauncher"
           "org.mozilla.Thunderbird"
           "com.github.wwmm.easyeffects"
-          "io.podman_desktop.PodmanDesktop"
-          "net.veloren.airshipper"
-          "com.github.neithern.g4music"
           "org.torproject.torbrowser-launcher"
-          "org.onlyoffice.desktopeditors"
-          "re.sonny.Workbench"
-          "net.ankiweb.Anki"
-          "ar.xjuan.Cambalache"
           "net.blockbench.Blockbench"
           "app.zen_browser.zen"
-          "org.remmina.Remmina"
-          "com.vysp3r.ProtonPlus"
-          "org.onionshare.OnionShare"
           "org.gnome.Loupe"
           "org.gnome.World.PikaBackup"
-          "dev.deedles.Trayscale"
           "io.ente.auth"
           "org.freedesktop.Platform.GL32.nvidia-580-119-02"
+          "im.fluffychat.Fluffychat"
+          "md.obsidian.Obsidian"
+          "org.libreoffice.LibreOffice"
+          "dev.vencord.Vesktop"
         ]
       else if systemSettings.hostname == "retrex" then
         [
