@@ -35,6 +35,7 @@
     gnome-tweaks
     gnome-weather
     gnomeExtensions.appindicator
+    gnomeExtensions.cloudflare-warp-toggle
     gnomeExtensions.battery-health-charging
     gnomeExtensions.bluetooth-battery-meter
     gnomeExtensions.blur-my-shell
