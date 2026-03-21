@@ -42,6 +42,10 @@ with lib.hm.gvariant;
         vrcx
         localsend
 
+        # --- Networking & VPN ---
+        protonvpn-gui
+        cloudflare-warp
+
         # --- System & Gaming ---
         flatpak
         papirus-icon-theme
