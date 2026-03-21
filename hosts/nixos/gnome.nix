@@ -6,6 +6,7 @@
   services.displayManager.autoLogin.user = "${userSettings.username}";
   services.gvfs.enable = true;
   services.gnome.gnome-online-accounts.enable = true;
+  programs.dconf.enable = true;
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour
@@ -29,6 +30,8 @@
   environment.systemPackages = with pkgs; [
     gnome.gvfs
     gvfs
+    gnome-online-accounts
+    libgnome-keyring
     gnome-tweaks
     gnome-weather
     gnomeExtensions.appindicator
