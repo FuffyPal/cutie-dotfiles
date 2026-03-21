@@ -4,6 +4,8 @@
   services.desktopManager.gnome.enable = true;
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "${userSettings.username}";
+  services.gvfs.enable = true;
+  services.gnome.gnome-online-accounts.enable = true;
 
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour
