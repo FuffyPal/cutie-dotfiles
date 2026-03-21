@@ -79,7 +79,7 @@ Aşağıdaki uzantılar GNOME'un resmi uzantı mağazasından veya ilgili kaynak
 | 16 | **Restart to...** | Güç menüsüne farklı önyükleme seçenekleri (UEFI, Windows vb.) ekler |
 | 17 | **Tiling Shell** | Akıllı pencere döşeme (tiling) desteği; pencereleri bölgelere yapıştırır |
 | 18 | **User Avatar in Quick Settings** | Hızlı ayarlar menüsünde kullanıcı avatar fotoğrafını gösterir |
-| 19 | **Warp Toggle** | Warp terminal uygulamasını hızlıca açmak için kısayol sunar |
+| 19 | **cloudflare-warp-toggle** | Warp terminal uygulamasını hızlıca açmak için kısayol sunar |
 | 20 | **Weather O'Clock** | Üst panelde saat ile birlikte hava durumu bilgisini gösterir |
 | 21 | **Wiggly** | Pencereleri sürüklerken eğlenceli bir yavaş titreme animasyonu ekler |
 
