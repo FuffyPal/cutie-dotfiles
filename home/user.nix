@@ -253,6 +253,7 @@ with lib.hm.gvariant;
         "qs-touchpad-toggle@crystal"
         "restartto@tiagoporsch.github.io"
         "quick-settings-avatar@d-go"
+        "cloudflare-warp-toggle@khaled.is-a.dev"
       ];
       favorite-apps = [
         "app.zen_browser.zen.desktop"
@@ -261,6 +262,7 @@ with lib.hm.gvariant;
         "dev.vencord.Vesktop.desktop"
         "vesktop.desktop"
         "Mattermost.desktop"
+        "element-desktop.desktop"
         "im.fluffychat.Fluffychat.desktop"
         "org.mozilla.Thunderbird.desktop"
         "org.gnome.World.PikaBackup.desktop"
