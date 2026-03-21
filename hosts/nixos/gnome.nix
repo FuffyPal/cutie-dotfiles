@@ -27,6 +27,8 @@
   ]);
 
   environment.systemPackages = with pkgs; [
+    gnome.gvfs
+    gvfs
     gnome-tweaks
     gnome-weather
     gnomeExtensions.appindicator
