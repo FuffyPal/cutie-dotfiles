@@ -139,7 +139,6 @@ with lib.hm.gvariant;
           "net.blockbench.Blockbench"
           "app.zen_browser.zen"
           "org.gnome.Loupe"
-          "org.gnome.World.PikaBackup"
           "io.ente.auth"
           "org.freedesktop.Platform.GL32.nvidia-580-119-02"
           "im.fluffychat.Fluffychat"
