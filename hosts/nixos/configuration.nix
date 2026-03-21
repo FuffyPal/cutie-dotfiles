@@ -114,6 +114,8 @@
   randomizedDelaySec = "45min";
   };
 
+  services.cloudflare-warp.enable = true;
+  
   programs.gamemode = {
     enable = true;
     settings = {
