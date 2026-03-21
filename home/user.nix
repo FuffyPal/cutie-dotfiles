@@ -44,6 +44,7 @@ with lib.hm.gvariant;
         # --- Media & Internet ---
         vrcx
         localsend
+        element-desktop
 
         # --- Networking & VPN ---
         protonvpn-gui
@@ -141,7 +142,6 @@ with lib.hm.gvariant;
           "org.gnome.Loupe"
           "io.ente.auth"
           "org.freedesktop.Platform.GL32.nvidia-580-119-02"
-          "im.fluffychat.Fluffychat"
           "md.obsidian.Obsidian"
           "org.libreoffice.LibreOffice"
           "dev.vencord.Vesktop"
