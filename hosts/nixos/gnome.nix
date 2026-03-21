@@ -34,14 +34,16 @@
     gnomeExtensions.caffeine
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.color-picker
-    gnomeExtensions.compiz-windows-effect
     gnomeExtensions.dash-to-dock
-    gnomeExtensions.tiling-shell
     gnomeExtensions.gsconnect
     gnomeExtensions.just-perfection
     gnomeExtensions.weather-oclock
     gnomeExtensions.media-controls
     gnomeExtensions.quick-settings-audio-panel
+    gnomeExtensions.quick-settings-touchpad-toggle
+    gnomeExtensions.restart-to
+    gnomeExtensions.forge
+    gnomeExtensions.user-avatar-in-quick-settings
   ];
   xdg.portal = {
       enable = true;
