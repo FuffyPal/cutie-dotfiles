@@ -29,6 +29,7 @@
       ../../modules/system/systemd-oomd.nix
       ./virt-manager.nix
       ./podman.nix
+      ./snapper.nix
     ]
     else [ ]);
 
