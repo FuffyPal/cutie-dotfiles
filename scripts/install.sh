@@ -32,6 +32,10 @@ EOF
 
 sudo sh -c 'echo -e "[unityhub]\nname=Unity Hub\nbaseurl=https://hub.unity3d.com/linux/repos/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://hub.unity3d.com/linux/repos/rpm/stable/repodata/repomd.xml.key\nrepo_gpgcheck=1" > /etc/yum.repos.d/unityhub.repo'
 
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc &&
+echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
+
+
 package="
 podman
 podman-docker
@@ -43,7 +47,7 @@ flatpak
 vim
 gnome-tweaks
 papirus-icon-theme
-codium
+code
 git-lfs
 git
 ptyxis
@@ -124,9 +128,9 @@ sudo rpm -e 'gpg-pubkey(4fa1c3ba-61abda35)' && sudo rpm --import https://pkg.clo
 curl -fsSl https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo | sudo tee /etc/yum.repos.d/cloudflare-warp.repo
 sudo dnf install -y cloudflare-warp
 wget "https://repo.protonvpn.com/fedora-$(cat /etc/fedora-release | cut -d' ' -f 3)-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.3-1.noarch.rpm"
-sudo dnf install -y ./protonvpn-stable-release-1.0.3-1.noarch.rpm 
+sudo dnf install -y ./protonvpn-stable-release-1.0.3-1.noarch.rpm
 rm protonvpn-stable-release-1.0.3-1.noarch.rpm
-sudo dnf install -y proton-vpn-gnome-desktop 
+sudo dnf install -y proton-vpn-gnome-desktop
 wget https://github.com/TibixDev/winboat/releases/download/v0.9.0/winboat-0.9.0-x86_64.AppImage
 chmod +x winboat-0.9.0-x86_64.AppImage
 ./winboat-0.9.0-x86_64.AppImage
