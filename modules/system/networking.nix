@@ -10,14 +10,16 @@
   networking.networkmanager.enable = true;
   services.zapret = {
     enable = true;
-    params = 
+    params =
       if systemSettings.hostname == "cutie" then
         [
-          "--dpi-desync=fake"
+          "--dpi-desync=fake,split2"
           "--dpi-desync-ttl=1"
           "--dpi-desync-fooling=badsum,md5sig"
-          "--dpi-desync-autottl=-1"
-          "--dpi-desync-split-pos=1"
+          "--dpi-desync-autottl=2"
+          "--dpi-desync-split-pos=midsld"
+          "--dpi-desync-udp=fake"
+          "--dpi-desync-udp-mdisorder=3"
         ]
       else if systemSettings.hostname == "retrex" then
         [
@@ -29,17 +31,18 @@
         ]
       else [ ];
     whitelist = [
+      "*.fluffypal.me"
       "fluffypal.me"
     ];
   };
   services.openssh = {
-    enable = true;
+    enable = false;
     settings = {
       PasswordAuthentication = true;
       KbdInteractiveAuthentication = true;
       PermitRootLogin = "no";
     };
-    openFirewall = true;
+    openFirewall = false;
   };
 
   services.tailscale = {
@@ -53,8 +56,8 @@
 
   services.resolved = {
     enable = true;
-    dnssec = "allow-downgrade";
-    dnsovertls = "opportunistic";
+    dnssec = "true";
+    dnsovertls = "true";
     extraConfig = ''
       [Resolve]
       DNS=1.1.1.1#cloudflare-dns.com 9.9.9.9#dns.quad9.net
@@ -78,40 +81,32 @@
     checkReversePath = "loose";
     trustedInterfaces = [ "tailscale0" ];
     allowedTCPPorts = [
-      22000
-      53317
-      139
-      445
-      8080
+      53317 # localsend
+      4955 # warframe
+      4950 # warframe
+      27031 # Steam Remote Play
+      27036 # Steam Remote Play
+      27037 # Steam Remote Play
     ];
     allowedUDPPorts = [
       config.services.tailscale.port
-      53317
-      22000
-      21027
-      27031
-      137
-      27036
-      138
+      53317 # localsend
+      4955 # warframe
+      4950 # warframe
+      27031 # Steam Remote Play
+      27036 # Steam Remote Play
+      27037 # Steam Remote Play
     ];
     allowedTCPPortRanges = [
       {
-        from = 1714;
-        to = 1764;
-      }
-      {
-        from = 27036;
-        to = 27037;
+        from = 1714; # kdeconnect
+        to = 1764; # kdeconnect
       }
     ];
     allowedUDPPortRanges = [
       {
-        from = 1714;
-        to = 1764;
-      }
-      {
-        from = 10400;
-        to = 10401;
+        from = 1714 # kdeconnect
+        to = 1764; # kdeconnect
       }
     ];
   };

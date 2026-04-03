@@ -25,16 +25,16 @@
   )
   ++ (if (systemSettings.hostname == "cutie")
     then [
-      ../../modules/system/ananicy.nix
-      ../../modules/system/systemd-oomd.nix
-      ./virt-manager.nix
+      #../../modules/system/ananicy.nix
+      #../../modules/system/systemd-oomd.nix
+      #./virt-manager.nix
       ./podman.nix
       ./snapper.nix
     ]
     else [ ]);
 
   boot.kernelPackages = pkgs.linuxPackages;
-  
+
   boot.kernelParams = [
     "quiet"
     "splash"
@@ -66,7 +66,7 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.steam.enable = true;
-  
+
   system.activationScripts.userAvatar = {
     text = ''
       mkdir -p /var/lib/AccountsService/icons
@@ -115,7 +115,7 @@
   };
 
   services.cloudflare-warp.enable = true;
-  
+
   programs.gamemode = {
     enable = true;
     settings = {

@@ -10,7 +10,7 @@ with lib.hm.gvariant;
 {
 
   imports = [
-    ./dconf-extension.nix  
+    ./dconf-extension.nix
   ];
   home.username = userSettings.username;
   home.homeDirectory = "/home/${userSettings.username}";
@@ -31,9 +31,9 @@ with lib.hm.gvariant;
       [
         # --- Editors ---
         helix
-        antigravity
+        zed-editor
 
-        # Windows
+        # --- Windows ---
         winboat
         freerdp
 
@@ -137,13 +137,13 @@ with lib.hm.gvariant;
           "org.mozilla.Thunderbird"
           "com.github.wwmm.easyeffects"
           "org.torproject.torbrowser-launcher"
-          "net.blockbench.Blockbench"
           "app.zen_browser.zen"
           "org.gnome.Loupe"
           "io.ente.auth"
           "org.freedesktop.Platform.GL32.nvidia-580-119-02"
           "md.obsidian.Obsidian"
           "org.libreoffice.LibreOffice"
+          "dev.deedles.Trayscale"
           "dev.vencord.Vesktop"
         ]
       else if systemSettings.hostname == "retrex" then

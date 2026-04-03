@@ -13,7 +13,7 @@
       LC_TIME = systemSettings.locale;
     };
 
-  # Klavye düzeni
+  # Keyboard layout
   services.xserver.xkb = {
     layout = "tr";
     variant = "";
