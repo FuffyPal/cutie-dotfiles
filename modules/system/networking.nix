@@ -17,9 +17,9 @@
           "--dpi-desync-ttl=1"
           "--dpi-desync-fooling=badsum,md5sig"
           "--dpi-desync-autottl=2"
-          "--dpi-desync-split-pos=midsld"
-          "--dpi-desync-udp=fake"
-          "--dpi-desync-udp-mdisorder=3"
+          "--dpi-desync-split-pos=midsld+1"
+          #"--dpi-desync-udp=fake"
+          #"--dpi-desync-udp-mdisorder=3"
         ]
       else if systemSettings.hostname == "retrex" then
         [
@@ -105,7 +105,7 @@
     ];
     allowedUDPPortRanges = [
       {
-        from = 1714 # kdeconnect
+        from = 1714; # kdeconnect
         to = 1764; # kdeconnect
       }
     ];
