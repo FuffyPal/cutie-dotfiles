@@ -16,7 +16,7 @@
       system = "x86_64-linux";
 
       userSettings = {
-        username = "fluffypal";
+        username = "flaouve";
         name = "Fluffy Pal";
         email = "email@email.com";
         dotfilesDir = "~/.cutie-dotfiles";
