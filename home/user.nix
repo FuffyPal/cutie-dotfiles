@@ -111,7 +111,7 @@ with lib.hm.gvariant;
       cat = "lolcat";
       helix = "hx";
       top = "btop";
-      up = "cd ${userSettings.username}/cutie-dotfiles && git pull && sudo nixos-rebuild swich --flake .#cutie";
+      up = "cd /home/${userSettings.username}/cutie-dotfiles && git pull && sudo nixos-rebuild swich --flake .#cutie";
     };
 
     bashrcExtra = ''
