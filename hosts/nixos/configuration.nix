@@ -31,7 +31,7 @@
       #./virt-manager.nix
       ./podman.nix
       ./snapper.nix
-      ../../modules/system/lto.nix
+      #../../modules/system/lto.nix
     ]
     else [ ]);
 

@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  nixpkgs.hostPlatform = {
+  nixpkgs.hostPlatform = lib.mkForce {
     gcc.arch = "znver3";
     gcc.tune = "znver3";
     system = "x86_64-linux";
