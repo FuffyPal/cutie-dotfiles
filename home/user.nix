@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   userSettings,
   systemSettings,
   lib,
@@ -26,73 +27,72 @@ with lib.hm.gvariant;
     createDirectories = true;
   };
   home.packages =
-    with pkgs;
     if systemSettings.hostname == "cutie" then
       [
         # --- Editors ---
-        helix
-        zed-editor
+        pkgs.helix
+        pkgs-unstable.zed-editor
 
         # --- Windows ---
-        winboat
-        freerdp
+        pkgs.winboat
+        pkgs.freerdp
 
         # --- Version Control ---
-        git
-        git-lfs
+        pkgs.git
+        pkgs.git-lfs
 
         # --- Media & Internet ---
-        vrcx
-        localsend
-        element-desktop
+        pkgs.vrcx
+        pkgs.localsend
+        pkgs.element-desktop
 
         # --- Networking & VPN ---
-        protonvpn-gui
-        cloudflare-warp
+        pkgs.protonvpn-gui
+        pkgs.cloudflare-warp
 
         # --- System & Gaming ---
-        flatpak
-        papirus-icon-theme
-        mangohud # test
-        goverlay # test
+        pkgs.flatpak
+        pkgs.papirus-icon-theme
+        pkgs.mangohud # test
+        pkgs.goverlay # test
 
         # --- CLI Fun & Utilities ---
-        lolcat
-        btop
+        pkgs.lolcat
+        pkgs.btop
       ]
     else if systemSettings.hostname == "retrex" then
       [
         # VR
-        alvr
-        sidequest
-        libcap
+        pkgs.alvr
+        pkgs.sidequest
+        pkgs.libcap
 
         # Editors
-        helix
-        gemini-cli
-        codex
-        opencode
-        cursor-cli
-        code-cursor
+        pkgs.helix
+        pkgs.gemini-cli
+        pkgs.codex
+        pkgs.opencode
+        pkgs.cursor-cli
+        pkgs.code-cursor
 
         # Version Control
-        git
-        git-lfs
+        pkgs.git
+        pkgs.git-lfs
 
         # Media & Internet
-        google-chrome
-        ffmpeg
-        vesktop
-        vrcx
+        pkgs.google-chrome
+        pkgs.ffmpeg
+        pkgs.vesktop
+        pkgs.vrcx
 
         # System & Gaming
-        flatpak
-        papirus-icon-theme
+        pkgs.flatpak
+        pkgs.papirus-icon-theme
 
         # CLI Utilities
-        bat
-        lolcat
-        btop
+        pkgs.bat
+        pkgs.lolcat
+        pkgs.btop
       ]
     else
       [ ];
