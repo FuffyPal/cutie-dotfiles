@@ -89,7 +89,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak";
-              home-manager.extraSpecialArgs = { inherit userSettings; systemSettings = retrexSettings; };
+              home-manager.extraSpecialArgs = { inherit userSettings; systemSettings = retrexSettings; inherit pkgs-unstable; };
               home-manager.users."${userSettings.username}" = {
                 imports = [
                   ./home/user.nix
