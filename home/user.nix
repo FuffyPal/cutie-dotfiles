@@ -55,6 +55,7 @@ with lib.hm.gvariant;
         pkgs.papirus-icon-theme
         pkgs.mangohud # test
         pkgs.goverlay # test
+        pkgs.distrobox
 
         # --- CLI Fun & Utilities ---
         pkgs.lolcat
@@ -88,7 +89,6 @@ with lib.hm.gvariant;
         # System & Gaming
         pkgs.flatpak
         pkgs.papirus-icon-theme
-        pkgs.distrobox
 
         # CLI Utilities
         pkgs.bat
