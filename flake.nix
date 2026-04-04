@@ -29,7 +29,7 @@
 
       userSettings = {
         username = "flaouve";
-        name = "Fluffy Pal";
+        name = "flaouve";
         email = "email@email.com";
         dotfilesDir = "~/.cutie-dotfiles";
       };
