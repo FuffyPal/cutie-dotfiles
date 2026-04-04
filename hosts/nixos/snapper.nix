@@ -7,7 +7,7 @@
 
     configs = {
       home = {
-        SUBVOLUME = "/home";
+        SUBVOLUME = "@home";
         FSTYPE = "btrfs";
 
         TIMELINE_CREATE = true;
