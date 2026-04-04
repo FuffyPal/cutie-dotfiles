@@ -165,6 +165,7 @@
     pkgs.libnotify
     pkgs.cudaPackages.cudatoolkit
     pkgs.btrfs-assistant
+    pkgs.bpftune
   ];
 
   programs.gamescope = {

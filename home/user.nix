@@ -264,11 +264,13 @@ with lib.hm.gvariant;
         "org.gnome.Nautilus.desktop"
         "dev.vencord.Vesktop.desktop"
         "vesktop.desktop"
+        "md.obsidian.Obsidian.desktop"
         "Mattermost.desktop"
         "element-desktop.desktop"
         "im.fluffychat.Fluffychat.desktop"
         "org.mozilla.Thunderbird.desktop"
         "org.gnome.World.PikaBackup.desktop"
+        "btrfs-assistant.desktop"
       ];
     };
     "org/gnome/desktop/interface" = {
