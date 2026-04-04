@@ -111,7 +111,7 @@ with lib.hm.gvariant;
       cat = "lolcat";
       helix = "hx";
       top = "btop";
-      up = "cd ${userSettings.username}/${userSettings.username} && git pull && sudo nixos-rebuild swich --flake .#cutie"
+      up = "cd ${userSettings.username}/${userSettings.username} && git pull && sudo nixos-rebuild swich --flake .#cutie";
     };
 
     bashrcExtra = ''
