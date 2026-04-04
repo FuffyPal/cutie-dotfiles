@@ -27,7 +27,7 @@
   ++ (if (systemSettings.hostname == "cutie")
     then [
       #../../modules/system/ananicy.nix
-      #../../modules/system/systemd-oomd.nix
+      ../../modules/system/systemd-oomd.nix
       #./virt-manager.nix
       ./podman.nix
       ./snapper.nix
