@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nix-flatpak.url = "github:gmodena/nix-flatpak/";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -11,9 +12,20 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-flatpak, ... }:
+  outputs = { self,
+    nixpkgs-unstable,
+    nixpkgs,
+    home-manager,
+    nix-flatpak,
+    ...
+  }:
     let
       system = "x86_64-linux";
+
+      pkgs-unstable = import nixpkgs-unstable {
+              inherit system;
+              config.allowUnfree = true;
+      };
 
       userSettings = {
         username = "flaouve";
@@ -47,7 +59,7 @@
       nixosConfigurations = {
 
         "${cutieSettings.hostname}" = nixpkgs.lib.nixosSystem {
-          specialArgs = { systemSettings = cutieSettings; inherit userSettings; inherit system; };
+          specialArgs = { systemSettings = cutieSettings; inherit userSettings; inherit system; inherit pkgs-unstable; };
           modules = [
             ./hosts/nixos/configuration.nix
             nix-flatpak.nixosModules.nix-flatpak
@@ -68,7 +80,7 @@
         };
 
         "${retrexSettings.hostname}" = nixpkgs.lib.nixosSystem {
-          specialArgs = { systemSettings = retrexSettings; inherit userSettings; inherit system;};
+          specialArgs = { systemSettings = retrexSettings; inherit userSettings; inherit system; inherit pkgs-unstable; };
           modules = [
             ./hosts/nixos/configuration.nix
             nix-flatpak.nixosModules.nix-flatpak

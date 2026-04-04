@@ -3,6 +3,7 @@
   userSettings,
   system,
   pkgs,
+  pkgs-unstable,
   ...
 }:
 {
@@ -33,7 +34,9 @@
     ]
     else [ ]);
 
-  boot.kernelPackages = pkgs.linuxPackages;
+  boot.kernelPackages =
+  if systemSettings.hostname == "cutie" then pkgs-unstable.linuxPackages
+  else pkgs.linuxPackages;
 
   boot.kernelParams = [
     "quiet"
@@ -161,6 +164,7 @@
     pkgs.gamescope
     pkgs.libnotify
     pkgs.cudaPackages.cudatoolkit
+    pkgs.btrfs-assistant
   ];
 
   programs.gamescope = {
