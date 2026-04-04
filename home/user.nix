@@ -53,6 +53,8 @@ with lib.hm.gvariant;
         # --- System & Gaming ---
         flatpak
         papirus-icon-theme
+        mangohud
+        goverlay
 
         # --- CLI Fun & Utilities ---
         lolcat
