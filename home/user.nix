@@ -88,6 +88,7 @@ with lib.hm.gvariant;
         # System & Gaming
         pkgs.flatpak
         pkgs.papirus-icon-theme
+        pkgs.distrobox
 
         # CLI Utilities
         pkgs.bat
@@ -143,7 +144,8 @@ with lib.hm.gvariant;
           "app.zen_browser.zen"
           "org.gnome.Loupe"
           "io.ente.auth"
-          "org.freedesktop.Platform.GL32.nvidia-580-119-02"
+          "org.freedesktop.Platform.GL.nvidia-595-58-03"
+          "com.ranfdev.DistroShelf"
           "md.obsidian.Obsidian"
           "org.libreoffice.LibreOffice"
           "dev.deedles.Trayscale"
