@@ -174,6 +174,8 @@
     capSysNice = true;
   };
 
+  programs.nix-ld.enable = true; # test
+
   environment.sessionVariables = {
     STAGING_SHARED_MEMORY = "1";
     PROTON_ASYNC = "1";
