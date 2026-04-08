@@ -143,7 +143,7 @@
       "wheel"
       "networkmanager"
       "tailscale"
-      "docker"
+      "podman"
       "libvirtd"
       "kvm"
     ];
