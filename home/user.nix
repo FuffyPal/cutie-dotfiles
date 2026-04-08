@@ -60,6 +60,7 @@ with lib.hm.gvariant;
         # --- CLI Fun & Utilities ---
         pkgs.lolcat
         pkgs.btop
+        pkgs.arrpc
       ]
     else if systemSettings.hostname == "retrex" then
       [
