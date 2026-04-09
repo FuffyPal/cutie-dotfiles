@@ -1,1 +1,1 @@
-cd scripts && ./fedora_workstation_debloat.sh && ./dns.sh && dnf.sh && ./firewalld.sh && ./zapret.sh && (./flatpak.sh & ./flatpak_not_requments.sh & ./install.sh & wait)
+cd scripts && ./fedora_workstation_debloat.sh && ./dns.sh && dnf.sh && sudo ./firewalld.sh && ./zapret.sh && (./flatpak.sh & ./flatpak_not_requments.sh & ./install.sh & wait)
