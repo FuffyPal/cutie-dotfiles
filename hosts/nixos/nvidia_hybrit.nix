@@ -33,4 +33,5 @@
   };
   hardware.nvidia-container-toolkit.enable = true;
   hardware.nvidia-container-toolkit.suppressNvidiaDriverAssertion = true;
+  hardware.nvidia-container-toolkit.mount-nvidia-executables = true;
 }
