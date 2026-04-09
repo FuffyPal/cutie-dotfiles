@@ -14,6 +14,7 @@ flatpak_packages=(
     md.obsidian.Obsidian
     im.fluffychat.Fluffychat
     org.gnome.seahorse.Application
+    io.podman_desktop.PodmanDesktop
 )
 
 flatpak_repo_user="flatpak --user remote-add --if-not-exists flathub_user https://dl.flathub.org/repo/flathub.flatpakrepo"
