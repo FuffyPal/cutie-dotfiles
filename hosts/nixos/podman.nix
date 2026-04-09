@@ -14,6 +14,7 @@
   environment.systemPackages = with pkgs; [
     podman-compose
     kubectl
+    nvidia-container-toolkit
   ];
   virtualisation.containers.registries.search = [
     "docker.io"
