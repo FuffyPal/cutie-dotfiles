@@ -8,7 +8,7 @@ let
 in
 {
   virtualisation.oci-containers = {
-    backend = "podman";
+    backend = "docker";
     containers = {
       comfyui = {
         image = "registry.gitlab.com/fluffypal/comfyui-docker:latest";
@@ -30,12 +30,6 @@ in
         ];
       };
     };
-  };
-
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    dockerSocket.enable = true;
   };
 
   users.users."${userSettings.username}".extraGroups = [ "podman" ];
