@@ -114,7 +114,7 @@ with lib.hm.gvariant;
       helix = "hx";
       top = "btop";
       up = "cd /home/${userSettings.username}/cutie-dotfiles && git pull && sudo nixos-rebuild switch --flake .#cutie";
-      comfyui-up = "sudo systemctl start podman-comfyui.service"
+      comfyui-up = "sudo systemctl start podman-comfyui.service";
       comfyui-down = "sudo systemctl stop podman-comfyui.service";
       comfyui-status = "sudo systemctl status podman-comfyui.service";
     };
