@@ -60,6 +60,7 @@ ptyxis
 wtype
 steam-devices
 gtk-layer-shell
+fuse
 fuse-libs
 freerdp
 btop
