@@ -30,7 +30,7 @@
       ../../modules/system/systemd-oomd.nix
       ../../modules/system/container.nix
       #./virt-manager.nix
-      ./podman.nix
+      ./docker.nix
       ./snapper.nix
       #../../modules/system/lto.nix
     ]
@@ -144,7 +144,7 @@
       "wheel"
       "networkmanager"
       "tailscale"
-      "podman"
+      "docker"
       "libvirtd"
       "kvm"
     ];
