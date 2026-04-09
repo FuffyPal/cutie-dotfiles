@@ -144,10 +144,9 @@
     extraGroups = [
       "wheel"
       "networkmanager"
-      "tailscale"
-      "docker"
-      "libvirtd"
-      "kvm"
+      "podman"
+      "video"
+      "render"
     ];
     subUidRanges = [
       {
