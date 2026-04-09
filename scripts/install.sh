@@ -77,6 +77,8 @@ libva-nvidia-driver
 libva-utils
 vdpauinfo
 "
+NVIDIA_CONTAINER_TOOLKIT_VERSION=1.19.0-1
+
 sudo dnf update -y
 sudo dnf install -y $package
 sudo dnf group install -y container-management
@@ -85,6 +87,13 @@ sudo dnf group install -y development-tools
 
 if command -v lspci > /dev/null; then
     if lspci | grep -i nvidia > /dev/null; then
+		curl -s -L https://nvidia.github.io/libnvidia-container/stable/rpm/nvidia-container-toolkit.repo | \
+  sudo tee /etc/yum.repos.d/nvidia-container-toolkit.repo
+		  sudo dnf install -y \
+      nvidia-container-toolkit-${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
+      nvidia-container-toolkit-base-${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
+      libnvidia-container-tools-${NVIDIA_CONTAINER_TOOLKIT_VERSION} \
+      libnvidia-container1-${NVIDIA_CONTAINER_TOOLKIT_VERSION}
         sudo dnf install -y $nvidia
     else
         echo "Nvidia GPU not found"
