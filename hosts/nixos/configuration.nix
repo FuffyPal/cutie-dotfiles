@@ -28,6 +28,7 @@
     then [
       #../../modules/system/ananicy.nix
       ../../modules/system/systemd-oomd.nix
+      ../../modules/system/container.nix
       #./virt-manager.nix
       ./podman.nix
       ./snapper.nix
