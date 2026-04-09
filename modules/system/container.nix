@@ -13,7 +13,7 @@ in
       comfyui = {
         image = "registry.gitlab.com/fluffypal/comfyui-docker:latest";
 
-        autoStart = true;
+        autoStart = false;
 
         ports = [
           "8188:8188"
