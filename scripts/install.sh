@@ -67,6 +67,7 @@ btop
 rust-analyzer
 cargo
 distrobox
+kubernetes1.35
 "
 
 nvidia="
