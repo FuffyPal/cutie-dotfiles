@@ -1,6 +1,8 @@
 flatpak_packages=(
     dev.vencord.Vesktop
     com.usebottles.bottles
+    io.github.dvlv.boxbuddyrs
+    io.podman_desktop.PodmanDesktop
 )
 
 flatpak_repo_user="flatpak --user remote-add --if-not-exists flathub_user https://dl.flathub.org/repo/flathub.flatpakrepo"

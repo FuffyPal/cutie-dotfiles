@@ -66,6 +66,7 @@ freerdp
 btop
 rust-analyzer
 cargo
+distrobox
 "
 
 nvidia="
