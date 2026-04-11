@@ -7,14 +7,11 @@ flatpak_packages=(
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
     org.torproject.torbrowser-launcher
-    net.blockbench.Blockbench
     org.libreoffice.LibreOffice
     app.zen_browser.zen
     org.gnome.Loupe
     io.ente.auth
-    com.usebottles.bottles
     md.obsidian.Obsidian
-    im.fluffychat.Fluffychat
 )
 
 flatpak_repo_user="flatpak --user remote-add --if-not-exists flathub_user https://dl.flathub.org/repo/flathub.flatpakrepo"
