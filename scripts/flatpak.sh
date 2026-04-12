@@ -18,6 +18,7 @@ FLATPAKS=(
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
     org.torproject.torbrowser-launcher
+    org.prismlauncher.PrismLauncher
     dev.dergs.Tonearm
     org.libreoffice.LibreOffice
     app.zen_browser.zen
