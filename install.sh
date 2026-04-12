@@ -62,6 +62,28 @@ gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 
+    info "ProtonVPN repo ekleniyor..."
+    local fedora_ver
+    fedora_ver=$(cat /etc/fedora-release | cut -d' ' -f 3)
+    local proton_rpm
+    proton_rpm=$(mktemp --suffix=.rpm)
+    curl -fsSL \
+        "https://repo.protonvpn.com/fedora-${fedora_ver}-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.3-1.noarch.rpm" \
+        -o "$proton_rpm"
+    sudo dnf install -y "$proton_rpm"
+    rm -f "$proton_rpm"
+
+    info "Cloudflare WARP repo ekleniyor..."
+    sudo rpm --import https://pkg.cloudflareclient.com/pubkey.gpg
+    sudo tee /etc/yum.repos.d/cloudflare-warp.repo > /dev/null <<'EOF'
+[cloudflare-warp]
+name=Cloudflare WARP
+baseurl=https://pkg.cloudflareclient.com/rpm/
+enabled=1
+gpgcheck=1
+gpgkey=https://pkg.cloudflareclient.com/pubkey.gpg
+EOF
+
     success "Repo'lar hazır."
 }
 
@@ -94,6 +116,9 @@ install_packages() {
         distrobox freerdp
         # Steam / oyun
         steam-devices gtk-layer-shell
+        # VPN
+        proton-vpn-gnome-desktop
+        cloudflare-warp
         # Kubernetes
         kubernetes1.35
     )
@@ -102,6 +127,9 @@ install_packages() {
 
     info "git-lfs başlatılıyor..."
     git lfs install || warn "git lfs install başarısız, atlandı."
+
+    info "Cloudflare WARP servisi etkinleştiriliyor..."
+    sudo systemctl enable --now warp-svc || warn "warp-svc başlatılamadı, atlandı."
 
     success "DNF paketleri kuruldu."
 }
@@ -163,7 +191,6 @@ apply_system_configs() {
     info "systemd-resolved yapılandırılıyor (DoT + DNSSEC)..."
     sudo cp "$DOTFILES_DIR/system/resolved.conf" /etc/systemd/resolved.conf
     sudo systemctl enable --now systemd-resolved
-    # resolv.conf'u systemd-resolved'a yönlendir
     sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
     info "firewalld etkinleştiriliyor..."
