@@ -115,7 +115,7 @@ install_packages() {
         # Konteyner / sanallaştırma
         distrobox freerdp
         # Steam / oyun
-        steam-devices gtk-layer-shell
+        steam gtk-layer-shell
         # VPN
         proton-vpn-gnome-desktop
         cloudflare-warp
