@@ -101,7 +101,7 @@ install_packages() {
     sudo dnf install -y "${PACKAGES[@]}"
 
     info "git-lfs başlatılıyor..."
-    git lfs install --system
+    git lfs install || warn "git lfs install başarısız, atlandı."
 
     success "DNF paketleri kuruldu."
 }
