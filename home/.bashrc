@@ -48,6 +48,17 @@ alias gc="git commit"
 alias gp="git push"
 alias gl="git log --oneline --graph --decorate"
 
+alias comfyui="podman run -d \
+  --name comfyui \
+  -p 8188:8188 \
+  -v models:/models \
+  --device nvidia.com/gpu=all \
+  --security-opt=label=disable \
+  --rm \
+  registry.gitlab.com/fluffypal/comfyui-docker:latest"
+alias comfyui-status="podman logs -f comfyui"
+alias comfyui-stop="podman stop comfyui"
+
 # ─── Paths ─────────────────────────────────────────────────────────────────────
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 
