@@ -62,6 +62,14 @@ gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 
+    info "Antigravity repo ekleniyor..."
+    sudo tee /etc/yum.repos.d/antigravity.repo << EOL
+[antigravity-rpm]
+name=Antigravity RPM Repository
+baseurl=https://us-central1-yum.pkg.dev/projects/antigravity-auto-updater-dev/antigravity-rpm
+enabled=1
+gpgcheck=0
+EOL
     info "ProtonVPN repo ekleniyor..."
     local fedora_ver
     fedora_ver=$(cat /etc/fedora-release | cut -d' ' -f 3)
@@ -107,7 +115,7 @@ install_packages() {
         # Masaüstü
         gnome-tweaks papirus-icon-theme ptyxis
         # Geliştirici araçları
-        code helix rust-analyzer cargo
+        antigravity helix rust-analyzer cargo
         # Yardımcılar
         lolcat btop wtype fuse fuse-libs
         # Btrfs
