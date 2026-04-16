@@ -25,3 +25,11 @@
 
 [diff]
     tool = vimdiff
+
+[user]
+    name = Flaouve
+    email = flaouve@gmail.com
+    signingkey = 02FC8EA3CD0EA7AB
+
+[commit]
+    gpgsign = true
