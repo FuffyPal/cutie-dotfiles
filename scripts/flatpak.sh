@@ -8,7 +8,6 @@ log() { echo -e "\e[38;2;255;171;185m[flatpak]\e[0m $*"; }
 FLATPAKS=(
     dev.vencord.Vesktop
     com.usebottles.bottles
-    io.github.dvlv.boxbuddyrs
     io.podman_desktop.PodmanDesktop
     com.github.rafostar.Clapper
     org.localsend.localsend_app
@@ -19,13 +18,11 @@ FLATPAKS=(
     com.github.wwmm.easyeffects
     org.torproject.torbrowser-launcher
     org.prismlauncher.PrismLauncher
-    dev.dergs.Tonearm
     org.libreoffice.LibreOffice
     app.zen_browser.zen
     org.gnome.Loupe
     io.ente.auth
     md.obsidian.Obsidian
-    im.fluffychat.Fluffychat
     org.gnome.seahorse.Application
 )
 

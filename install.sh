@@ -121,7 +121,7 @@ install_packages() {
         # Btrfs
         snapper python3-dnf-plugin-snapper btrfs-assistant
         # Konteyner / sanallaştırma
-        distrobox freerdp
+        freerdp
         # Steam / oyun
         steam gtk-layer-shell
         # VPN
