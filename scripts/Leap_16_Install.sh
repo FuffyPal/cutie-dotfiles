@@ -4,5 +4,5 @@ sudo zypper --gpg-auto-import-keys addrepo --refresh --check --name "Packman Rep
 sudo zypper --gpg-auto-import-keys addrepo --refresh --check --name "Nvidia Repository" -f https://download.nvidia.com/opensuse/leap/16.0 NVIDIA
 sudo zypper ref
 sudo zypper in -y antigravity git git-lfs papirus-icon-theme firewalld firewall-config helix btop systemd-resolved  zram-generator  systemd-zram-service podman podman-docker unzip
-sudo zypper install-new-recommends -y
+sudo zypper install-new-recommends
 sudo systemctl enable --now zramswap.service
