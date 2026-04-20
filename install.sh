@@ -91,7 +91,9 @@ enabled=1
 gpgcheck=1
 gpgkey=https://pkg.cloudflareclient.com/pubkey.gpg
 EOF
-
+    info "Cude Repo ekleniyor..."
+    sudo dnf config-manager addrepo --from-repofile https://developer.download.nvidia.com/compute/cuda/repos/fedora$(rpm -E %fedora)/x86_64/cuda-fedora$(rpm -E %fedora).repo
+    
     success "Repo'lar hazır."
 }
 
