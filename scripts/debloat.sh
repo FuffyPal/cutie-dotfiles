@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # scripts/debloat.sh — GNOME bloatware kaldırma
 
 set -euo pipefail

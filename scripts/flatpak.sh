@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # scripts/flatpak.sh — Flatpak uygulamaları kur
 
 set -euo pipefail
@@ -24,6 +24,7 @@ FLATPAKS=(
     io.ente.auth
     md.obsidian.Obsidian
     org.gnome.seahorse.Application
+    org.cockpit_project.CockpitClient
 )
 
 log "Flathub remote ekleniyor..."

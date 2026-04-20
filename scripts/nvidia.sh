@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # scripts/nvidia.sh — NVIDIA sürücü + container toolkit kurulumu
 
 set -euo pipefail

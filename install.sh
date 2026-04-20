@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # install.sh — Fedora dotfiles ana kurulum scripti
 #
 # Kullanım:
