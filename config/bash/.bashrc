@@ -28,7 +28,7 @@ alias la="ls -lha --color=auto"
 alias grep="grep --color=auto"
 alias helix="/bin/hx"
 alias hx="/bin/hx"
-alias up="sudo dnf update -y && flatpak update -y"
+alias up="sudo zypper dup -y && flatpak update -y"
 alias cat="/bin/lolcat"
 alias comfyui="podman run  -v ~/models:/workspace/ComfyUI/models --name comfyui -p 8188:8188 -d --device nvidia.com/gpu=all --rm --security-opt=label=disable comfyui-docker:latest"
 

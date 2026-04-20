@@ -1,4 +1,4 @@
-DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 # ─── Renkli log fonksiyonları ──────────────────────────────────────────────────
 info()    { echo -e "\e[38;2;180;200;255m[INFO]\e[0m    $*"; }
