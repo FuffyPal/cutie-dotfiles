@@ -15,6 +15,7 @@ create_symlinks() {
         ["$DOTFILES_DIR/config/bash/.bashrc"]="$HOME/.bashrc"
         ["$DOTFILES_DIR/config/vim/.vimrc"]="$HOME/.vimrc"
         ["$DOTFILES_DIR/config/git/.gitconfig"]="$HOME/.gitconfig"
+        ["$DOTFILES_DIR/config/helix/config.toml"]="$HOME/.config/helix/config.toml"
     )
 
     for src in "${!LINKS[@]}"; do
