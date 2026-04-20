@@ -11,7 +11,7 @@ step()    { echo -e "\n\e[38;2;255;171;185m━━━ $* ━━━\e[0m\n"; }
 
 # ─── DNF paketleri ─────────────────────────────────────────────────────────
 install_packages() {
-    step "DNF paketleri kuruluyor"
+    step "DNF Installing Packages"
 
     PACKAGES=(
         # Temel araçlar
@@ -25,12 +25,12 @@ install_packages() {
 
     sudo dnf install -y "${PACKAGES[@]}"
 
-    success "DNF paketleri kuruldu."
+    success "DNF Packages installed"
 }
 
 # ─── Dotfiles symlink'leri ─────────────────────────────────────────────────
 create_symlinks() {
-    step "Dotfiles symlink'leri oluşturuluyor"
+    step "Dotfiles Creating symlinks"
 
     declare -A LINKS=(
         ["$DOTFILES_DIR/home/.bashrc"]="$HOME/.bashrc"
@@ -45,22 +45,34 @@ create_symlinks() {
             mv "$dst" "${dst}.bak"
         fi
         ln -sf "$src" "$dst"
-        success "Bağlandı: $dst → $src"
+        success "link: $dst → $src"
     done
+}
+
+# ─── Compose Kurulum ─────────────────────────────────────────────────
+
+compose_setup() {
+    step "pal-clouddyy-stack Setup"
+
+    if ! command -v podman-compose &>/dev/null; then
+        error "Podman Compose Not Found."
+    else
+
+    fi
 }
 
 # ─── Ana akış ─────────────────────────────────────────────────────────────────
 main() {
     echo -e "\e[38;2;255;171;185m"
     echo "  ╔═══════════════════════════════════════════╗"
-    echo "  ║   Fedora Server Dotfiles Kurulum Scripti  ║"
+    echo "  ║   Fedora Server Dotfiles Setup Scripti  ║"
     echo "  ╚═══════════════════════════════════════════╝"
     echo -e "\e[0m"
 
     create_symlinks
     install_packages
 
-    echo -e "\n\e[38;2;150;255;150m✔ Kurulum tamamlandı!\e[0m"
+    echo -e "\n\e[38;2;150;255;150m✔ Setup Finished!\e[0m"
     echo -e "  Önerilir: sistemi yeniden başlatın → \e[1msudo reboot\e[0m"
 }
 
