@@ -243,7 +243,7 @@ create_symlinks() {
 main() {
     echo -e "\e[38;2;255;171;185m"
     echo "  ╔═══════════════════════════════════╗"
-    echo "  ║   Fedora Dotfiles Kurulum Scripti  ║"
+    echo "  ║   Fedora Dotfiles Kurulum Scripti ║"
     echo "  ╚═══════════════════════════════════╝"
     echo -e "\e[0m"
 
