@@ -44,7 +44,6 @@ with lib.hm.gvariant;
         # --- Media & Internet ---
         pkgs.vrcx
         pkgs.localsend
-        pkgs.element-desktop
 
         # --- Networking & VPN ---
         pkgs.protonvpn-gui
@@ -162,6 +161,7 @@ with lib.hm.gvariant;
           "io.gitlab.librewolf-community"
           "io.github.giantpinkrobots.varia"
           "im.fluffychat.Fluffychat"
+          "org.libreoffice.LibreOffice"
         ]
       else if systemSettings.hostname == "retrex" then
         [
