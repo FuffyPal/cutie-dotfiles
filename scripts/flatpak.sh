@@ -19,12 +19,14 @@ FLATPAKS=(
     org.torproject.torbrowser-launcher
     org.prismlauncher.PrismLauncher
     org.libreoffice.LibreOffice
-    app.zen_browser.zen
+    io.gitlab.librewolf-community
     org.gnome.Loupe
     io.ente.auth
     md.obsidian.Obsidian
     org.gnome.seahorse.Application
     org.cockpit_project.CockpitClient
+    io.github.giantpinkrobots.varia
+    im.fluffychat.Fluffychat
 )
 
 log "Flathub remote ekleniyor..."
