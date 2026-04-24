@@ -104,11 +104,21 @@ with lib.hm.gvariant;
       "erasedups"
     ];
     shellAliases = {
-      ll = "ls -lh";
-      la = "ls -lha";
-      cat = "lolcat";
-      helix = "hx";
-      top = "btop";
+      ls="ls --color=auto";
+      l="ls --color=auto";
+      ll="ls -lh --color=auto";
+      la="ls -lha --color=auto";
+      grep="grep --color=auto";
+      helix="hx";
+      hx="hx";
+      cat="lolcat";
+      top="btop";
+      myip="curl -s ifconfig.me";
+      gs="git status";
+      ga="git add";
+      gc="git commit";
+      gp="git push";
+      gl="git log --oneline --graph --decorate";
       up = "cd /home/${userSettings.username}/cutie-dotfiles && git pull && sudo nixos-rebuild switch --flake .#cutie";
       comfyui-up = "sudo systemctl start podman-comfyui.service";
       comfyui-down = "sudo systemctl stop podman-comfyui.service";
