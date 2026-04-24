@@ -160,6 +160,8 @@ with lib.hm.gvariant;
           "org.gnome.seahorse.Application"
           "org.cockpit_project.CockpitClient"
           "io.gitlab.librewolf-community"
+          "io.github.giantpinkrobots.varia"
+          "im.fluffychat.Fluffychat"
         ]
       else if systemSettings.hostname == "retrex" then
         [
