@@ -53,14 +53,10 @@ with lib.hm.gvariant;
         # --- System & Gaming ---
         pkgs.flatpak
         pkgs.papirus-icon-theme
-        pkgs.mangohud # test
-        pkgs.goverlay # test
-        pkgs.distrobox
 
         # --- CLI Fun & Utilities ---
         pkgs.lolcat
         pkgs.btop
-        pkgs.arrpc
       ]
     else if systemSettings.hostname == "retrex" then
       [
@@ -145,15 +141,15 @@ with lib.hm.gvariant;
           "org.mozilla.Thunderbird"
           "com.github.wwmm.easyeffects"
           "org.torproject.torbrowser-launcher"
-          "app.zen_browser.zen"
           "org.gnome.Loupe"
           "io.ente.auth"
           "org.freedesktop.Platform.GL.nvidia-595-58-03"
-          "com.ranfdev.DistroShelf"
           "md.obsidian.Obsidian"
-          "org.libreoffice.LibreOffice"
           "dev.deedles.Trayscale"
           "dev.vencord.Vesktop"
+          "org.gnome.seahorse.Application"
+          "org.cockpit_project.CockpitClient"
+          "io.gitlab.librewolf-community"
         ]
       else if systemSettings.hostname == "retrex" then
         [
