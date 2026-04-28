@@ -41,8 +41,8 @@ with lib.hm.gvariant;
         pkgs.vscode-extensions.eamodio.gitlens
 
         # --- Windows ---
-        pkgs.winboat
-        pkgs.freerdp
+        #pkgs.winboat
+        #pkgs.freerdp
 
         # --- Version Control ---
         pkgs.git
