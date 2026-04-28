@@ -32,6 +32,13 @@ with lib.hm.gvariant;
         # --- Editors ---
         pkgs.helix
         pkgs-unstable.zed-editor
+        pkgs.vscode
+        # --- VScode Extensions ---
+        pkgs.vscode-extensions.catppuccin.catppuccin-vsc
+        pkgs.vscode-extensions.catppuccin.catppuccin-vsc-icons
+        pkgs.vscode-extensions.ms-azuretools.vscode-containers
+        pkgs.vscode-extensions.ms-vscode-remote.remote-containers
+        pkgs.vscode-extensions.eamodio.gitlens
 
         # --- Windows ---
         pkgs.winboat
@@ -44,6 +51,8 @@ with lib.hm.gvariant;
         # --- Media & Internet ---
         pkgs.vrcx
         pkgs.localsend
+        pkgs.librewolf
+        pkgs.thunderbird
 
         # --- Networking & VPN ---
         pkgs.protonvpn-gui
@@ -147,7 +156,6 @@ with lib.hm.gvariant;
           "org.localsend.localsend_app"
           "io.gitlab.theevilskeleton.Upscaler"
           "com.github.tchx84.Flatseal"
-          "org.mozilla.Thunderbird"
           "com.github.wwmm.easyeffects"
           "org.torproject.torbrowser-launcher"
           "org.gnome.Loupe"
@@ -158,10 +166,7 @@ with lib.hm.gvariant;
           "dev.vencord.Vesktop"
           "org.gnome.seahorse.Application"
           "org.cockpit_project.CockpitClient"
-          "io.gitlab.librewolf-community"
           "io.github.giantpinkrobots.varia"
-          "im.fluffychat.Fluffychat"
-          "org.libreoffice.LibreOffice"
         ]
       else if systemSettings.hostname == "retrex" then
         [

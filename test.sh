@@ -8,7 +8,7 @@ git add -N .
 
 echo -e "${BLUE}🔍 Nix Flake yapısı kontrol ediliyor...${NC}"
 
-if nix flake check; then
+if nix flake check --extra-experimental-features "nix-command flakes"; then
     echo -e "${GREEN}✅ Kod yapısı (Syntax) doğru.${NC}"
 else
     echo -e "${RED}❌ Kodda hata var!${NC}"
@@ -18,7 +18,7 @@ fi
 
 echo -e "${BLUE}🛠️  Tüm sistem inşa ediliyor (Dry-run)...${NC}"
 
-if nix build .#nixosConfigurations.cutie.config.system.build.toplevel --dry-run; then
+if nix build .#nixosConfigurations.cutie.config.system.build.toplevel --extra-experimental-features "nix-command flakes" --dry-run; then
     echo -e "${GREEN}✅ İnşa başarılı! Hem sistem hem kullanıcı ayarları uyumlu.${NC}"
 else
     echo -e "${RED}❌ İnşa başarısız! Mantıksal bir çakışma var.${NC}"
@@ -26,7 +26,7 @@ else
     exit 1
 fi
 
-if nix build .#nixosConfigurations.retrex.config.system.build.toplevel --dry-run; then
+if nix build .#nixosConfigurations.retrex.config.system.build.toplevel --extra-experimental-features "nix-command flakes" --dry-run; then
     echo -e "${GREEN}✅ İnşa başarılı! Hem sistem hem kullanıcı ayarları uyumlu.${NC}"
 else
     echo -e "${RED}❌ İnşa başarısız! Mantıksal bir çakışma var.${NC}"
