@@ -59,6 +59,10 @@ with lib.hm.gvariant;
         # --- CLI Fun & Utilities ---
         pkgs.lolcat
         pkgs.btop
+
+        # --- Nix Devel ENV ---
+        pkgs.nixd
+        pkgs.nil
       ]
     else if systemSettings.hostname == "retrex" then
       [
