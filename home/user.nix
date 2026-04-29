@@ -32,13 +32,7 @@ with lib.hm.gvariant;
         # --- Editors ---
         pkgs.helix
         pkgs-unstable.zed-editor
-        pkgs.vscode
-        # --- VScode Extensions ---
-        pkgs.vscode-extensions.catppuccin.catppuccin-vsc
-        pkgs.vscode-extensions.catppuccin.catppuccin-vsc-icons
-        pkgs.vscode-extensions.ms-azuretools.vscode-containers
-        pkgs.vscode-extensions.ms-vscode-remote.remote-containers
-        pkgs.vscode-extensions.eamodio.gitlens
+        pkgs-unstable.lapce
 
         # --- Windows ---
         #pkgs.winboat
