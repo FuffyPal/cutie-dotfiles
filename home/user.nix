@@ -35,8 +35,8 @@ with lib.hm.gvariant;
         pkgs-unstable.lapce
 
         # --- Windows ---
-        #pkgs.winboat
-        #pkgs.freerdp
+        pkgs-unstable.winboat
+        pkgs.freerdp
 
         # --- Version Control ---
         pkgs.git
