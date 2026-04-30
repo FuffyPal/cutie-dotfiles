@@ -74,6 +74,7 @@
         pkgs.rust-analyzer
         pkgs.rustfmt
         pkgs.clippy
+        pkgs.gcc
       ]
     else if systemSettings.hostname == "retrex" then
       [
