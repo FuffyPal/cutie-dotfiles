@@ -282,6 +282,7 @@ with lib.hm.gvariant;
       ];
       favorite-apps = [
         "app.zen_browser.zen.desktop"
+        "librewolf.desktop"
         "org.gnome.Console.desktop"
         "org.gnome.Nautilus.desktop"
         "dev.vencord.Vesktop.desktop"
@@ -291,6 +292,7 @@ with lib.hm.gvariant;
         "element-desktop.desktop"
         "im.fluffychat.Fluffychat.desktop"
         "org.mozilla.Thunderbird.desktop"
+        "thunderbird.desktop"
         "org.gnome.World.PikaBackup.desktop"
         "btrfs-assistant.desktop"
       ];
