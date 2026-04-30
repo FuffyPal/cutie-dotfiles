@@ -32,7 +32,6 @@ with lib.hm.gvariant;
         # --- Editors ---
         pkgs.helix
         pkgs-unstable.zed-editor
-        pkgs-unstable.lapce
 
         # --- Windows ---
         pkgs-unstable.winboat
@@ -165,7 +164,6 @@ with lib.hm.gvariant;
           "org.torproject.torbrowser-launcher"
           "org.gnome.Loupe"
           "io.ente.auth"
-          "org.freedesktop.Platform.GL.nvidia-595-58-03"
           "md.obsidian.Obsidian"
           "dev.deedles.Trayscale"
           "dev.vencord.Vesktop"
@@ -187,12 +185,12 @@ with lib.hm.gvariant;
           "app.zen_browser.zen"
           "org.gnome.Loupe"
           "dev.deedles.Trayscale"
-          "org.freedesktop.Platform.GL32.nvidia-580-119-02"
         ]
       else
         [ ];
     update.auto.enable = true;
-    uninstallUnmanaged = true;
+    update.auto.onCalendar = "04:00";
+    uninstallUnmanaged = false;
   };
 
   dconf.settings = {
