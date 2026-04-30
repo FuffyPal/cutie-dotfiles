@@ -75,6 +75,9 @@
         pkgs.rustfmt
         pkgs.clippy
         pkgs.gcc
+
+        # --- Python Devel ENV ---
+        pkgs.python3
       ]
     else if systemSettings.hostname == "retrex" then
       [
