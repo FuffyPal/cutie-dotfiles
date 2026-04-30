@@ -24,22 +24,24 @@
     else
       [ ]
   )
-  ++ (if (systemSettings.hostname == "cutie")
-    then [
-      #../../modules/system/ananicy.nix
-      ../../modules/system/systemd-oomd.nix
-      #../../modules/system/container.nix
-      #./virt-manager.nix
-      #./docker.nix
-      ./podman.nix
-      ./snapper.nix
-      #../../modules/system/lto.nix
-    ]
-    else [ ]);
+  ++ (
+    if (systemSettings.hostname == "cutie") then
+      [
+        #../../modules/system/ananicy.nix
+        ../../modules/system/systemd-oomd.nix
+        #../../modules/system/container.nix
+        #./virt-manager.nix
+        #./docker.nix
+        ./podman.nix
+        ./snapper.nix
+        #../../modules/system/lto.nix
+      ]
+    else
+      [ ]
+  );
 
   boot.kernelPackages =
-  if systemSettings.hostname == "cutie" then pkgs-unstable.linuxPackages
-  else pkgs.linuxPackages;
+    if systemSettings.hostname == "cutie" then pkgs-unstable.linuxPackages else pkgs.linuxPackages;
 
   boot.kernelParams = [
     "quiet"
@@ -59,9 +61,12 @@
     enable = true;
     theme = "bgrt";
   };
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 10;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    systemd-boot.configurationLimit = 10;
+    timeout = 0;
+  };
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -110,14 +115,15 @@
   services.bpftune.enable = true;
 
   system.autoUpgrade = {
-  enable = true;
-  flake = "/home/${userSettings.username}/cutie-dotfiles";
-  flags = [
-    "--update-input" "nixpkgs"
-    "--commit-lock-file"
-  ];
-  dates = "weekly";
-  randomizedDelaySec = "45min";
+    enable = true;
+    flake = "/home/${userSettings.username}/cutie-dotfiles";
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--commit-lock-file"
+    ];
+    dates = "weekly";
+    randomizedDelaySec = "45min";
   };
 
   services.cloudflare-warp.enable = true;
@@ -130,8 +136,8 @@
         default_cpu_governor = "balanced";
       };
       custom = {
-        start = "${pkgs.libnotify}/bin/notify-send 'Oyun Modu Aktif'";
-        stop = "${pkgs.libnotify}/bin/notify-send 'Oyun Modu Kapalı'";
+        start = "${pkgs.libnotify}/bin/notify-send 'Game Mod Enable'";
+        stop = "${pkgs.libnotify}/bin/notify-send 'Game Mod Disable'";
       };
     };
   };

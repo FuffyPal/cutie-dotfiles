@@ -3,10 +3,8 @@
   pkgs-unstable,
   userSettings,
   systemSettings,
-  lib,
   ...
 }:
-with lib.hm.gvariant;
 
 {
 
@@ -191,115 +189,6 @@ with lib.hm.gvariant;
     update.auto.enable = true;
     update.auto.onCalendar = "16:00";
     uninstallUnmanaged = false;
-  };
-
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      accent-color = "pink";
-    };
-    "org/gnome/desktop/background" = {
-      picture-uri = "file://${../assets/images/wallpaper.png}";
-      picture-uri-dark = "file://${../assets/images/wallpaper.png}";
-      picture-options = "zoom";
-    };
-    "org/gnome/desktop/screensaver" = {
-      picture-uri = "file://${../assets/images/wallpaper.png}";
-      picture-options = "zoom";
-    };
-    "org/gnome/desktop/app-folders" = {
-      folder-children = [
-        "Utilities"
-        "Settings"
-        "Accessories"
-        "Core"
-        "YaST"
-        "Pardus"
-        "Office"
-        "Game"
-        "Network"
-        "AudioVideo"
-        "Development"
-      ];
-    };
-    "org/gnome/desktop/app-folders/folders/Utilities" = {
-      name = "Zubehör";
-      categories = [
-        "Utility"
-        "Accessories"
-        "Core"
-        "Settings"
-      ];
-    };
-    "org/gnome/desktop/app-folders/folders/Game" = {
-      name = "Spiel";
-      categories = [ "Game" ];
-    };
-    "org/gnome/desktop/app-folders/folders/AudioVideo" = {
-      name = "Multimedia";
-      categories = [
-        "AudioVideo"
-        "Audio"
-        "Video"
-      ];
-    };
-    "org/gnome/desktop/app-folders/folders/Development" = {
-      name = "Entwicklung";
-      categories = [ "Development" ];
-    };
-    "org/gnome/desktop/app-folders/folders/Office" = {
-      name = "Büro";
-      categories = [ "Office" ];
-    };
-    "org/gnome/shell" = {
-      disable-user-extensions = false;
-      enabled-extensions = [
-        "appindicatorsupport@rgcjonas.gmail.com"
-        "battery-health-charging@maniacx.github.com"
-        "Battery-Health-Charging@maniacx.github.com"
-        "bluetooth-battery-meter@maniacx.github.com"
-        "Bluetooth-Battery-Meter@maniacx.github.com"
-        "blur-my-shell@aunetx"
-        "caffeine@patapon.info"
-        "clipboard-indicator@tudmotu.com"
-        "color-picker@tuberry"
-        "compiz-windows-effect@hermes82.github.com"
-        "compiz-windows-effect@hermes83.github.com"
-        "dash-to-dock@micxgx.gmail.com"
-        "tilingshell@ferrarodomenico.com"
-        "gsconnect@andyholmes.github.io"
-        "just-perfection-desktop@just-perfection"
-        "weatheroclock@clemens.lab21.org"
-        "weatheroclock@CleoMenezesJr.github.io"
-        "quick-settings-audio-panel@rayzeq.github.io"
-        "quick-settings-tweaker@qwreey"
-        "mediacontrols@cliffniff.github.com"
-        "wiggle@meghatsh.github.com"
-        "forge@jmmaranan.com"
-        "qs-touchpad-toggle@crystal"
-        "restartto@tiagoporsch.github.io"
-        "quick-settings-avatar@d-go"
-        "cloudflare-warp-toggle@khaled.is-a.dev"
-      ];
-      favorite-apps = [
-        "app.zen_browser.zen.desktop"
-        "librewolf.desktop"
-        "org.gnome.Console.desktop"
-        "org.gnome.Nautilus.desktop"
-        "dev.vencord.Vesktop.desktop"
-        "vesktop.desktop"
-        "md.obsidian.Obsidian.desktop"
-        "Mattermost.desktop"
-        "element-desktop.desktop"
-        "im.fluffychat.Fluffychat.desktop"
-        "org.mozilla.Thunderbird.desktop"
-        "thunderbird.desktop"
-        "org.gnome.World.PikaBackup.desktop"
-        "btrfs-assistant.desktop"
-      ];
-    };
-    "org/gnome/desktop/interface" = {
-      icon-theme = "Papirus";
-    };
   };
 
   programs.git = {
