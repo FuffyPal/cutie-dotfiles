@@ -35,24 +35,16 @@
         ./snapper.nix
         #../../modules/system/lto.nix
       ]
-      ++ (
-        if (systemSettings.desktop == "gnome") then
-          [
-            ./gnome.nix
-          ]
-        else
-          [ ]
-      )
     else
       [ ]
-      ++ (
-        if (systemSettings.desktop == "gnome") then
-          [
-            ./gnome.nix
-          ]
-        else
-          [ ]
-      )
+  )
+  ++ (
+    if (systemSettings.desktop == "gnome") then
+      [
+        ./gnome.nix
+      ]
+    else
+      [ ]
   );
 
   boot.kernelPackages =

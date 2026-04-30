@@ -8,9 +8,16 @@
 
 {
 
-  imports = [
-    ./dconf-extension.nix
-  ];
+  imports =
+    [ ]
+    ++ (
+      if (systemSettings.desktop == "gnome") then
+        [
+          ./dconf-extension.nix
+        ]
+      else
+        [ ]
+    );
   home.username = userSettings.username;
   home.homeDirectory = "/home/${userSettings.username}";
   home.file.".face".source = ../assets/images/avatar.jpg;
