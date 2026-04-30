@@ -189,7 +189,7 @@ with lib.hm.gvariant;
       else
         [ ];
     update.auto.enable = true;
-    update.auto.onCalendar = "04:00";
+    update.auto.onCalendar = "16:00";
     uninstallUnmanaged = false;
   };
 
