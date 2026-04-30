@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    nix-flatpak.url = "github:gmodena/nix-flatpak/";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -12,19 +12,21 @@
     };
   };
 
-  outputs = { self,
-    nixpkgs-unstable,
-    nixpkgs,
-    home-manager,
-    nix-flatpak,
-    ...
-  }:
+  outputs =
+    {
+      self,
+      nixpkgs-unstable,
+      nixpkgs,
+      home-manager,
+      nix-flatpak,
+      ...
+    }:
     let
       system = "x86_64-linux";
 
       pkgs-unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
+        inherit system;
+        config.allowUnfree = true;
       };
 
       userSettings = {
@@ -59,7 +61,12 @@
       nixosConfigurations = {
 
         "${cutieSettings.hostname}" = nixpkgs.lib.nixosSystem {
-          specialArgs = { systemSettings = cutieSettings; inherit userSettings; inherit system; inherit pkgs-unstable; };
+          specialArgs = {
+            systemSettings = cutieSettings;
+            inherit userSettings;
+            inherit system;
+            inherit pkgs-unstable;
+          };
           modules = [
             ./hosts/nixos/configuration.nix
             nix-flatpak.nixosModules.nix-flatpak
@@ -68,7 +75,11 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak";
-              home-manager.extraSpecialArgs = { inherit userSettings; systemSettings = cutieSettings; inherit pkgs-unstable; };
+              home-manager.extraSpecialArgs = {
+                inherit userSettings;
+                systemSettings = cutieSettings;
+                inherit pkgs-unstable;
+              };
               home-manager.users."${userSettings.username}" = {
                 imports = [
                   ./home/user.nix
@@ -80,7 +91,12 @@
         };
 
         "${retrexSettings.hostname}" = nixpkgs.lib.nixosSystem {
-          specialArgs = { systemSettings = retrexSettings; inherit userSettings; inherit system; inherit pkgs-unstable; };
+          specialArgs = {
+            systemSettings = retrexSettings;
+            inherit userSettings;
+            inherit system;
+            inherit pkgs-unstable;
+          };
           modules = [
             ./hosts/nixos/configuration.nix
             nix-flatpak.nixosModules.nix-flatpak
@@ -89,7 +105,11 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "bak";
-              home-manager.extraSpecialArgs = { inherit userSettings; systemSettings = retrexSettings; inherit pkgs-unstable; };
+              home-manager.extraSpecialArgs = {
+                inherit userSettings;
+                systemSettings = retrexSettings;
+                inherit pkgs-unstable;
+              };
               home-manager.users."${userSettings.username}" = {
                 imports = [
                   ./home/user.nix
