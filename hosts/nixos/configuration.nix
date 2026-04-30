@@ -9,7 +9,6 @@
 {
   imports = [
     ./hardware.nix
-    ./gnome.nix
     ../../modules/system/locale.nix
     ../../modules/system/networking.nix
     ../../modules/system/services.nix
@@ -36,8 +35,24 @@
         ./snapper.nix
         #../../modules/system/lto.nix
       ]
+      ++ (
+        if (systemSettings.desktop == "gnome") then
+          [
+            ./gnome.nix
+          ]
+        else
+          [ ]
+      )
     else
       [ ]
+      ++ (
+        if (systemSettings.desktop == "gnome") then
+          [
+            ./gnome.nix
+          ]
+        else
+          [ ]
+      )
   );
 
   boot.kernelPackages =

@@ -43,7 +43,7 @@
         gpuType = "hybrid";
         amdgpuBusId = "PCI:5:0:0";
         nvidiaBusId = "PCI:1:0:0";
-        syncthingId = "None"; # dont working because i dont have syncthing installed
+        desktop = "gnome";
       };
 
       retrexSettings = {
@@ -51,9 +51,9 @@
         timezone = "Europe/Istanbul";
         locale = "tr_TR.UTF-8";
         gpuType = "nvidia";
+        desktop = "gnome";
         # amdgpuBusId = "PCI:5:0:0";
         # nvidiaBusId = "PCI:1:0:0";
-        # syncthingId = "None"; # dont working because i dont have syncthing installed
       };
 
     in
