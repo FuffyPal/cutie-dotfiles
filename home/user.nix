@@ -51,6 +51,7 @@
         pkgs.localsend
         pkgs.librewolf
         pkgs.thunderbird
+        pkgs.vesktop
 
         # --- Networking & VPN ---
         pkgs.protonvpn-gui
@@ -63,6 +64,7 @@
         # --- CLI Fun & Utilities ---
         pkgs.lolcat
         pkgs.btop
+        pkgs.arrpc
 
         # --- Nix Devel ENV ---
         pkgs.nixd
@@ -175,7 +177,6 @@
           "io.ente.auth"
           "md.obsidian.Obsidian"
           "dev.deedles.Trayscale"
-          "dev.vencord.Vesktop"
           "org.gnome.seahorse.Application"
           "org.cockpit_project.CockpitClient"
           "io.github.giantpinkrobots.varia"
