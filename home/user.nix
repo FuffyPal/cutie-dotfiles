@@ -168,7 +168,6 @@
         [
           "com.usebottles.bottles"
           "com.github.rafostar.Clapper"
-          "org.localsend.localsend_app"
           "io.gitlab.theevilskeleton.Upscaler"
           "com.github.tchx84.Flatseal"
           "com.github.wwmm.easyeffects"
