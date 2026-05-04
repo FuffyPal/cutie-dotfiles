@@ -51,7 +51,10 @@
   hardware.openrazer.users = [ "${userSettings.username}" ];
 
   boot.kernelPackages =
-    if systemSettings.hostname == "cutie" then pkgs-unstable.linuxPackages else pkgs.linuxPackages;
+    if systemSettings.hostname == "cutie" then
+      pkgs-unstable.linuxPackages_latest
+    else
+      pkgs.linuxPackages_latest;
 
   boot.kernelParams = [
     "quiet"
