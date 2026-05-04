@@ -43,6 +43,14 @@
       [
         ./gnome.nix
       ]
+    # else if (systemSettings.desktop == "hyprland") then
+    #   [
+    #     ./hyprland.nix
+    #   ]
+    # else if (systemSettings.desktop == "niri") then
+    #   [
+    #     ./niri.nix
+    #   ]
     else
       [ ]
   );
