@@ -47,6 +47,9 @@
       [ ]
   );
 
+  hardware.openrazer.enable = true;
+  hardware.openrazer.users = [ "${userSettings.username}" ];
+
   boot.kernelPackages =
     if systemSettings.hostname == "cutie" then pkgs-unstable.linuxPackages else pkgs.linuxPackages;
 
@@ -161,18 +164,6 @@
       "video"
       "render"
     ];
-    subUidRanges = [
-      {
-        startUid = 100000;
-        count = 65536;
-      }
-    ];
-    subGidRanges = [
-      {
-        startGid = 100000;
-        count = 65536;
-      }
-    ];
   };
   environment.systemPackages = [
     pkgs.nvidia-container-toolkit
@@ -181,6 +172,7 @@
     pkgs.cudaPackages.cudatoolkit
     pkgs.btrfs-assistant
     pkgs.bpftune
+    pkgs.polychromatic
   ];
 
   programs.gamescope = {
