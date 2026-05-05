@@ -52,6 +52,7 @@
         pkgs.librewolf
         pkgs.thunderbird
         pkgs.vesktop
+        pkgs.google-chrome
 
         # --- Networking & VPN ---
         pkgs.protonvpn-gui
