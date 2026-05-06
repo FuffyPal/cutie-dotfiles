@@ -110,7 +110,7 @@ install_packages() {
 
     PACKAGES=(
         # Temel araçlar
-        git git-lfs vim google-chrome-stable
+        git git-lfs vim
         # Sistem
         flatpak podman podman-docker podman-compose
         firewalld firewall-config firewall-applet
@@ -126,6 +126,8 @@ install_packages() {
         freerdp
         # Steam / oyun
         steam gtk-layer-shell
+        # Medya / Network
+        google-chrome-stable
         # VPN
         proton-vpn-gnome-desktop
         cloudflare-warp
