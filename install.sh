@@ -131,8 +131,6 @@ install_packages() {
         # VPN
         proton-vpn-gnome-desktop
         cloudflare-warp
-        # Kubernetes
-        kubernetes1.35
     )
 
     sudo dnf update -y
