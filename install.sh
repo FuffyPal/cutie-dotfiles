@@ -110,7 +110,7 @@ install_packages() {
 
     PACKAGES=(
         # Temel araçlar
-        git git-lfs vim
+        git git-lfs vim google-chrome-stable
         # Sistem
         flatpak podman podman-docker podman-compose
         firewalld firewall-config firewall-applet
