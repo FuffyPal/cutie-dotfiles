@@ -8,7 +8,6 @@ log() { echo -e "\e[38;2;255;171;185m[flatpak]\e[0m $*"; }
 FLATPAKS=(
     dev.vencord.Vesktop
     com.usebottles.bottles
-    io.podman_desktop.PodmanDesktop
     com.github.rafostar.Clapper
     org.localsend.localsend_app
     io.gitlab.theevilskeleton.Upscaler
@@ -17,8 +16,6 @@ FLATPAKS=(
     org.mozilla.Thunderbird
     com.github.wwmm.easyeffects
     org.torproject.torbrowser-launcher
-    org.prismlauncher.PrismLauncher
-    org.libreoffice.LibreOffice
     io.gitlab.librewolf-community
     org.gnome.Loupe
     io.ente.auth
@@ -26,7 +23,6 @@ FLATPAKS=(
     org.gnome.seahorse.Application
     org.cockpit_project.CockpitClient
     io.github.giantpinkrobots.varia
-    im.fluffychat.Fluffychat
 )
 
 log "Flathub remote ekleniyor..."
