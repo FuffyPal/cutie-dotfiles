@@ -133,6 +133,7 @@ install_packages() {
         kubernetes1.35
     )
 
+    sudo dnf update -y
     sudo dnf install -y "${PACKAGES[@]}"
 
     info "git-lfs başlatılıyor..."
@@ -254,7 +255,7 @@ main() {
     fi
 
     setup_repos
-    run_debloat
+    run_debloat 
     install_packages
     install_flatpaks
     maybe_nvidia
