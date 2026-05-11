@@ -61,6 +61,7 @@
         # --- System & Gaming ---
         pkgs.flatpak
         pkgs.papirus-icon-theme
+        pkgs-unstable.rustdesk
 
         # --- CLI Fun & Utilities ---
         pkgs.lolcat

@@ -1,4 +1,10 @@
-{ pkgs, userSettings , ... }: {
+{ 
+  pkgs, 
+  userSettings, 
+  ... 
+}:
+
+{
   services.xserver.enable = true;
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -8,24 +14,27 @@
   services.gnome.gnome-online-accounts.enable = true;
   programs.dconf.enable = true;
 
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-tour
-    gnome-music
-    gnome-maps
-    gnome-contacts
-    gnome-clocks
-    gnome-calendar
-    gnome-software
-    geary
-    epiphany
-    cheese
-    gnome-calculator
-    simple-scan
-    showtime
-    snapshot
-    decibels
-    papers
-  ]);
+  environment.gnome.excludePackages = (
+    with pkgs;
+    [
+      gnome-tour
+      gnome-music
+      gnome-maps
+      gnome-contacts
+      gnome-clocks
+      gnome-calendar
+      gnome-software
+      geary
+      epiphany
+      cheese
+      gnome-calculator
+      simple-scan
+      showtime
+      snapshot
+      decibels
+      papers
+    ]
+  );
 
   environment.systemPackages = with pkgs; [
     gnome.gvfs
@@ -34,6 +43,7 @@
     libgnome-keyring
     gnome-tweaks
     gnome-weather
+    orchis-theme
     gnomeExtensions.appindicator
     gnomeExtensions.cloudflare-warp-toggle
     gnomeExtensions.battery-health-charging
@@ -52,10 +62,11 @@
     gnomeExtensions.restart-to
     gnomeExtensions.forge
     gnomeExtensions.user-avatar-in-quick-settings
+    gnomeExtensions.user-themes
   ];
   xdg.portal = {
-      enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
-      config.common.default = "gnome";
-    };
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    config.common.default = "gnome";
+  };
 }
