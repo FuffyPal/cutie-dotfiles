@@ -182,6 +182,7 @@
           "org.cockpit_project.CockpitClient"
           "io.github.giantpinkrobots.varia"
           "com.vysp3r.ProtonPlus"
+          "org.gnome.Boxes"
         ]
       else if systemSettings.hostname == "retrex" then
         [
