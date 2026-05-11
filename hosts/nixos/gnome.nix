@@ -1,7 +1,7 @@
-{ 
-  pkgs, 
-  userSettings, 
-  ... 
+{
+  pkgs,
+  userSettings,
+  ...
 }:
 
 {
@@ -43,7 +43,6 @@
     libgnome-keyring
     gnome-tweaks
     gnome-weather
-    orchis-theme
     gnomeExtensions.appindicator
     gnomeExtensions.cloudflare-warp-toggle
     gnomeExtensions.battery-health-charging
@@ -62,7 +61,6 @@
     gnomeExtensions.restart-to
     gnomeExtensions.forge
     gnomeExtensions.user-avatar-in-quick-settings
-    gnomeExtensions.user-themes
   ];
   xdg.portal = {
     enable = true;
