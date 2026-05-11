@@ -29,7 +29,8 @@
           "--dpi-desync-autottl=-1"
           "--dpi-desync-split-pos=1"
         ]
-      else [ ];
+      else
+        [ "--dpi-desync=fake" ];
     whitelist = [
       "*.fluffypal.me"
       "fluffypal.me"
