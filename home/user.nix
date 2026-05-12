@@ -53,6 +53,8 @@
         pkgs.thunderbird
         pkgs.vesktop
         pkgs.google-chrome
+        pkgs.davinci-resolve
+        pkgs.obs-studio
 
         # --- Networking & VPN ---
         pkgs.protonvpn-gui
