@@ -55,6 +55,7 @@
         pkgs.google-chrome
         pkgs.davinci-resolve
         pkgs.obs-studio
+        pkgs.krita
 
         # --- Networking & VPN ---
         pkgs.protonvpn-gui
