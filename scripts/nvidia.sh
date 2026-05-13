@@ -44,20 +44,11 @@ install_drivers() {
     sudo dnf install -y "${NVIDIA_PACKAGES[@]}"
 }
 
-configure_podman_nvidia() {
-    if command -v nvidia-ctk &>/dev/null; then
-        log "Podman için NVIDIA CDI yapılandırılıyor..."
-        sudo nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml
-        log "CDI oluşturuldu: /etc/cdi/nvidia.yaml"
-    fi
-}
-
 # ─── Main ──────────────────────────────────────────────────────────────────────
 if detect_nvidia; then
     log "NVIDIA GPU tespit edildi."
     install_container_toolkit
     install_drivers
-    configure_podman_nvidia
     log "NVIDIA kurulum tamamlandı. Modüller oluşmak için yeniden başlatma gerekebilir."
 else
     log "NVIDIA GPU bulunamadı, atlanıyor."
