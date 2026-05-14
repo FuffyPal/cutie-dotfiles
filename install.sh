@@ -131,6 +131,10 @@ install_packages() {
         # VPN
         proton-vpn-gnome-desktop
         cloudflare-warp
+        # Rust Devel ENV
+        rust cargo rust-analyzer
+        # Nodejs devel ENV
+        nodejs
     )
 
     sudo dnf update -y
