@@ -14,13 +14,15 @@ install_packages() {
     step "DNF Installing Packages"
 
     PACKAGES=(
-        # Temel araçlar
+        # Base Tool
         git git-lfs vim
-        # Sistem
+        # System
         podman podman-docker podman-compose
         firewalld
-        # Yardımcılar
+        # Utilis
         lolcat btop
+        # Cockpit ENV
+        cockpit cockpit-machines cockpit-podman cockpit-storaged cockpit-files cockpit-bridge cockpit-system cockpit-ws cockpit-ws-selinux
     )
 
     sudo dnf install -y "${PACKAGES[@]}"
