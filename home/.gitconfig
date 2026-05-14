@@ -29,7 +29,7 @@
 [user]
     name = Flaouve
     email = flaouve@gmail.com
-    signingkey = 02FC8EA3CD0EA7AB
+    signingkey = 66BFB0A8CD2ED13A
 
 [commit]
     gpgsign = true
