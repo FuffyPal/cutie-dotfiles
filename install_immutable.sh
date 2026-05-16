@@ -182,6 +182,14 @@ install_packages() {
 install_flatpaks() {
     step "Flatpak uygulamaları kuruluyor"
     bash "$DOTFILES_DIR/scripts/flatpak.sh"
+    FLATPAKS(
+        com.ranfdev.DistroShelf
+        dev.zed.Zed
+        com.visualstudio.code
+        com.google.Chrome
+    )
+    log "Flatpak uygulamaları kuruluyor (${#FLATPAKS[@]} adet)..."
+    flatpak install -y --user flathub "${FLATPAKS[@]}"
     success "Flatpak kurulumu tamamlandı."
 }
 
