@@ -93,7 +93,6 @@ gpgkey=https://pkg.cloudflareclient.com/pubkey.gpg
 EOF
     info "Cude Repo ekleniyor..."
     sudo dnf config-manager addrepo --from-repofile https://developer.download.nvidia.com/compute/cuda/repos/fedora$(rpm -E %fedora)/x86_64/cuda-fedora$(rpm -E %fedora).repo
-    
     success "Repo'lar hazır."
 }
 
@@ -135,6 +134,8 @@ install_packages() {
         rust cargo rust-analyzer
         # Nodejs devel ENV
         nodejs
+        # sanal kamera ve obs studip
+        kmod-v4l2loopback akmod-v4l2loopback v4l2loopback-utils obs-studio
     )
 
     sudo dnf update -y
@@ -259,7 +260,7 @@ main() {
     fi
 
     setup_repos
-    run_debloat 
+    run_debloat
     install_packages
     install_flatpaks
     maybe_nvidia
