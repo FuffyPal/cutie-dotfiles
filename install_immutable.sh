@@ -182,7 +182,7 @@ install_packages() {
 install_flatpaks() {
     step "Flatpak uygulamaları kuruluyor"
     bash "$DOTFILES_DIR/scripts/flatpak.sh"
-    FLATPAK_PACKS(
+    FLATPAK_PACKS=(
         com.ranfdev.DistroShelf
         dev.zed.Zed
         com.visualstudio.code
