@@ -290,7 +290,7 @@ main() {
     # setup_repos
     run_debloat
     # install_packages
-    # install_flatpaks
+    install_flatpaks
     # maybe_nvidia
     # setup_secureboot
     # apply_system_configs
