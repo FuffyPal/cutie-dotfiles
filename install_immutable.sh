@@ -16,6 +16,8 @@ success() { echo -e "\e[38;2;150;255;150m[OK]\e[0m      $*"; }
 warn()    { echo -e "\e[38;2;255;200;100m[WARN]\e[0m    $*"; }
 error()   { echo -e "\e[38;2;255;100;100m[ERROR]\e[0m   $*" >&2; }
 step()    { echo -e "\n\e[38;2;255;171;185m━━━ $* ━━━\e[0m\n"; }
+log() { echo -e "\e[38;2;180;200;255m[debloat]\e[0m $*"; }
+
 
 # ─── Argümanlar ────────────────────────────────────────────────────────────────
 SYMLINKS_ONLY=false
