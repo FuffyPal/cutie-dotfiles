@@ -135,7 +135,7 @@ install_packages() {
         # Nodejs devel ENV
         nodejs
         # sanal kamera ve obs studip
-        kmod-v4l2loopback akmod-v4l2loopback v4l2loopback-utils obs-studio
+        kmod-v4l2loopback akmod-v4l2loopback v4l2loopback-utils obs-studio help2man
     )
 
     sudo dnf update -y
