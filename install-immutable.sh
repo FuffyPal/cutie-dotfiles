@@ -43,6 +43,13 @@ setup_repos() {
       https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
       https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
     sudo rpm-ostree ex apply-live
+    info "Cuda Repo Ekleniyor..."
+    sudo curl -o /etc/yum.repos.d/cuda-fedora43.repo https://developer.download.nvidia.com/compute/cuda/repos/fedora43/x86_64/cuda-fedora43.repo
+    rpm-ostree refresh-md
+    info "Nvidia Toolkit Container Repo Ekleniyor"
+    sudo curl -Lo /etc/yum.repos.d/_copr_@ai-ml-nvidia-container-toolkit.repo \
+    https://copr.fedorainfracloud.org/coprs/g/ai-ml/nvidia-container-toolkit/repo/fedora-$(rpm -E %fedora)/g-ai-ml-nvidia-container-toolkit-fedora-$(rpm -E %fedora).repo
+    rpm-ostree refresh-md
     success "Repo'lar hazır."
 }
 
@@ -215,7 +222,7 @@ main() {
     run_debloat
     install_packages
     install_flatpaks
-    # maybe_nvidia
+    maybe_nvidia
     # setup_secureboot
     apply_system_configs
     create_symlinks
