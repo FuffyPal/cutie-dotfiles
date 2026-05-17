@@ -143,39 +143,17 @@ install_packages() {
         # Sistem
         flatpak podman podman-docker podman-compose
         firewalld firewall-config firewall-applet
+        distrobox
         # Masaüstü
-        gnome-tweaks papirus-icon-theme ptyxis
-        # Geliştirici araçları
-        zed helix rust-analyzer cargo
+        gnome-tweaks papirus-icon-theme
         # Yardımcılar
         lolcat btop wtype fuse fuse-libs
-        # Btrfs
-        snapper python3-dnf-plugin-snapper btrfs-assistant
         # Konteyner / sanallaştırma
         freerdp
-        # Steam / oyun
-        steam gtk-layer-shell
-        # Medya / Network
-        google-chrome-stable
-        # VPN
-        proton-vpn-gnome-desktop
-        cloudflare-warp
-        # Rust Devel ENV
-        rust cargo rust-analyzer
-        # Nodejs devel ENV
-        nodejs
         # sanal kamera ve obs studip
         kmod-v4l2loopback akmod-v4l2loopback v4l2loopback-utils obs-studio help2man
     )
-
-    sudo dnf update -y
-    sudo dnf install -y "${PACKAGES[@]}"
-
-    info "git-lfs başlatılıyor..."
-    git lfs install || warn "git lfs install başarısız, atlandı."
-
-    info "Cloudflare WARP servisi etkinleştiriliyor..."
-    sudo systemctl enable --now warp-svc || warn "warp-svc başlatılamadı, atlandı."
+    sudo rpm-ostree install "${PACKAGES[@]}"
 
     success "DNF paketleri kuruldu."
 }
@@ -299,7 +277,7 @@ main() {
 
     # setup_repos
     run_debloat
-    # install_packages
+    install_packages
     install_flatpaks
     # maybe_nvidia
     # setup_secureboot
