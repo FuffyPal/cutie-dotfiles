@@ -39,62 +39,10 @@ setup_repos() {
     step "Repo'lar yapılandırılıyor"
 
     info "RPM Fusion ekleniyor..."
-    sudo dnf install -y \
-        "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" \
-        "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
-
-    info "Terra repo ekleniyor..."
-    sudo dnf install -y --nogpgcheck \
-        --repofrompath "terra,https://repos.fyralabs.com/terra$(rpm -E %fedora)" \
-        terra-release
-
-    info "Fedora workstation repoları etkinleştiriliyor..."
-    sudo dnf install -y fedora-workstation-repositories
-    sudo dnf config-manager setopt google-chrome.enabled=1
-    sudo dnf config-manager setopt rpmfusion-nonfree-nvidia-driver.enabled=1
-
-    info "VS Code repo ekleniyor..."
-    sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-    sudo tee /etc/yum.repos.d/vscode.repo > /dev/null <<'EOF'
-[code]
-name=Visual Studio Code
-baseurl=https://packages.microsoft.com/yumrepos/vscode
-enabled=1
-gpgcheck=1
-gpgkey=https://packages.microsoft.com/keys/microsoft.asc
-EOF
-
-    info "Antigravity repo ekleniyor..."
-    sudo tee /etc/yum.repos.d/antigravity.repo << EOL
-[antigravity-rpm]
-name=Antigravity RPM Repository
-baseurl=https://us-central1-yum.pkg.dev/projects/antigravity-auto-updater-dev/antigravity-rpm
-enabled=1
-gpgcheck=0
-EOL
-    info "ProtonVPN repo ekleniyor..."
-    local fedora_ver
-    fedora_ver=$(cat /etc/fedora-release | cut -d' ' -f 3)
-    local proton_rpm
-    proton_rpm=$(mktemp --suffix=.rpm)
-    curl -fsSL \
-        "https://repo.protonvpn.com/fedora-${fedora_ver}-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.3-1.noarch.rpm" \
-        -o "$proton_rpm"
-    sudo dnf install -y "$proton_rpm"
-    rm -f "$proton_rpm"
-
-    info "Cloudflare WARP repo ekleniyor..."
-    sudo rpm --import https://pkg.cloudflareclient.com/pubkey.gpg
-    sudo tee /etc/yum.repos.d/cloudflare-warp.repo > /dev/null <<'EOF'
-[cloudflare-warp]
-name=Cloudflare WARP
-baseurl=https://pkg.cloudflareclient.com/rpm/
-enabled=1
-gpgcheck=1
-gpgkey=https://pkg.cloudflareclient.com/pubkey.gpg
-EOF
-    info "Cude Repo ekleniyor..."
-    sudo dnf config-manager addrepo --from-repofile https://developer.download.nvidia.com/compute/cuda/repos/fedora$(rpm -E %fedora)/x86_64/cuda-fedora$(rpm -E %fedora).repo
+    sudo rpm-ostree install \
+      https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+      https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+    sudo rpm-ostree override replace
     success "Repo'lar hazır."
 }
 
@@ -275,7 +223,7 @@ main() {
         exit 0
     fi
 
-    # setup_repos
+    setup_repos
     run_debloat
     install_packages
     install_flatpaks
