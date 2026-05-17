@@ -112,8 +112,6 @@ install_flatpaks() {
     bash "$DOTFILES_DIR/scripts/flatpak.sh"
     FLATPAK_PACKS=(
         com.ranfdev.DistroShelf
-        dev.zed.Zed
-        com.visualstudio.code
         com.google.Chrome
     )
     log "Flatpak uygulamaları kuruluyor (${#FLATPAK_PACKS[@]} adet)..."
