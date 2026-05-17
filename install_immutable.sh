@@ -153,7 +153,7 @@ install_packages() {
         # sanal kamera ve obs studip
         kmod-v4l2loopback akmod-v4l2loopback v4l2loopback-utils obs-studio help2man
     )
-    sudo rpm-ostree install "${PACKAGES[@]}"
+    sudo rpm-ostree install --allow-inactive "${PACKAGES[@]}"
 
     success "DNF paketleri kuruldu."
 }
