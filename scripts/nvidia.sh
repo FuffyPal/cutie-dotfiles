@@ -16,6 +16,7 @@ NVIDIA_PACKAGES=(
     libva-nvidia-driver
     libva-utils
     vdpauinfo
+    cuda-toolkit-13-2
 )
 
 detect_nvidia() {
