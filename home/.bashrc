@@ -73,3 +73,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 # ─── Rust ──────────────────────────────────────────────────────────────────────
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+# --- CUDA ----------------------------------------------------------------------
+export PATH=/usr/local/cuda-13.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-13.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export CUDA_ROOT=/usr/local/cuda-13.2
