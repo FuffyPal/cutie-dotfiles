@@ -100,6 +100,8 @@ install_packages() {
         freerdp
         # sanal kamera ve obs studip
         kmod-v4l2loopback akmod-v4l2loopback v4l2loopback-utils obs-studio help2man
+        # Cockpit ENV
+        cockpit cockpit-machines cockpit-podman cockpit-storaged cockpit-files cockpit-bridge cockpit-system cockpit-ws cockpit-ws-selinux
     )
     sudo rpm-ostree install --allow-inactive "${PACKAGES[@]}"
 
@@ -112,6 +114,7 @@ install_flatpaks() {
     bash "$DOTFILES_DIR/scripts/flatpak.sh"
     FLATPAK_PACKS=(
         com.ranfdev.DistroShelf
+        it.mijorus.gearlever
         com.google.Chrome
     )
     log "Flatpak uygulamaları kuruluyor (${#FLATPAK_PACKS[@]} adet)..."
@@ -163,25 +166,12 @@ setup_secureboot() {
 apply_system_configs() {
     step "Sistem konfigürasyonları uygulanıyor"
 
-    info "dnf.conf kopyalanıyor..."
-    sudo cp "$DOTFILES_DIR/system/dnf.conf" /etc/dnf/dnf.conf
-
     info "systemd-resolved yapılandırılıyor (DoT + DNSSEC)..."
     sudo cp "$DOTFILES_DIR/system/resolved.conf" /etc/systemd/resolved.conf
     sudo systemctl enable --now systemd-resolved
-    sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
     info "firewalld etkinleştiriliyor..."
     sudo systemctl enable --now firewalld
-
-    info "Snapper yapılandırılıyor..."
-    if command -v snapper &>/dev/null; then
-        sudo snapper -c root create-config / || warn "Snapper config zaten var, atlandı."
-        sudo cp "$DOTFILES_DIR/system/snapper-root.conf" /etc/snapper/configs/root
-        sudo systemctl enable --now snapper-timeline.timer snapper-cleanup.timer
-    else
-        warn "snapper bulunamadı, atlandı."
-    fi
 
     success "Sistem konfigürasyonları uygulandı."
 }
@@ -227,7 +217,7 @@ main() {
     install_flatpaks
     # maybe_nvidia
     # setup_secureboot
-    # apply_system_configs
+    apply_system_configs
     create_symlinks
 
     echo -e "\n\e[38;2;150;255;150m✔ Kurulum tamamlandı!\e[0m"
