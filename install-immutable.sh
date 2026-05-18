@@ -50,6 +50,15 @@ setup_repos() {
     sudo curl -Lo /etc/yum.repos.d/_copr_@ai-ml-nvidia-container-toolkit.repo \
     https://copr.fedorainfracloud.org/coprs/g/ai-ml/nvidia-container-toolkit/repo/fedora-$(rpm -E %fedora)/g-ai-ml-nvidia-container-toolkit-fedora-$(rpm -E %fedora).repo
     rpm-ostree refresh-md
+    info "Antigravity Repo ekleniyor..."
+    sudo tee /etc/yum.repos.d/antigravity.repo << EOL
+    [antigravity-rpm]
+    name=Antigravity RPM Repository
+    baseurl=https://us-central1-yum.pkg.dev/projects/antigravity-auto-updater-dev/antigravity-rpm
+    enabled=1
+    gpgcheck=0
+    EOL
+    rpm-ostree refresh-md
     success "Repo'lar hazır."
 }
 
@@ -139,37 +148,7 @@ maybe_nvidia() {
     bash "$DOTFILES_DIR/scripts/nvidia.sh"
 }
 
-# ─── 6. Secure Boot (akmods) ──────────────────────────────────────────────────
-# setup_secureboot() {
-#     step "Secure Boot / akmods yapılandırılıyor"
-
-#     if sudo kmodgenca -a; then
-#         info "akmods sertifikası oluşturuldu."
-#     else
-#         warn "İlk deneme başarısız, --force ile tekrar deneniyor..."
-#         if ! sudo kmodgenca -a --force; then
-#             error "Sertifika oluşturulamadı. Secure Boot ayarı atlanıyor."
-#             return 1
-#         fi
-#     fi
-
-#     local cert="/etc/pki/akmods/certs/public_key.der"
-#     if [ ! -f "$cert" ]; then
-#         warn "Sertifika dosyası bulunamadı: $cert"
-#         return 1
-#     fi
-
-#     info "MOK sertifikası import ediliyor..."
-#     if sudo mokutil --import "$cert"; then
-#         success "Secure Boot sertifikası import edildi."
-#         info "Sistemi yeniden başlatınca MOK Manager çıkacak, sertifikayı oradan onaylayın."
-#     else
-#         error "mokutil import başarısız."
-#         return 1
-#     fi
-# }
-
-# ─── 7. Sistem konfigürasyonları ──────────────────────────────────────────────
+# ─── 6. Sistem konfigürasyonları ──────────────────────────────────────────────
 apply_system_configs() {
     step "Sistem konfigürasyonları uygulanıyor"
 
@@ -223,7 +202,6 @@ main() {
     install_packages
     install_flatpaks
     maybe_nvidia
-    # setup_secureboot
     apply_system_configs
     create_symlinks
 
