@@ -109,7 +109,7 @@ install_packages() {
         firewalld firewall-config firewall-applet
         distrobox
         # Masaüstü
-        gnome-tweaks papirus-icon-theme
+        gnome-tweaks papirus-icon-theme antigravity
         # Yardımcılar
         lolcat btop wtype fuse fuse-libs
         # Konteyner / sanallaştırma
