@@ -116,7 +116,7 @@ install_packages() {
         # Masaüstü
         gnome-tweaks papirus-icon-theme ptyxis
         # Geliştirici araçları
-        zed helix rust-analyzer cargo
+        antigravity helix rust-analyzer cargo
         # Yardımcılar
         lolcat btop wtype fuse fuse-libs
         # Btrfs
