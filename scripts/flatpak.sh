@@ -23,6 +23,7 @@ FLATPAKS=(
     org.gnome.seahorse.Application
     org.cockpit_project.CockpitClient
     io.github.giantpinkrobots.varia
+    io.podman_desktop.PodmanDesktop
 )
 
 log "Flathub remote ekleniyor..."
