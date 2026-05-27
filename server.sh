@@ -59,7 +59,14 @@ compose_setup() {
     if ! command -v podman-compose &>/dev/null; then
         error "Podman Compose Not Found."
     else
-
+        if ! command -v git &>/dev/null; then
+            error "Git Not Found."
+        else
+            cd "$DOTFILES_DIR/server/docker"
+            git pull https://gitlab.com/FluffyPal/pal-clouddyy-stack.git
+            podman-compose build
+            success "Stack updated."
+        fi
     fi
 }
 
@@ -73,6 +80,7 @@ main() {
 
     create_symlinks
     install_packages
+    compose_setup
 
     echo -e "\n\e[38;2;150;255;150m✔ Setup Finished!\e[0m"
     echo -e "  Önerilir: sistemi yeniden başlatın → \e[1msudo reboot\e[0m"
