@@ -71,7 +71,7 @@ compose_setup() {
             else
                 git clone https://gitlab.com/FluffyPal/pal-clouddyy-stack.git && cd pal-clouddyy-stack
             fi
-            podman-compose build
+            # podman-compose build
             success "Stack updated."
         fi
     fi
