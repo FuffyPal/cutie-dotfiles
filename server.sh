@@ -65,9 +65,9 @@ compose_setup() {
         if ! command -v git &>/dev/null; then
             error "Git Not Found."
         else
-            mkdir -P "$DOTFILES_DIR/server/docker"
+            mkdir -p "$DOTFILES_DIR/server/docker"
             cd "$DOTFILES_DIR/server/docker"
-            git pull https://gitlab.com/FluffyPal/pal-clouddyy-stack.git
+            git clone https://gitlab.com/FluffyPal/pal-clouddyy-stack.git
             podman-compose build
             success "Stack updated."
         fi
