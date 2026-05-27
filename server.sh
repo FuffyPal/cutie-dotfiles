@@ -65,8 +65,12 @@ compose_setup() {
         if ! command -v git &>/dev/null; then
             error "Git Not Found."
         else
-            cd ~/ && \
-            git clone https://gitlab.com/FluffyPal/pal-clouddyy-stack.git && \
+            cd ~/
+            if [ -d "pal-clouddyy-stack" ]; then
+                cd pal-clouddyy-stack && git pull
+            else
+                git clone https://gitlab.com/FluffyPal/pal-clouddyy-stack.git && cd pal-clouddyy-stack
+            fi
             podman-compose build
             success "Stack updated."
         fi
