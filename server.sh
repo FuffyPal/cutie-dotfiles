@@ -71,6 +71,10 @@ compose_setup() {
             else
                 git clone https://gitlab.com/FluffyPal/pal-clouddyy-stack.git && cd pal-clouddyy-stack
             fi
+            
+            podman network create tailscale_net 
+            podman network create cloud_public 
+            podman network create cloud_internal
             # podman-compose build
             success "Stack updated."
         fi
