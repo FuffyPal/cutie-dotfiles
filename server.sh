@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+
 # ─── Renkli log fonksiyonları ──────────────────────────────────────────────────
 info()    { echo -e "\e[38;2;180;200;255m[INFO]\e[0m    $*"; }
 success() { echo -e "\e[38;2;150;255;150m[OK]\e[0m      $*"; }
