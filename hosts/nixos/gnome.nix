@@ -43,6 +43,7 @@
     libgnome-keyring
     gnome-tweaks
     gnome-weather
+    
     gnomeExtensions.appindicator
     gnomeExtensions.cloudflare-warp-toggle
     gnomeExtensions.battery-health-charging
@@ -59,7 +60,7 @@
     gnomeExtensions.quick-settings-audio-panel
     gnomeExtensions.quick-settings-touchpad-toggle
     gnomeExtensions.restart-to
-    gnomeExtensions.forge
+    gnomeExtensions.paperwm
     gnomeExtensions.user-avatar-in-quick-settings
   ];
   xdg.portal = {

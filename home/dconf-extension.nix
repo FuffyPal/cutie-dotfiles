@@ -207,6 +207,7 @@ with lib.hm.gvariant;
         "cloudflare-warp-toggle@khaled.is-a.dev"
       ];
       favorite-apps = [
+        "google-chrome.desktop"
         "app.zen_browser.zen.desktop"
         "librewolf.desktop"
         "org.gnome.Console.desktop"

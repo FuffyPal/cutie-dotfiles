@@ -173,7 +173,7 @@
           "com.github.rafostar.Clapper"
           "io.gitlab.theevilskeleton.Upscaler"
           "org.localsend.localsend_app"
-          "org.mozilla.Thunderbird"
+          "org.mozilla.thunderbird"
           "io.podman_desktop.PodmanDesktop"
           "io.gitlab.librewolf-community"
           "com.github.tchx84.Flatseal"
