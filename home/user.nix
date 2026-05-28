@@ -206,7 +206,7 @@
         [ ];
     update.auto.enable = true;
     update.auto.onCalendar = "16:00";
-    uninstallUnmanaged = false;
+    uninstallUnmanaged = true;
   };
 
   programs.git = {
