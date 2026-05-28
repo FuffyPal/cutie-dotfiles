@@ -132,6 +132,8 @@ install_packages() {
         cloudflare-warp
         # Rust Devel ENV
         rust cargo rust-analyzer
+        # Go Devel ENV
+        golang
         # Nodejs devel ENV
         nodejs
         # sanal kamera ve obs studip
