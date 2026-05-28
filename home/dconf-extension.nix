@@ -205,6 +205,7 @@ with lib.hm.gvariant;
         "restartto@tiagoporsch.github.io"
         "quick-settings-avatar@d-go"
         "cloudflare-warp-toggle@khaled.is-a.dev"
+        "paperwm@paperwm.github.com"
       ];
       favorite-apps = [
         "google-chrome.desktop"
