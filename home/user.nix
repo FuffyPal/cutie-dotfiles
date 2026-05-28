@@ -48,9 +48,6 @@
 
         # --- Media & Internet ---
         pkgs.vrcx
-        pkgs.localsend
-        pkgs.librewolf
-        pkgs.thunderbird
         pkgs.vesktop
         pkgs.google-chrome
         pkgs.davinci-resolve
@@ -174,17 +171,19 @@
           "com.usebottles.bottles"
           "com.github.rafostar.Clapper"
           "io.gitlab.theevilskeleton.Upscaler"
+          "org.localsend.localsend_app"
+          "org.mozilla.Thunderbird"
+          "io.podman_desktop.PodmanDesktop"
+          "io.gitlab.librewolf-community"
           "com.github.tchx84.Flatseal"
           "com.github.wwmm.easyeffects"
           "org.torproject.torbrowser-launcher"
           "org.gnome.Loupe"
           "io.ente.auth"
-          "md.obsidian.Obsidian"
           "dev.deedles.Trayscale"
           "org.gnome.seahorse.Application"
           "org.cockpit_project.CockpitClient"
           "io.github.giantpinkrobots.varia"
-          "com.vysp3r.ProtonPlus"
           "org.gnome.Boxes"
         ]
       else if systemSettings.hostname == "retrex" then
