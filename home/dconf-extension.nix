@@ -221,6 +221,8 @@ with lib.hm.gvariant;
         "im.fluffychat.Fluffychat.desktop"
         "org.mozilla.Thunderbird.desktop"
         "thunderbird.desktop"
+        "org.mozilla.thunderbird.desktop"
+        "org.mozilla.thunderbird_esr.desktop"
         "org.gnome.World.PikaBackup.desktop"
         "btrfs-assistant.desktop"
       ];
