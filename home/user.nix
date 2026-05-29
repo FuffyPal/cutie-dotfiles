@@ -119,6 +119,40 @@
         pkgs.lolcat
         pkgs.btop
       ]
+    else if systemSettings.hostname == "it" then
+      [
+        # VR
+        pkgs.alvr
+        pkgs.sidequest
+        pkgs.libcap
+
+        # Editors
+        pkgs.helix
+        pkgs.gemini-cli
+        pkgs.codex
+        pkgs.opencode
+        pkgs.cursor-cli
+        pkgs.code-cursor
+
+        # Version Control
+        pkgs.git
+        pkgs.git-lfs
+
+        # Media & Internet
+        pkgs.google-chrome
+        pkgs.ffmpeg
+        pkgs.vesktop
+        pkgs.vrcx
+
+        # System & Gaming
+        pkgs.flatpak
+        pkgs.papirus-icon-theme
+
+        # CLI Utilities
+        pkgs.bat
+        pkgs.lolcat
+        pkgs.btop
+      ]
     else
       [ ];
 
@@ -203,6 +237,27 @@
           "app.zen_browser.zen"
           "org.gnome.Loupe"
           "dev.deedles.Trayscale"
+        ]
+      else if systemSettings.hostname == "it" then
+        [
+          "com.usebottles.bottles"
+          "com.github.rafostar.Clapper"
+          "io.gitlab.theevilskeleton.Upscaler"
+          "org.localsend.localsend_app"
+          "org.mozilla.thunderbird"
+          "io.podman_desktop.PodmanDesktop"
+          "io.gitlab.librewolf-community"
+          "com.github.tchx84.Flatseal"
+          "com.github.wwmm.easyeffects"
+          "org.torproject.torbrowser-launcher"
+          "org.gnome.Loupe"
+          "io.ente.auth"
+          "dev.deedles.Trayscale"
+          "org.kde.kleopatra"
+          "org.cockpit_project.CockpitClient"
+          "io.github.giantpinkrobots.varia"
+          "org.gnome.Boxes"
+          "io.github.totoshko88.RustConn"
         ]
       else
         [ ];
