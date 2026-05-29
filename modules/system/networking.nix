@@ -49,9 +49,11 @@
   services.tailscale = {
     enable = true;
     extraUpFlags = [
-      "--operator=${userSettings.username}"
       "--ssh"
       "--exit-node-allow-lan-access"
+    ];
+    extraSetFlags = [
+      "--operator=${userSettings.username}"
     ];
   };
 
