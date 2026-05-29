@@ -172,7 +172,14 @@
         # --- Python Devel ENV ---
         pkgs.python3
 
-        # Gnome extensions
+        # --- Gnome ---
+        pkgs.gnome.gvfs
+        pkgs.gvfs
+        pkgs.gnome-online-accounts
+        pkgs.libgnome-keyring
+        pkgs.gnome-tweaks
+        pkgs.gnome-weather
+        # --- extensions ---
         pkgs.gnomeExtensions.appindicator
         pkgs.gnomeExtensions.cloudflare-warp-toggle
         pkgs.gnomeExtensions.battery-health-charging
