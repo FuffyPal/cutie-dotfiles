@@ -88,7 +88,7 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
     systemd-boot.configurationLimit = 10;
-    timeout = 0;
+    timeout = 3;
   };
 
   nix.settings.experimental-features = [
