@@ -32,7 +32,7 @@
       userSettings = {
         username = "flaouve";
         name = "flaouve";
-        email = "flaouve@gmail.com";
+        email = "email@email.com";
         dotfilesDir = "~/.cutie-dotfiles";
       };
 
