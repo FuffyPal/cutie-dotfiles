@@ -276,6 +276,7 @@
               sha256 = "04lx6n87qwfybbxw98dy8wwlp98s7xjyxv6rf9fmkcp1mc22l7fk";
             }}";
           }
+          "org.freedesktop.Platform.GL32.nvidia-595-71-05"
         ]
       else if systemSettings.hostname == "retrex" then
         [
