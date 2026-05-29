@@ -81,6 +81,7 @@
         pkgs.rustfmt
         pkgs.clippy
         pkgs.gcc
+        pkgs.cargo-edit
 
         # --- Python Devel ENV ---
         pkgs.python3
@@ -226,6 +227,12 @@
       gc = "git commit";
       gp = "git push";
       gl = "git log --oneline --graph --decorate";
+      rmajor = "cargo set-version --bump major";
+      rminor = "cargo set-version --bump minor";
+      rpatch = "cargo set-version --bump patch";
+      rrc = "cargo set-version --bump rc";
+      rbeta = "cargo set-version --bump beta";
+      ralpha = "cargo set-version --bump alpha";
       up = "cd /home/${userSettings.username}/cutie-dotfiles && git pull && sudo nixos-rebuild switch --flake .#cutie --cores 4";
       comfyui-up = "sudo systemctl start podman-comfyui.service";
       comfyui-down = "sudo systemctl stop podman-comfyui.service";
