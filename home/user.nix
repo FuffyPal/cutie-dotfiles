@@ -37,7 +37,6 @@
         # --- Editors ---
         pkgs.helix
         pkgs-unstable.zed-editor
-        pkgs-unstable.antigravity
 
         # --- Windows ---
         pkgs-unstable.winboat
@@ -326,6 +325,11 @@
     update.auto.enable = true;
     update.auto.onCalendar = "16:00";
     uninstallUnmanaged = true;
+  };
+
+  programs.helix = {
+    themes = "adwaita-dark";
+    defaultEditor = true;
   };
 
   programs.git = {
