@@ -121,37 +121,56 @@
       ]
     else if systemSettings.hostname == "it" then
       [
-        # VR
-        pkgs.alvr
-        pkgs.sidequest
-        pkgs.libcap
-
-        # Editors
+        # --- Editors ---
         pkgs.helix
-        pkgs.gemini-cli
-        pkgs.codex
-        pkgs.opencode
-        pkgs.cursor-cli
-        pkgs.code-cursor
+        pkgs-unstable.zed-editor
+        pkgs-unstable.antigravity
 
-        # Version Control
+        # --- Windows ---
+        pkgs-unstable.winboat
+        pkgs.freerdp
+
+        # --- Version Control ---
         pkgs.git
         pkgs.git-lfs
 
-        # Media & Internet
-        pkgs.google-chrome
-        pkgs.ffmpeg
-        pkgs.vesktop
+        # --- Media & Internet ---
         pkgs.vrcx
+        pkgs.vesktop
+        pkgs.google-chrome
+        pkgs.davinci-resolve
+        pkgs.obs-studio
+        pkgs.krita
 
-        # System & Gaming
+        # --- Networking & VPN ---
+        pkgs.protonvpn-gui
+        pkgs.cloudflare-warp
+
+        # --- System & Gaming ---
         pkgs.flatpak
         pkgs.papirus-icon-theme
+        pkgs-unstable.rustdesk
+        pkgs.gnupg
 
-        # CLI Utilities
-        pkgs.bat
+        # --- CLI Fun & Utilities ---
         pkgs.lolcat
         pkgs.btop
+        pkgs.arrpc
+
+        # --- Nix Devel ENV ---
+        pkgs.nixd
+        pkgs.nil
+
+        # --- Rust Devel ENV ---
+        pkgs.cargo
+        pkgs.rustc
+        pkgs.rust-analyzer
+        pkgs.rustfmt
+        pkgs.clippy
+        pkgs.gcc
+
+        # --- Python Devel ENV ---
+        pkgs.python3
 
         # Gnome extensions
         pkgs.gnomeExtensions.appindicator
