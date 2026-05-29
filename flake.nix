@@ -32,7 +32,7 @@
       userSettings = {
         username = "flaouve";
         name = "flaouve";
-        email = "email@email.com";
+        email = "flaouve@gmail.com";
         dotfilesDir = "~/.cutie-dotfiles";
       };
 
@@ -130,30 +130,28 @@
         };
       };
       homeConfigurations = {
-        "${userSettings.username}@${itFedoraSettings.hostname}" =
-          home-manager.lib.homeManagerConfiguration
+        "${userSettings.username}" = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+
+          extraSpecialArgs = {
+            inherit userSettings;
+            systemSettings = itFedoraSettings;
+            inherit pkgs-unstable;
+          };
+
+          modules = [
+            ./home/user.nix
+            nix-flatpak.homeManagerModules.nix-flatpak
             {
-              pkgs = import nixpkgs {
-                inherit system;
-                config.allowUnfree = true;
-              };
-
-              extraSpecialArgs = {
-                inherit userSettings;
-                systemSettings = itFedoraSettings;
-                inherit pkgs-unstable;
-              };
-
-              modules = [
-                ./home/user.nix
-                nix-flatpak.homeManagerModules.nix-flatpak
-                {
-                  home.username = userSettings.username;
-                  home.homeDirectory = "/home/${userSettings.username}";
-                  home.stateVersion = "25.11";
-                }
-              ];
-            };
+              home.username = userSettings.username;
+              home.homeDirectory = "/home/${userSettings.username}";
+              home.stateVersion = "25.11";
+            }
+          ];
+        };
       };
     };
 }
