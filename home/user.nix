@@ -183,7 +183,7 @@
           "org.gnome.Loupe"
           "io.ente.auth"
           "dev.deedles.Trayscale"
-          "org.gnome.seahorse.Application"
+          "org.kde.kleopatra"
           "org.cockpit_project.CockpitClient"
           "io.github.giantpinkrobots.varia"
           "org.gnome.Boxes"
