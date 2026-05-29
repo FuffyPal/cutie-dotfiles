@@ -268,6 +268,14 @@
           "io.github.giantpinkrobots.varia"
           "org.gnome.Boxes"
           "io.github.totoshko88.RustConn"
+          {
+            appId = "com.hytale.Launcher";
+            sha256 = "04lx6n87qwfybbxw98dy8wwlp98s7xjyxv6rf9fmkcp1mc22l7fk";
+            bundle = "${pkgs.fetchurl {
+              url = "https://launcher.hytale.com/builds/release/linux/amd64/hytale-launcher-latest.flatpak";
+              sha256 = "04lx6n87qwfybbxw98dy8wwlp98s7xjyxv6rf9fmkcp1mc22l7fk";
+            }}";
+          }
         ]
       else if systemSettings.hostname == "retrex" then
         [
