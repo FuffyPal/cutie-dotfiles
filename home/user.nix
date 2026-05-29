@@ -219,6 +219,104 @@
         email = userSettings.email;
       };
     };
+    signing = {
+      signByDefault = true;
+      format = "openpgp";
+      key = "28408DCB6F7696E7";
+    };
+    programs.git.ignores = [
+      "*~"
+      "*.swp"
+      ".DS_Store"
+      ".vscode/"
+      "result"
+
+      # --- Python Devel ENV ---
+
+      # Compile and Bytecode files
+      "__pycache__/"
+      "*.py[cod]"
+      "*$py.class"
+
+      # Virtual Environments
+      ".venv/"
+      "venv/"
+      "ENV/"
+      "env/"
+      ".env"
+
+      # Distribution / Packaging
+      "build/"
+      "develop-eggs/"
+      "dist/"
+      "downloads/"
+      "eggs/"
+      ".eggs/"
+      "lib/"
+      "lib64/"
+      "parts/"
+      "sdist/"
+      "var/"
+      "wheels/"
+      "pip-wheel-metadata/"
+      "share/python-wheels/"
+      "*.egg-info/"
+      ".installed.cfg"
+      "*.egg"
+      "MANIFEST"
+
+      # Test and Jupyter Notebook outputs
+      ".pytest_cache/"
+      ".nosexy/"
+      "htmlcov/"
+      ".tomlcov"
+      ".coverage"
+      ".coverage.*"
+      ".cache"
+      ".ipynb_checkpoints"
+
+      # Python ENV Manager tools
+      ".python-version"
+      ".poetry/"
+
+      # --- Rust Devel ENV ---
+
+      # Compaile Outputs
+      "target/"
+
+      # Temp Files
+      "**/*.rs.bk"
+      "Cargo.lock.ms"
+
+      # Benchmarking Tools
+      "损害报告/"
+      "criterion/"
+
+      # Debugging Tools
+      "tarpaulin-report.html"
+      "cargo-lock.toml"
+
+      # --- Go (Golang) Devel ENV ---
+
+      # Binary Files
+      "*.exe"
+      "*.exe~"
+      "*.dll"
+      "*.so"
+      "*.dylib"
+      "*.test"
+      "*.out"
+
+      # Profiling Anlayz Outputs
+      "*.pprof"
+
+      # Addication
+      "vendor/"
+
+      # Temo Files
+      "go.work"
+      "go.work.sum"
+    ];
   };
   programs.home-manager.enable = true;
 }
