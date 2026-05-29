@@ -152,6 +152,26 @@
         pkgs.bat
         pkgs.lolcat
         pkgs.btop
+
+        # Gnome extensions
+        pkgs.gnomeExtensions.appindicator
+        pkgs.gnomeExtensions.cloudflare-warp-toggle
+        pkgs.gnomeExtensions.battery-health-charging
+        pkgs.gnomeExtensions.bluetooth-battery-meter
+        pkgs.gnomeExtensions.blur-my-shell
+        pkgs.gnomeExtensions.caffeine
+        pkgs.gnomeExtensions.clipboard-indicator
+        pkgs.gnomeExtensions.color-picker
+        pkgs.gnomeExtensions.dash-to-dock
+        pkgs.gnomeExtensions.gsconnect
+        pkgs.gnomeExtensions.just-perfection
+        pkgs.gnomeExtensions.weather-oclock
+        pkgs.gnomeExtensions.media-controls
+        pkgs.gnomeExtensions.quick-settings-audio-panel
+        pkgs.gnomeExtensions.quick-settings-touchpad-toggle
+        pkgs.gnomeExtensions.restart-to
+        pkgs.gnomeExtensions.paperwm
+        pkgs.gnomeExtensions.user-avatar-in-quick-settings
       ]
     else
       [ ];
