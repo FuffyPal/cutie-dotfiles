@@ -146,9 +146,6 @@
             ./home/user.nix
             nix-flatpak.homeManagerModules.nix-flatpak
             {
-              home.useGlobalPkgs = true;
-              home.useUserPackages = true;
-              home.backupFileExtension = "bak";
               home.username = userSettings.username;
               home.homeDirectory = "/home/${userSettings.username}";
               home.stateVersion = "25.11";
