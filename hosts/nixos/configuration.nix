@@ -185,7 +185,7 @@
     pkgs.cudaPackages.cudatoolkit
     pkgs.btrfs-assistant
     pkgs.bpftune
-    pkgs.polychromatic
+    # pkgs.polychromatic i forgeet openrazer disabled
   ];
 
   programs.gamescope = {
