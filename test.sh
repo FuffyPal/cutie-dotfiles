@@ -34,7 +34,7 @@ else
     exit 1
 fi
 
-if nix build .#homeConfigurations."flaouve@it".activationPackage --extra-experimental-features "nix-command flakes" --dry-run; then
+if nix build .#homeConfigurations."flaouve".activationPackage --extra-experimental-features "nix-command flakes" --dry-run; then
     echo -e "${GREEN}✅ flaouve@it: İnşa başarılı! Home Manager dotfile ayarları uyumlu.${NC}"
 else
     echo -e "${RED}❌ flaouve@it: İnşa başarısız! Home Manager ayarlarında çakışma var.${NC}"
