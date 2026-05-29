@@ -146,7 +146,7 @@
       gc = "git commit";
       gp = "git push";
       gl = "git log --oneline --graph --decorate";
-      up = "cd /home/${userSettings.username}/cutie-dotfiles && git pull && sudo nixos-rebuild switch --flake .#cutie";
+      up = "cd /home/${userSettings.username}/cutie-dotfiles && git pull && sudo nixos-rebuild switch --flake .#cutie --cores 4";
       comfyui-up = "sudo systemctl start podman-comfyui.service";
       comfyui-down = "sudo systemctl stop podman-comfyui.service";
       comfyui-status = "systemctl status podman-comfyui.service";
@@ -187,6 +187,7 @@
           "org.cockpit_project.CockpitClient"
           "io.github.giantpinkrobots.varia"
           "org.gnome.Boxes"
+          "io.github.totoshko88.RustConn"
         ]
       else if systemSettings.hostname == "retrex" then
         [

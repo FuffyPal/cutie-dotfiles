@@ -55,14 +55,16 @@
       [ ]
   );
 
-  hardware.openrazer.enable = true;
-  hardware.openrazer.users = [ "${userSettings.username}" ];
+  # FIX: OpenRazer driver compilation error (kernel expects 6 arguments, but code provides 5)
+  # Owww Sorry but wait
+  # hardware.openrazer.enable = true;
+  # hardware.openrazer.users = [ "${userSettings.username}" ];
 
   boot.kernelPackages =
     if systemSettings.hostname == "cutie" then
       pkgs-unstable.linuxPackages_latest
     else
-      pkgs.linuxPackages_latest;
+      pkgs.linuxPackages;
 
   boot.kernelParams = [
     "quiet"
