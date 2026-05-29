@@ -275,6 +275,7 @@
           "org.gnome.Boxes"
           "io.github.totoshko88.RustConn"
           "org.prismlauncher.PrismLauncher"
+          "org.vinegarhq.Sober"
           {
             appId = "com.hypixel.HytaleLauncher";
             sha256 = "04lx6n87qwfybbxw98dy8wwlp98s7xjyxv6rf9fmkcp1mc22l7fk";
