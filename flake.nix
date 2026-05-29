@@ -46,6 +46,16 @@
         desktop = "gnome";
       };
 
+      itFedoraSettings = {
+        hostname = "it";
+        timezone = "Europe/Istanbul";
+        locale = "de_DE.UTF-8";
+        gpuType = "hybrid";
+        amdgpuBusId = "PCI:5:0:0";
+        nvidiaBusId = "PCI:1:0:0";
+        desktop = "gnome";
+      };
+
       retrexSettings = {
         hostname = "retrex";
         timezone = "Europe/Istanbul";
@@ -118,7 +128,32 @@
             }
           ];
         };
+      };
+      homeConfigurations = {
+        "${userSettings.username}@${itFedoraSettings.hostname}" =
+          home-manager.lib.homeManagerConfiguration
+            {
+              pkgs = import nixpkgs {
+                inherit system;
+                config.allowUnfree = true;
+              };
 
+              extraSpecialArgs = {
+                inherit userSettings;
+                systemSettings = itFedoraSettings;
+                inherit pkgs-unstable;
+              };
+
+              modules = [
+                ./home/user.nix
+                nix-flatpak.homeManagerModules.nix-flatpak
+                {
+                  home.username = userSettings.username;
+                  home.homeDirectory = "/home/${userSettings.username}";
+                  home.stateVersion = "25.11";
+                }
+              ];
+            };
       };
     };
 }
