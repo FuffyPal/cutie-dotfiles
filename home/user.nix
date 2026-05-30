@@ -168,6 +168,7 @@
         pkgs.rustfmt
         pkgs.clippy
         pkgs.gcc
+        pkgs.rustlings
 
         # --- Python Devel ENV ---
         pkgs.python3
