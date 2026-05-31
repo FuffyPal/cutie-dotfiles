@@ -33,6 +33,7 @@
       snapshot
       decibels
       papers
+      gnome-system-monitor
     ]
   );
 
@@ -43,7 +44,8 @@
     libgnome-keyring
     gnome-tweaks
     gnome-weather
-    
+    resources
+
     gnomeExtensions.appindicator
     gnomeExtensions.cloudflare-warp-toggle
     gnomeExtensions.battery-health-charging
