@@ -8,6 +8,7 @@
 
   networking.hostName = systemSettings.hostname;
   networking.networkmanager.enable = true;
+  networking.networkmanager.dns = "systemd-resolved";
   services.zapret = {
     enable = true;
     params =
@@ -57,10 +58,15 @@
     ];
   };
 
+  networking.nameservers = [ ];
   services.resolved = {
     enable = true;
     dnssec = "true";
     dnsovertls = "true";
+    fallbackDns = [
+      "1.0.0.1#cloudflare-dns.com"
+      "149.112.112.112#dns.quad9.net"
+    ];
     extraConfig = ''
       [Resolve]
       DNS=1.1.1.1#cloudflare-dns.com 9.9.9.9#dns.quad9.net
@@ -68,6 +74,7 @@
       Cache=yes
       CacheFromLocalhost=no
       ReadEtcHosts=yes
+      Domains=~.
     '';
   };
   programs.alvr.openFirewall = true;
