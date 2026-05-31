@@ -21,7 +21,7 @@
   home.username = userSettings.username;
   home.homeDirectory = "/home/${userSettings.username}";
   home.file.".face".source = ../assets/images/avatar.jpg;
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   home.sessionPath = [
     "$HOME/.nix-profile/bin"
@@ -55,7 +55,7 @@
         pkgs.krita
 
         # --- Networking & VPN ---
-        pkgs.protonvpn-gui
+        pkgs.proton-vpn
         pkgs.cloudflare-warp
 
         # --- System & Gaming ---
