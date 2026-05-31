@@ -1,16 +1,21 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  environment.etc."pix-logo.png".source = ../../assets/images/logo.png;
+  environment.etc."pix-logo.png".source = ../../../assets/images/logo.png;
 
   environment.systemPackages = [
-    (pkgs.runCommand "pix-logo-icon" {} ''
+    (pkgs.runCommand "pix-logo-icon" { } ''
       mkdir -p $out/share/pixmaps
-      cp ${../../assets/images/logo.png} $out/share/pixmaps/pix-logo.png
+      cp ${../../../assets/images/logo.png} $out/share/pixmaps/pix-logo.png
     '')
   ];
 
-  boot.plymouth.logo = ../../assets/images/logo5.png;
+  boot.plymouth.logo = ../../../assets/images/logo5.png;
 
   environment.etc."os-release".text = lib.mkForce ''
     NAME="Pix"

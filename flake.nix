@@ -78,7 +78,7 @@
             inherit pkgs-unstable;
           };
           modules = [
-            ./hosts/nixos/configuration.nix
+            ./hosts/nixos/Desktop/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

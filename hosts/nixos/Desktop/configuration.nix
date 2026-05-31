@@ -9,10 +9,10 @@
 {
   imports = [
     ./hardware.nix
-    ../../modules/system/locale.nix
-    ../../modules/system/networking.nix
-    ../../modules/system/services.nix
-    ../../modules/system/fonts.nix
+    ../../../modules/system/locale.nix
+    ../../../modules/system/networking.nix
+    ../../../modules/system/services.nix
+    ../../../modules/system/fonts.nix
     ./customize.nix
   ]
   ++ (
@@ -27,7 +27,7 @@
     if (systemSettings.hostname == "cutie") then
       [
         #../../modules/system/ananicy.nix
-        ../../modules/system/systemd-oomd.nix
+        ../../../modules/system/systemd-oomd.nix
         #../../modules/system/container.nix
         #./virt-manager.nix
         #./docker.nix
@@ -106,7 +106,7 @@
       mkdir -p /var/lib/AccountsService/icons
       mkdir -p /var/lib/AccountsService/users
 
-      cp ${../../assets/images/avatar.jpg} /var/lib/AccountsService/icons/${userSettings.username}
+      cp ${../../../assets/images/avatar.jpg} /var/lib/AccountsService/icons/${userSettings.username}
 
       echo -e "[User]\nIcon=/var/lib/AccountsService/icons/${userSettings.username}\nSystemAccount=false" > /var/lib/AccountsService/users/${userSettings.username}
 
