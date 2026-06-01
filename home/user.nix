@@ -85,6 +85,12 @@
 
         # --- Python Devel ENV ---
         pkgs.python3
+
+        # --- C# Devel ENV ---
+        pkgs.dotnet-sdk
+        pkgs.omnisharp-roslyn
+        pkgs.netcoredbg
+
       ]
     else if systemSettings.hostname == "retrex" then
       [
