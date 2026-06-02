@@ -280,7 +280,6 @@
           "org.kde.kleopatra"
           "org.cockpit_project.CockpitClient"
           "io.github.giantpinkrobots.varia"
-          "org.gnome.Boxes"
           "io.github.totoshko88.RustConn"
           "org.prismlauncher.PrismLauncher"
           "org.vinegarhq.Sober"
@@ -327,7 +326,6 @@
           "org.kde.kleopatra"
           "org.cockpit_project.CockpitClient"
           "io.github.giantpinkrobots.varia"
-          "org.gnome.Boxes"
           "io.github.totoshko88.RustConn"
         ]
       else

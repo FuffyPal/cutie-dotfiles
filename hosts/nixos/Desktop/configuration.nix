@@ -30,7 +30,7 @@
         ../../../modules/system/systemd-oomd.nix
         # ../../../modules/system/cockpit.nix
         #../../modules/system/container.nix
-        #./virt-manager.nix
+        ../../../modules/system/virt-manager.nix
         #./docker.nix
         ./podman.nix
         ./snapper.nix

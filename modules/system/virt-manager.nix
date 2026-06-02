@@ -29,8 +29,8 @@
   ];
 
   services.samba = {
-    enable = true;
-    openFirewall = true;
+    enable = false;
+    openFirewall = false;
     settings = {
       global = {
         workgroup = "WORKGROUP";
@@ -54,4 +54,3 @@
     };
   };
 }
-
