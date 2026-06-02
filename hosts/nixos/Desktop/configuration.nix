@@ -28,6 +28,7 @@
       [
         #../../modules/system/ananicy.nix
         ../../../modules/system/systemd-oomd.nix
+        ../../../modules/system/cockpit.nix
         #../../modules/system/container.nix
         #./virt-manager.nix
         #./docker.nix
