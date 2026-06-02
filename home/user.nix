@@ -244,6 +244,7 @@
       comfyui-up = "sudo systemctl start podman-comfyui.service";
       comfyui-down = "sudo systemctl stop podman-comfyui.service";
       comfyui-status = "systemctl status podman-comfyui.service";
+      virt-manager = "GTK_THEME=Adwaita:dark virt-manager";
     };
 
     bashrcExtra = ''
