@@ -36,6 +36,10 @@
         dotfilesDir = "~/.cutie-dotfiles";
       };
 
+      # serverSettings = {
+      #   cockpit = true;
+      # };
+
       cutieSettings = {
         hostname = "cutie";
         timezone = "Europe/Istanbul";
@@ -76,6 +80,7 @@
             inherit userSettings;
             inherit system;
             inherit pkgs-unstable;
+            # inherit serverSettings;
           };
           modules = [
             ./hosts/nixos/Desktop/configuration.nix
