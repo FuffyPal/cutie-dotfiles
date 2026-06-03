@@ -91,6 +91,9 @@
         pkgs.omnisharp-roslyn
         pkgs.netcoredbg
 
+        # --- Javaa Devel ENV ---
+        pkgs.openjdk21
+
       ]
     else if systemSettings.hostname == "retrex" then
       [
@@ -337,7 +340,9 @@
   };
 
   programs.helix = {
-    themes = "adwaita-dark";
+    settings = {
+      theme = "adwaita-dark";
+    };
     defaultEditor = true;
   };
 
