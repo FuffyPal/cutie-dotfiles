@@ -141,7 +141,6 @@
         # --- Editors ---
         pkgs.helix
         pkgs-unstable.zed-editor
-        pkgs-unstable.antigravity
 
         # --- Windows ---
         pkgs-unstable.winboat
