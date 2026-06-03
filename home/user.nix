@@ -94,6 +94,13 @@
         # --- Javaa Devel ENV ---
         pkgs.openjdk21
 
+        # --- Go Devel ENV ---
+        pkgs.go
+        pkgs.gopls
+        pkgs.go-tools
+        pkgs.golangci-lint
+        pkgs.delve
+
       ]
     else if systemSettings.hostname == "retrex" then
       [
