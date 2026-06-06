@@ -37,6 +37,7 @@
         # --- Editors ---
         pkgs.helix
         pkgs-unstable.zed-editor
+        pkgs-unstable.antigravity-cli
 
         # --- Windows ---
         pkgs-unstable.winboat
