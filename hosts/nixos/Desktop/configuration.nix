@@ -170,6 +170,7 @@
   };
 
   services.flatpak.enable = true;
+  xdg.portal.enable = true;
 
   users.users."${userSettings.username}" = {
     isNormalUser = true;
