@@ -58,6 +58,10 @@
         hostname = "virtual";
         timezone = "Europe/Istanbul";
         locale = "de_DE.UTF-8";
+        gpuType = "a";
+        amdgpuBusId = "PCI:5:0:0";
+        nvidiaBusId = "PCI:1:0:0";
+        desktop = "s";
       };
 
       itFedoraSettings = {
