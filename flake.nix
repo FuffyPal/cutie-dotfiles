@@ -129,23 +129,6 @@
             ./hosts/nixos/Desktop/configuration.nix
             disko.nixosModules.disko
             ./hosts/nixos/Desktop/disk-config.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "bak";
-              home-manager.extraSpecialArgs = {
-                inherit userSettings;
-                systemSettings = cutieSettings;
-                inherit pkgs-unstable;
-              };
-              home-manager.users."${userSettings.username}" = {
-                imports = [
-                  ./home/user.nix
-                  nix-flatpak.homeManagerModules.nix-flatpak
-                ];
-              };
-            }
           ];
         };
 
