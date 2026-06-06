@@ -169,8 +169,7 @@
     };
   };
 
-  services.flatpak.enable = true;
-  xdg.portal.enable = true;
+  services.flatpak.enable = false;
 
   users.users."${userSettings.username}" = {
     isNormalUser = true;
