@@ -128,7 +128,7 @@
           modules = [
             ./hosts/nixos/Desktop/configuration.nix
             disko.nixosModules.disko
-            ./host/nixos/Dekstop/disk-config.nix
+            ./hosts/nixos/Desktop/disk-config.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
