@@ -86,6 +86,8 @@
 
         # --- Python Devel ENV ---
         pkgs.python3
+        pkgs.pyright
+        pkgs.ruff
 
         # --- C# Devel ENV ---
         pkgs.dotnet-sdk
