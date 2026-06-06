@@ -5,13 +5,19 @@
         type = "disk";
         device = "/dev/vda";
         content = {
-          type = "gpt"; # BIOS olsa bile modern GPT bölme tablosu kullanmak en sağlıklısıdır
+          type = "gpt";
           partitions = {
-            # 1. BIOS Boot Bölümü (GRUB'ın GPT disklere kurulabilmesi için ŞARTTIR)
-            boot = {
+            ESP = {
               priority = 1;
-              size = "1M";
-              type = "EF02"; # Kurulum imajlarında GRUB MBR için bu tip aranır
+              name = "ESP";
+              size = "500M";
+              type = "EF00";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = [ "umask=0077" ];
+              };
             };
 
             # 2. 8GB Swap Bölümü
@@ -24,7 +30,6 @@
               };
             };
 
-            # 3. Kalan Alan: Btrfs Root Dizinleri
             root = {
               priority = 3;
               size = "100%";
