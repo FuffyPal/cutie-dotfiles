@@ -61,6 +61,8 @@
   # hardware.openrazer.enable = true;
   # hardware.openrazer.users = [ "${userSettings.username}" ];
 
+  services.fstrim.enable = true;
+
   boot.kernelPackages =
     if systemSettings.hostname == "cutie" then
       pkgs-unstable.linuxPackages_latest

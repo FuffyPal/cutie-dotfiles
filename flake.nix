@@ -6,6 +6,9 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +22,7 @@
       nixpkgs,
       home-manager,
       nix-flatpak,
+      disko,
       ...
     }:
     let
@@ -48,6 +52,12 @@
         amdgpuBusId = "PCI:5:0:0";
         nvidiaBusId = "PCI:1:0:0";
         desktop = "niri";
+      };
+
+      virtualSettings = {
+        hostname = "virtual";
+        timezone = "Europe/Istanbul";
+        locale = "de_DE.UTF-8";
       };
 
       itFedoraSettings = {
@@ -84,6 +94,37 @@
           };
           modules = [
             ./hosts/nixos/Desktop/configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "bak";
+              home-manager.extraSpecialArgs = {
+                inherit userSettings;
+                systemSettings = cutieSettings;
+                inherit pkgs-unstable;
+              };
+              home-manager.users."${userSettings.username}" = {
+                imports = [
+                  ./home/user.nix
+                  nix-flatpak.homeManagerModules.nix-flatpak
+                ];
+              };
+            }
+          ];
+        };
+
+        "${virtualSettings.hostname}" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            systemSettings = virtualSettings;
+            inherit userSettings;
+            inherit system;
+            inherit pkgs-unstable;
+          };
+          modules = [
+            ./hosts/nixos/Desktop/configuration.nix
+            disko.nixosModules.disko
+            ./host/nixos/Dekstop/disk-config.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
