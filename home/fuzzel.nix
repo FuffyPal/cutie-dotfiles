@@ -14,7 +14,7 @@
         horizontal-pad = 20;
         vertical-pad = 15;
         inner-pad = 10;
-        radius = 12;
+        # radius = 12;
       };
 
       colors = {
