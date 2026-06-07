@@ -16,129 +16,39 @@
     input {
         keyboard {
             xkb {
-                // You can set rules, model, layout, variant and options.
-                // For more information, see xkeyboard-config(7).
-
-                // For example:
                 layout "tr"
-                // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
-
-                // If this section is empty, niri will fetch xkb settings
-                // from org.freedesktop.locale1. You can control these using
-                // localectl set-x11-keymap.
             }
-
-            // Enable numlock on startup, omitting this setting disables it.
             numlock
         }
-
-        // Next sections include libinput settings.
-        // Omitting settings disables them, or leaves them at their default values.
-        // All commented-out settings here are examples, not defaults.
         touchpad {
-            // off
             tap
-            // dwt
-            // dwtp
-            // drag false
-            // drag-lock
             natural-scroll
-            // accel-speed 0.2
-            // accel-profile "flat"
-            // scroll-method "two-finger"
-            // disabled-on-external-mouse
+            scroll-method "two-finger"
         }
-
-        mouse {
-            // off
-            // natural-scroll
-            // accel-speed 0.2
-            // accel-profile "flat"
-            // scroll-method "no-scroll"
-        }
-
-        trackpoint {
-            // off
-            // natural-scroll
-            // accel-speed 0.2
-            // accel-profile "flat"
-            // scroll-method "on-button-down"
-            // scroll-button 273
-            // scroll-button-lock
-            // middle-emulation
-        }
-
-        // Uncomment this to make the mouse warp to the center of newly focused windows.
-        // warp-mouse-to-focus
-
-        // Focus windows and outputs automatically when moving the mouse into them.
-        // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-        // focus-follows-mouse max-scroll-amount="0%"
+        focus-follows-mouse max-scroll-amount="0%"
     }
-
-    // You can configure outputs by their name, which you can find
-    // by running `niri msg outputs` while inside a niri instance.
-    // The built-in laptop monitor is usually called "eDP-1".
-    // Find more information on the wiki:
-    // https://niri-wm.github.io/niri/Configuration:-Outputs
-    // Remember to uncomment the node by removing "/-"!
-    /-output "eDP-1" {
-        // Uncomment this line to disable this output.
-        // off
-
-        // Resolution and, optionally, refresh rate of the output.
-        // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
-        // If the refresh rate is omitted, niri will pick the highest refresh rate
-        // for the resolution.
-        // If the mode is omitted altogether or is invalid, niri will pick one automatically.
-        // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
+    output "eDP-1" {
         mode "1920x1080@120.030"
-
-        // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-        scale 2
-
-        // Transform allows to rotate the output counter-clockwise, valid values are:
-        // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
+        scale 1
         transform "normal"
-
-        // Position of the output in the global coordinate space.
-        // This affects directional monitor actions like "focus-monitor-left", and cursor movement.
-        // The cursor can only move between directly adjacent outputs.
-        // Output scale and rotation has to be taken into account for positioning:
-        // outputs are sized in logical, or scaled, pixels.
-        // For example, a 3840×2160 output with scale 2.0 will have a logical size of 1920×1080,
-        // so to put another output directly adjacent to it on the right, set its x to 1920.
-        // If the position is unset or results in an overlap, the output is instead placed
-        // automatically.
-        position x=1280 y=0
+        position x=0 y=0
     }
 
     // Settings that influence how windows are positioned and sized.
     // Find more information on the wiki:
     // https://niri-wm.github.io/niri/Configuration:-Layout
     layout {
-        // Set gaps around windows in logical pixels.
         gaps 12
 
-        // When to center a column when changing focus, options are:
-        // - "never", default behavior, focusing an off-screen column will keep at the left
-        //   or right edge of the screen.
-        // - "always", the focused column will always be centered.
-        // - "on-overflow", focusing a column will center it if it doesn't fit
-        //   together with the previously focused column.
         center-focused-column "never"
 
         // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
         preset-column-widths {
-            // Proportion sets the width as a fraction of the output width, taking gaps into account.
-            // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
-            // The default preset widths are 1/3, 1/2 and 2/3 of the output.
             proportion 0.33333
             proportion 0.5
             proportion 0.66667
 
-            // Fixed sets the width in logical pixels exactly.
-            // fixed 1920
+            fixed 1905
         }
 
         // You can also customize the heights that "switch-preset-window-height" (Mod+Ctrl+Shift+R) toggles between.
@@ -269,20 +179,14 @@
         }
     }
 
-    // Add lines like this to spawn processes at startup.
-    // Note that running niri as a session supports xdg-desktop-autostart,
-    // which may be more convenient to use.
-    // See the binds section below for more spawn examples.
-
-    // This line starts waybar, a commonly used bar for Wayland compositors.
     spawn-at-startup "waybar"
+    spawn-at-startup "hyprpaper"
 
     // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
     // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 
     hotkey-overlay {
-        // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
-        // skip-at-startup
+        skip-at-startup
     }
 
     // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -629,12 +533,9 @@
         // which ensures niri always processes them, even when an inhibitor is active.
         Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-        // The quit action will show a confirmation dialog to avoid accidental exits.
         Mod+Shift+E { quit; }
         Ctrl+Alt+Delete { quit; }
 
-        // Powers off the monitors. To turn them back on, do any input like
-        // moving the mouse or pressing any other key.
         Mod+Shift+P { power-off-monitors; }
     }
 
