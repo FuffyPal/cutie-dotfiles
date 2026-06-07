@@ -43,6 +43,7 @@
     if (systemSettings.desktop == "gnome") then
       [
         ./gnome.nix
+        ./niri.nix
       ]
     # else if (systemSettings.desktop == "hyprland") then
     #   [
