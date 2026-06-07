@@ -118,7 +118,7 @@
     // https://niri-wm.github.io/niri/Configuration:-Layout
     layout {
         // Set gaps around windows in logical pixels.
-        gaps 16
+        gaps 12
 
         // When to center a column when changing focus, options are:
         // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -174,13 +174,13 @@
             // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
             // Color of the ring on the active monitor.
-            active-color "#7fc8ff"
+            active-gradient from="#b4befe" to="#89b4fa" angle=45
 
             // Color of the ring on inactive monitors.
             //
             // The focus ring only draws around the active window, so the only place
             // where you can see its inactive-color is on other monitors.
-            inactive-color "#505050"
+            inactive-color "#45475a"
 
             // You can also use gradients. They take precedence over solid colors.
             // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -222,7 +222,7 @@
         // You can enable drop shadows for windows.
         shadow {
             // Uncomment the next line to enable shadows.
-            // on
+            on
 
             // By default, the shadow draws only around its window, and not behind it.
             // Uncomment this setting to make the shadow draw behind its window.
@@ -253,7 +253,7 @@
             offset x=0 y=5
 
             // You can also change the shadow color and opacity.
-            color "#0007"
+            color "rgba(17, 17, 27, 0.6)"
         }
 
         // Struts shrink the area occupied by windows, similarly to layer-shell panels.
