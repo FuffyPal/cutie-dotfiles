@@ -42,5 +42,13 @@ else
     exit 1
 fi
 
+if nix build .#homeConfigurations.virtual.activationPackage --extra-experimental-features "nix-command flakes" --dry-run; then
+    echo -e "${GREEN}✅ virtual: İnşa başarılı! Home Manager dotfile ayarları uyumlu.${NC}"
+else
+    echo -e "${RED}❌ virtual: İnşa başarısız! Home Manager ayarlarında çakışma var.${NC}"
+    git reset
+    exit 1
+fi
+
 echo -e "${BLUE}👋 Test tamamlandı. Her şey kuruluma hazır!${NC}"
 git reset

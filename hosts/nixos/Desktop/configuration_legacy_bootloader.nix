@@ -184,7 +184,6 @@
     pkgs.nvidia-container-toolkit
     pkgs.gamescope
     pkgs.libnotify
-    pkgs.cudaPackages.cudatoolkit
     pkgs.btrfs-assistant
     pkgs.bpftune
     # pkgs.polychromatic i forgeet openrazer disabled
