@@ -121,6 +121,7 @@
     dates = "weekly";
     options = "--delete-older-than 7d";
   };
+
   zramSwap = {
     enable = true;
     algorithm = "zstd";
