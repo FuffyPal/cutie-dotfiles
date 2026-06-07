@@ -169,7 +169,7 @@
     };
   };
 
-  services.flatpak.enable = false;
+  services.flatpak.enable = true;
 
   users.users."${userSettings.username}" = {
     isNormalUser = true;
