@@ -1,11 +1,20 @@
+{ pkgs, ... }:
 {
   imports = [
     ./kitty.nix
     ./fuzzel.nix
-    ./hyprpaper.nix
+    ./waybar.nix
   ];
 
   services.awww.enable = true;
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.adwaita-icon-theme;
+    name = "Adwaita";
+    size = 24;
+  };
 
   xdg.configFile."niri/config.kdl".text = ''
     // This config is in the KDL format: https://kdl.dev
@@ -28,7 +37,7 @@
             natural-scroll
             scroll-method "two-finger"
         }
-        focus-follows-mouse max-scroll-amount="0%"
+        focus-follows-mouse max-scroll-amount="100%"
     }
     output "eDP-1" {
         mode "1920x1080@120.030"
