@@ -5,6 +5,8 @@
     ./hyprpaper.nix
   ];
 
+  services.awww.enable = true;
+
   xdg.configFile."niri/config.kdl".text = ''
     // This config is in the KDL format: https://kdl.dev
     // "/-" comments out the following node.
@@ -181,7 +183,8 @@
     }
 
     spawn-at-startup "waybar"
-    spawn-at-startup "hyprpaper"
+    spawn-at-startup "awww-daemon"
+    spawn-at-startup "awww" "img" "${../assets/images/wallpaper.png}"
 
     // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
     // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
