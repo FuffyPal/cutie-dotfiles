@@ -1,6 +1,7 @@
 {
   imports = [
     ./kitty.nix
+    ./fuzzel.nix
   ];
 
   xdg.configFile."niri/config.kdl".text = ''
@@ -368,7 +369,7 @@
         Mod+F1 { show-hotkey-overlay; }
 
         // Suggested binds for running programs: terminal, app launcher, screen locker.
-        Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+        Mod+T hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty"; }
         Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
         Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
