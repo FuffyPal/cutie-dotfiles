@@ -73,6 +73,7 @@
         pkgs.lolcat
         pkgs.btop
         pkgs.arrpc
+        pkgs.tree
 
         # --- Nix Devel ENV ---
         pkgs.nixd
