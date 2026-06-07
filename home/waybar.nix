@@ -62,7 +62,7 @@
         };
 
         "network" = {
-          format-wifi = "   {essid}";
+          format-wifi = "";
           format-ethernet = "󰈀  {ipaddr}/{cidr}";
           format-disconnected = "󰖪  Disconnected";
           tooltip-format = "{ifname} via {gwaddr}";
