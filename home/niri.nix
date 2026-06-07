@@ -2,6 +2,7 @@
   imports = [
     ./kitty.nix
     ./fuzzel.nix
+    ./hyprpaper.nix
   ];
 
   xdg.configFile."niri/config.kdl".text = ''
