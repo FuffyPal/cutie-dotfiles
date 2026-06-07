@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./kitty.nix
+  ];
+
   xdg.configFile."niri/config.kdl".text = ''
     // This config is in the KDL format: https://kdl.dev
     // "/-" comments out the following node.
@@ -361,7 +365,7 @@
 
         // Mod-Shift-/, which is usually the same as Mod-?,
         // shows a list of important hotkeys.
-        Mod+Shift+Slash { show-hotkey-overlay; }
+        Mod+F1 { show-hotkey-overlay; }
 
         // Suggested binds for running programs: terminal, app launcher, screen locker.
         Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
