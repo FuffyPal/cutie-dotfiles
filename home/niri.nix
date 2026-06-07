@@ -4,6 +4,7 @@
     ./kitty.nix
     ./fuzzel.nix
     ./waybar.nix
+    ./swaync.nix
   ];
 
   services.awww.enable = true;
