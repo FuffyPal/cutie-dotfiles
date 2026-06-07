@@ -1,6 +1,6 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
-programs.fuzzel = {
+  programs.fuzzel = {
     enable = true;
     settings = {
       main = {
@@ -32,4 +32,5 @@ programs.fuzzel = {
         radius = 12;
       };
     };
+  };
 }
