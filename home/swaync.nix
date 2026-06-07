@@ -56,7 +56,7 @@
       widget-config = {
         mpris = {
           image-size = 50;
-          image-radius = 12; # Köşelerini biraz yumuşattık
+          image-radius = 12;
         };
         volume = {
           label = " 󰕾 ";
@@ -112,7 +112,6 @@
       };
     };
 
-    # Tamamen Blurlu Transparan Catppuccin Tasarımı
     style = ''
       /* Catppuccin Mocha Yarı Şeffaf Renk Tanımlamaları */
       @define-color cc_bg         rgba(30, 30, 46, 0.65);  /* %65 Opak Base - Arka planı gösterecek */
@@ -135,7 +134,6 @@
           color: @cc_fg;
       }
 
-      /* Ana Kontrol Merkezi Paneli (Blurlu Yapı) */
       .control-center {
           background-color: @cc_bg;
           border-radius: 24px;
@@ -150,7 +148,6 @@
           margin-top: 6px;
       }
 
-      /* Gelen Bildirim Kutuları */
       .notification {
           background-color: @cc_bg_alt;
           color: @cc_fg;
@@ -252,7 +249,6 @@
           color: #11111b;
       }
 
-      /* Ses ve Parlaklık Barları */
       scale trough {
           background-color: rgba(203, 166, 247, 0.2);
           border-radius: 999px;
@@ -280,7 +276,6 @@
           border-radius: 999px;
       }
 
-      /* Hızlı Ayar Buton Izgarası (Grid) */
       .widget-buttons-grid {
           font-size: 1.1rem;
           padding: 10px 14px;
@@ -299,11 +294,10 @@
       }
 
       .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
-          background: #89b4fa; /* Aktifken şık bir Catppuccin Mavisi */
+          background: #89b4fa;
           color: #11111b;
       }
 
-      /* Medya Oynatıcı Widget (MPRIS) */
       .widget-mpris .widget-mpris-player {
           background-color: rgba(49, 50, 68, 0.4);
           border-radius: 16px;
@@ -319,10 +313,9 @@
       .widget-mpris .widget-mpris-player .widget-mpris-title {
           font-weight: bold;
           font-size: 1.1rem;
-          color: #cba6f7; /* Şarkı ismi Mauve renginde parlasın */
+          color: #cba6f7;
       }
 
-      /* Üst Başlık Alanı */
       .widget-title {
           padding: 10px 16px;
       }
