@@ -14,11 +14,10 @@
       if (systemSettings.desktop == "gnome") then
         [
           ./dconf-extension.nix
-          ./niri.nix
         ]
       else if (systemSettings.desktop == "niri") then
         [
-          # ./niri.nix
+          ./niri.nix
         ]
       else
         [ ]
