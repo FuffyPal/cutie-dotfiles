@@ -1,4 +1,8 @@
 {
+  imports = [
+    ./login_manager.nix
+  ];
+
   programs.niri.enable = true;
   programs.yazi = {
     enable = true;
