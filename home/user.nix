@@ -71,6 +71,7 @@
         pkgs-unstable.rustdesk
         pkgs.gnupg
         pkgs-unstable.handy
+        pkgs.wtype
 
         # --- CLI Fun & Utilities ---
         pkgs.lolcat
