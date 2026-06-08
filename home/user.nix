@@ -70,6 +70,7 @@
         pkgs.papirus-icon-theme
         pkgs-unstable.rustdesk
         pkgs.gnupg
+        pkgs-unstable.handy
 
         # --- CLI Fun & Utilities ---
         pkgs.lolcat
