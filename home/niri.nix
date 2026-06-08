@@ -9,6 +9,11 @@
 
   services.awww.enable = true;
 
+  home.packages = [
+    pkgs.cliphist
+    pkgs.wl-clipboard
+  ];
+
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
@@ -38,10 +43,7 @@
             natural-scroll
             scroll-method "two-finger"
         }
-        focus-follows-mouse = {
-            enable = true;
-            max-scrolling-movement = "0%";
-        };
+        focus-follows-mouse
     }
     output "eDP-1" {
         mode "1920x1080@120.030"
@@ -198,6 +200,7 @@
     spawn-at-startup "waybar"
     spawn-at-startup "awww-daemon"
     spawn-at-startup "awww" "img" "${../assets/images/wallpaper.png}"
+    spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
     // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
     // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -292,6 +295,7 @@
         // Suggested binds for running programs: terminal, app launcher, screen locker.
         Mod+T hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty"; }
         Mod+D hotkey-overlay-title="Run an Application: Fuzzel" { spawn "fuzzel"; }
+        Mod+G hotkey-overlay-title="Run an Application: Clipboard Manager" { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
         Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
         // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -332,19 +336,19 @@
         Mod+Down  { focus-window-down; }
         Mod+Up    { focus-window-up; }
         Mod+Right { focus-column-right; }
-        Mod+H     { focus-column-left; }
-        Mod+J     { focus-window-down; }
-        Mod+K     { focus-window-up; }
-        Mod+L     { focus-column-right; }
+        // Mod+H     { focus-column-left; }
+        // Mod+J     { focus-window-down; }
+        // Mod+K     { focus-window-up; }
+        // Mod+L     { focus-column-right; }
 
         Mod+Ctrl+Left  { move-column-left; }
         Mod+Ctrl+Down  { move-window-down; }
         Mod+Ctrl+Up    { move-window-up; }
         Mod+Ctrl+Right { move-column-right; }
-        Mod+Ctrl+H     { move-column-left; }
-        Mod+Ctrl+J     { move-window-down; }
-        Mod+Ctrl+K     { move-window-up; }
-        Mod+Ctrl+L     { move-column-right; }
+        // Mod+Ctrl+H     { move-column-left; }
+        // Mod+Ctrl+J     { move-window-down; }
+        // Mod+Ctrl+K     { move-window-up; }
+        // Mod+Ctrl+L     { move-column-right; }
 
         // Alternative commands that move across workspaces when reaching
         // the first or last window in a column.
