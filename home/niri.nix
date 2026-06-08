@@ -38,7 +38,10 @@
             natural-scroll
             scroll-method "two-finger"
         }
-        focus-follows-mouse max-scroll-amount="100%"
+        focus-follows-mouse = {
+            enable = true;
+            max-scrolling-movement = "0%";
+        };
     }
     output "eDP-1" {
         mode "1920x1080@120.030"

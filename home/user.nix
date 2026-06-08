@@ -42,6 +42,8 @@
         pkgs.helix
         pkgs-unstable.zed-editor
         pkgs-unstable.antigravity-cli
+        pkgs.gemini-cli
+        pkgs.antigravity
 
         # --- Windows ---
         pkgs-unstable.winboat
@@ -356,7 +358,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "adwaita-dark";
+      theme = "catppuccin-mocha";
     };
     defaultEditor = true;
   };
