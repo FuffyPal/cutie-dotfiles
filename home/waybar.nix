@@ -13,10 +13,11 @@
         ];
         modules-center = [ "clock" ];
         modules-right = [
+          "tray"
           "pulseaudio"
           "network"
           "battery"
-          "tray"
+
         ];
 
         "niri/workspaces" = {
@@ -40,6 +41,11 @@
           format = "󱑒  {:%H:%M}";
           format-alt = "  {:%A, %B %d, %Y}";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        };
+
+        "tray" = {
+          icon-size = 14;
+          spacing = 10;
         };
 
         "battery" = {
@@ -139,7 +145,7 @@
       }
 
       #pulseaudio {
-          color: @blue;
+          color: @mauve;
           margin-right: 15px;
           padding-left: 5px;
           padding-right: 5px;
@@ -151,7 +157,7 @@
       }
 
       #battery {
-          color: @blue;
+          color: @mauve;
           padding-left: 5px;
           padding-right: 5px;
       }
