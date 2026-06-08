@@ -14,6 +14,7 @@
         horizontal-pad = 20;
         vertical-pad = 15;
         inner-pad = 10;
+        icon-theme = "Papirus-Dark";
         # radius = 12;
       };
 
