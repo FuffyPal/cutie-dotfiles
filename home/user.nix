@@ -83,36 +83,6 @@
         pkgs.nixd
         pkgs.nil
 
-        # --- Rust Devel ENV ---
-        pkgs.cargo
-        pkgs.rustc
-        pkgs.rust-analyzer
-        pkgs.rustfmt
-        pkgs.rustlings
-        pkgs.clippy
-        pkgs.gcc
-        pkgs.cargo-edit
-
-        # --- Python Devel ENV ---
-        pkgs.python3
-        pkgs.pyright
-        pkgs.ruff
-
-        # --- C# Devel ENV ---
-        pkgs.dotnet-sdk
-        pkgs.omnisharp-roslyn
-        pkgs.netcoredbg
-
-        # --- Javaa Devel ENV ---
-        pkgs.openjdk21
-
-        # --- Go Devel ENV ---
-        pkgs.go
-        pkgs.gopls
-        pkgs.go-tools
-        pkgs.golangci-lint
-        pkgs.delve
-
       ]
     else if systemSettings.hostname == "retrex" then
       [
@@ -188,18 +158,6 @@
         # --- Nix Devel ENV ---
         pkgs.nixd
         pkgs.nil
-
-        # --- Rust Devel ENV ---
-        pkgs.cargo
-        pkgs.rustc
-        pkgs.rust-analyzer
-        pkgs.rustfmt
-        pkgs.rustlings
-        pkgs.clippy
-        pkgs.gcc
-
-        # --- Python Devel ENV ---
-        pkgs.python3
 
         # --- Gnome ---
         pkgs.gnome.gvfs
