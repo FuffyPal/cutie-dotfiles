@@ -195,7 +195,7 @@
             {
               home.username = userSettings.username;
               home.homeDirectory = "/home/${userSettings.username}";
-              home.stateVersion = "25.11";
+              # home.stateVersion = "26.05";
             }
           ];
         };
