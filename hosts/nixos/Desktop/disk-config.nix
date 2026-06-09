@@ -1,9 +1,13 @@
 {
+  systemSettings,
+  ...
+}:
+{
   disko.devices = {
     disk = {
       my-main-disk = {
         type = "disk";
-        device = "/dev/vda";
+        device = "/dev/${systemSettings.disk}";
         content = {
           type = "gpt";
           partitions = {

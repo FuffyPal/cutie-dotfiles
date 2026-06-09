@@ -52,17 +52,28 @@
         amdgpuBusId = "PCI:5:0:0";
         nvidiaBusId = "PCI:1:0:0";
         desktop = "niri";
+        # disk = "nvme0n1"; # lsblk output
       };
 
-      virtualSettings = {
-        hostname = "virtual";
-        timezone = "Europe/Istanbul";
-        locale = "de_DE.UTF-8";
-        gpuType = "a";
-        amdgpuBusId = "PCI:5:0:0";
-        nvidiaBusId = "PCI:1:0:0";
-        desktop = "s";
-      };
+      # violet1Settings = {
+      #   hostname = "eu-violet-1";
+      #   timezone = "Europe/Istanbul";
+      #   locale = "de_DE.UTF-8";
+      #   gpuType = "none";
+      #   disk = "sda"; # lsblk output
+      #   desktop = "none";
+      # };
+
+      # virtualSettings = {
+      #   hostname = "virtual";
+      #   timezone = "Europe/Istanbul";
+      #   locale = "de_DE.UTF-8";
+      #   disk = "vda"; # lsblk output
+      #   gpuType = "a";
+      #   amdgpuBusId = "PCI:5:0:0";
+      #   nvidiaBusId = "PCI:1:0:0";
+      #   desktop = "s";
+      # };
 
       itFedoraSettings = {
         hostname = "it";
@@ -80,8 +91,7 @@
         locale = "tr_TR.UTF-8";
         gpuType = "nvidia";
         desktop = "gnome";
-        # amdgpuBusId = "PCI:5:0:0";
-        # nvidiaBusId = "PCI:1:0:0";
+        # disk = "vda"; # lsblk output
       };
 
     in
@@ -118,19 +128,19 @@
           ];
         };
 
-        "${virtualSettings.hostname}" = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            systemSettings = virtualSettings;
-            inherit userSettings;
-            inherit system;
-            inherit pkgs-unstable;
-          };
-          modules = [
-            ./hosts/nixos/Desktop/configuration.nix
-            disko.nixosModules.disko
-            ./hosts/nixos/Desktop/disk-config.nix
-          ];
-        };
+        # "${virtualSettings.hostname}" = nixpkgs.lib.nixosSystem {
+        #   specialArgs = {
+        #     systemSettings = virtualSettings;
+        #     inherit userSettings;
+        #     inherit system;
+        #     inherit pkgs-unstable;
+        #   };
+        #   modules = [
+        #     ./hosts/nixos/Desktop/configuration.nix
+        #     disko.nixosModules.disko
+        #     ./hosts/nixos/Desktop/disk-config.nix
+        #   ];
+        # };
 
         "${retrexSettings.hostname}" = nixpkgs.lib.nixosSystem {
           specialArgs = {
@@ -140,7 +150,7 @@
             inherit pkgs-unstable;
           };
           modules = [
-            ./hosts/nixos/configuration.nix
+            ./hosts/nixos/Desktop/configuration.nix
             nix-flatpak.nixosModules.nix-flatpak
             home-manager.nixosModules.home-manager
             {
