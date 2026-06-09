@@ -1,11 +1,17 @@
-{ pkgs, userSettings, ... }: {
+{
+  pkgs,
+  userSettings,
+  systemSettings,
+  ...
+}:
+{
 
   services.xserver.enable = true;
   services.displayManager.gdm.enable = true;
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "${userSettings.username}";
 
-  services.displayManager.defaultSession = "niri";
+  services.displayManager.defaultSession = "${systemSettings.desktop}";
 
   programs.dconf.enable = true;
 
