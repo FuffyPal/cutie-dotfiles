@@ -48,7 +48,7 @@ fi
 #     echo -e "${RED}❌ virtual: İnşa başarısız! Home Manager ayarlarında çakışma var.${NC}"
 #     git reset
 #     exit 1
-fi
+# fi
 
 echo -e "${BLUE}👋 Test tamamlandı. Her şey kuruluma hazır!${NC}"
 git reset
