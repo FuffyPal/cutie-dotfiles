@@ -302,7 +302,6 @@
           "org.kde.kleopatra"
           "org.cockpit_project.CockpitClient"
           "io.github.giantpinkrobots.varia"
-          "io.github.totoshko88.RustConn"
           "org.prismlauncher.PrismLauncher"
           "org.vinegarhq.Sober"
           {
