@@ -5,26 +5,34 @@
 {
   disko.devices = {
     disk = {
-      my-main-disk = {
+      my-disk = {
         type = "disk";
         device = "/dev/${systemSettings.disk}";
         content = {
           type = "gpt";
           partitions = {
-            ESP = {
-              priority = 1;
-              name = "ESP";
-              size = "500M";
-              type = "EF00";
-              content = {
-                type = "filesystem";
-                format = "vfat";
-                mountpoint = "/boot";
-                mountOptions = [ "umask=0077" ];
-              };
-            };
+            boot =
+              if systemSettings.biosmode == "efi" then
+                {
+                  priority = 1;
+                  name = "ESP";
+                  size = "500M";
+                  type = "EF00";
+                  content = {
+                    type = "filesystem";
+                    format = "vfat";
+                    mountpoint = "/boot";
+                    mountOptions = [ "umask=0077" ];
+                  };
+                }
+              else
+                {
+                  priority = 1;
+                  name = "bootMBR";
+                  size = "1M";
+                  type = "EF02";
+                };
 
-            # 2. 8GB Swap Bölümü
             swap = {
               priority = 2;
               size = "8G";

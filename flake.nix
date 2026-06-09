@@ -51,18 +51,8 @@
         gpuType = "hybrid";
         amdgpuBusId = "PCI:5:0:0";
         nvidiaBusId = "PCI:1:0:0";
-        desktop = "niri";
         # disk = "nvme0n1"; # lsblk output
       };
-
-      # violet1Settings = {
-      #   hostname = "eu-violet-1";
-      #   timezone = "Europe/Istanbul";
-      #   locale = "de_DE.UTF-8";
-      #   gpuType = "none";
-      #   disk = "sda"; # lsblk output
-      #   desktop = "none";
-      # };
 
       # virtualSettings = {
       #   hostname = "virtual";
@@ -73,6 +63,17 @@
       #   amdgpuBusId = "PCI:5:0:0";
       #   nvidiaBusId = "PCI:1:0:0";
       #   desktop = "s";
+      #   biosmode = "efi";
+      # };
+
+      # violet1Settings = {
+      #   hostname = "eu-violet-1";
+      #   timezone = "Europe/Istanbul";
+      #   locale = "de_DE.UTF-8";
+      #   gpuType = "none";
+      #   disk = "sda"; # lsblk output
+      #   desktop = "none";
+      #   biosmode = "legacy";
       # };
 
       itFedoraSettings = {

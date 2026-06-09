@@ -87,12 +87,15 @@
     enable = true;
     theme = "bgrt";
   };
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-    systemd-boot.configurationLimit = 10;
-    timeout = 3;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = if systemSettings.biosmode == "efi" then true else false;
+    efiInstallAsRemovable = if systemSettings.biosmode == "efi" then true else false;
+    device = "/dev/${systemSettings.disk}";
+    useOSProber = true;
+    configurationLimit = 10;
   };
+  boot.loader.timeout = 3;
 
   nix.settings.experimental-features = [
     "nix-command"
