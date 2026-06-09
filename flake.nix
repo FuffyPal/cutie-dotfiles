@@ -51,7 +51,9 @@
         gpuType = "hybrid";
         amdgpuBusId = "PCI:5:0:0";
         nvidiaBusId = "PCI:1:0:0";
-        # disk = "nvme0n1"; # lsblk output
+        desktop = "niri";
+        biosmode = "efi";
+        disk = "nvme0n1"; # lsblk output
       };
 
       # virtualSettings = {
@@ -92,7 +94,8 @@
         locale = "tr_TR.UTF-8";
         gpuType = "nvidia";
         desktop = "gnome";
-        # disk = "vda"; # lsblk output
+        disk = "none"; # lsblk output
+        biosmode = "efi";
       };
 
     in
