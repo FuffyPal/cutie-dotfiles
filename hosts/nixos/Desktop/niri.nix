@@ -1,9 +1,22 @@
+{ pkgs, ...}:
 {
   imports = [
     ./login_manager.nix
   ];
 
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri;
+  };
+
+  programs.xwayland.enable = true;
+
+  environment.systemPackages = [ pkgs.xwayland-satellite ];
+
+  environment.sessionVariables = {
+    DISPLAY = ":0";
+  };
+  
   programs.yazi = {
     enable = true;
     settings.theme = {
