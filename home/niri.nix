@@ -5,6 +5,7 @@
     ./fuzzel.nix
     ./waybar.nix
     ./swaync.nix
+    ./btop.nix
   ];
 
   services.awww.enable = true;
