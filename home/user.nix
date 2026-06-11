@@ -74,10 +74,11 @@
         pkgs.wtype
 
         # --- CLI Fun & Utilities ---
-        pkgs.lolcat
         pkgs.btop
         pkgs.arrpc
         pkgs.tree
+        pkgs.bat
+        pkgs.eza
 
         # --- Nix Devel ENV ---
         pkgs.nixd
@@ -145,8 +146,8 @@
 
         # CLI Utilities
         pkgs.bat
-        pkgs.lolcat
         pkgs.btop
+        pkgs.eza
       ]
     else if systemSettings.hostname == "it" then
       [
@@ -181,9 +182,10 @@
         pkgs.gnupg
 
         # --- CLI Fun & Utilities ---
-        pkgs.lolcat
         pkgs.btop
         pkgs.arrpc
+        pkgs.bat
+        pkgs.eza
 
         # --- Nix Devel ENV ---
         pkgs.nixd
@@ -228,14 +230,15 @@
       "erasedups"
     ];
     shellAliases = {
-      ls = "ls --color=auto";
-      l = "ls --color=auto";
-      ll = "ls -lh --color=auto";
-      la = "ls -lha --color=auto";
+      ls = "eza --icons=always --color=always --group-directories-first";
+      eza = "eza --icons=always --color=always --group-directories-first";
+      l = "eza --icons=always --color=always --group-directories-first";
+      ll = "eza -lh --icons=always --color=always --group-directories-first";
+      la = "eza -lha --icons=always --color=always --group-directories-first";
       grep = "grep --color=auto";
       helix = "hx";
       hx = "hx";
-      cat = "lolcat";
+      cat = "bat";
       top = "btop";
       myip = "curl -s ifconfig.me";
       gs = "git status";
@@ -347,7 +350,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "catppuccin-mocha";
+      theme = "catppuccin_mocha";
     };
     defaultEditor = true;
   };
