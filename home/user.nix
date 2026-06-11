@@ -79,6 +79,7 @@
         pkgs.tree
         pkgs.bat
         pkgs.eza
+        pkgs.cava
 
         # --- Nix Devel ENV ---
         pkgs.nixd

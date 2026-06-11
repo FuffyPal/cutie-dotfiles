@@ -6,6 +6,7 @@
     ./waybar.nix
     ./swaync.nix
     ./btop.nix
+    ./cava.nix
   ];
 
   services.awww.enable = true;
