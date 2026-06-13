@@ -20,7 +20,7 @@
   environment.etc."os-release".text = lib.mkForce ''
     NAME="Pix"
     ID=pix
-    ID_LIKE=nixos
+    ID_LIKE="femboyos nixos"
     PRETTY_NAME="Pix OS Flowery Edition"
     VERSION="0.1"
     VERSION_ID="0.1"
