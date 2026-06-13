@@ -14,7 +14,6 @@
   home.packages = [
     pkgs.cliphist
     pkgs.wl-clipboard
-    pkgs.pulsemixer
   ];
 
   home.pointerCursor = {
@@ -258,8 +257,11 @@
     }
 
     window-rule {
-        match app-id="floating_mixer"
+        match app-id=r#"^(floating_mixer|floating_cava)$"#
         open-floating true
+
+        default-column-width { proportion 0.40; }
+        default-window-height { proportion 0.40; }
     }
 
     // Example: block out two password managers from screen capture.

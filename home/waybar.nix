@@ -115,7 +115,8 @@
             ];
           };
           tooltip-format = "Volume: {volume}%";
-          on-click = "${pkgs.kitty}/bin/kitty --class floating_mixer -e pulsemixer";
+          on-click = "${pkgs.kitty}/bin/kitty --class floating_mixer -e ${pkgs.pulsemixer}/bin/pulsemixer";
+          on-click-right = "${pkgs.kitty}/bin/kitty --class floating_mixer -e ${pkgs.cava}/bin/cava";
         };
       };
     };
