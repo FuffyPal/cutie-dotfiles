@@ -88,6 +88,7 @@
             "󰤨"
           ];
           tooltip-format = "{essid} ({signalStrength}%) via {gwaddr}";
+          on-click = "${pkgs.kitty}/bin/kitty --class floating_mixer -e ${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
         };
 
         "pulseaudio" = {

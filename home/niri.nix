@@ -2,7 +2,7 @@
 {
   imports = [
     ./kitty.nix
-    #./fuzzel.nix
+    #./fuzzel.nix just i kill
     ./waybar.nix
     ./swaync.nix
     ./btop.nix
