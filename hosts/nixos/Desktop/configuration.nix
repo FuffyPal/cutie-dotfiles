@@ -92,11 +92,17 @@
     timeout = 3;
   };
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  nix.settings.auto-optimise-store = true;
+  nix.settings = {
+    max-jobs = 4;
+    cores = 2;
+
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+
+    auto-optimise-store = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
 
