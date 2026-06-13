@@ -34,7 +34,7 @@
 
         "niri/window" = {
           format = "{}";
-          max-length = 40;
+          max-length = 80;
         };
 
         "clock" = {
@@ -91,7 +91,7 @@
         };
 
         "pulseaudio" = {
-          format = "{icon}";
+          format = " {icon}";
           format-bluetooth = "{icon} ";
           format-muted = "󰝟";
           format-icons = {
@@ -193,6 +193,19 @@
           animation-timing-function: linear;
           animation-iteration-count: infinite;
           animation-direction: alternate;
+      }
+
+      tooltip {
+        background-color: rgba(30, 30, 46, 0.8);
+        border: 2px solid @surface0;
+        border-radius: 10px;
+        padding: 5px 10px;
+      }
+
+      tooltip label {
+        color: @text;
+        font-family: "JetBrainsMono Nerd Font", sans-serif;
+        font-size: 13px;
       }
     '';
   };
