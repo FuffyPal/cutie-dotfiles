@@ -2,11 +2,12 @@
 {
   imports = [
     ./kitty.nix
-    ./fuzzel.nix
+    #./fuzzel.nix
     ./waybar.nix
     ./swaync.nix
     ./btop.nix
     ./cava.nix
+    ./rofi.nix
   ];
 
   services.awww.enable = true;
@@ -300,8 +301,8 @@
 
         // Suggested binds for running programs: terminal, app launcher, screen locker.
         Mod+T hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty"; }
-        Mod+D hotkey-overlay-title="Run an Application: Fuzzel" { spawn "fuzzel"; }
-        Mod+G hotkey-overlay-title="Run an Application: Clipboard Manager" { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+        Mod+D hotkey-overlay-title="Run an Application: Rofi" { spawn "sh" "-c" "rofi -show drun"; }
+        Mod+G hotkey-overlay-title="Run an Application: Clipboard Manager" { spawn "sh" "-c" "cliphist list | rofi -dmenu | cliphist decode | wl-copy"; }
         Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
         // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
