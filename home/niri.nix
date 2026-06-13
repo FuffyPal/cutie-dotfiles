@@ -14,6 +14,7 @@
   home.packages = [
     pkgs.cliphist
     pkgs.wl-clipboard
+    pkgs.pulsemixer
   ];
 
   home.pointerCursor = {
@@ -251,12 +252,13 @@
         default-column-width {}
     }
 
-    // Open the Firefox picture-in-picture player as floating by default.
     window-rule {
-        // This app-id regular expression will work for both:
-        // - host Firefox (app-id is "firefox")
-        // - Flatpak Firefox (app-id is "org.mozilla.firefox")
-        match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+        match app-id=r#"librewolf$"# title="^Bild-im-Bild|Picture-in-Picture|Resim içinde Resim$"
+        open-floating true
+    }
+
+    window-rule {
+        match app-id="floating_mixer"
         open-floating true
     }
 
