@@ -54,24 +54,40 @@
             critical = 15;
           };
           format = "{icon}";
-          format-charging = "  {icon}";
-          format-plugged = "  {icon}";
+          format-charging = "{icon}";
+          format-plugged = "{icon}";
           format-alt = "{icon} {time}";
-          format-icons = [
-            ""
-            ""
-            ""
-            ""
-            ""
-          ];
+          format-icons = {
+            default = [
+              ""
+              ""
+              ""
+              ""
+              ""
+            ];
+            charging = [
+              "󰢟"
+              "󰢜"
+              "󰂇"
+              "󰂉"
+              "󰂅"
+            ];
+          };
           tooltip-format = "{capacity}% - {time} left";
         };
 
         "network" = {
-          format-wifi = "";
+          format-wifi = "{icon}";
           format-ethernet = "󰈀  {ipaddr}/{cidr}";
           format-disconnected = "󰖪  Disconnected";
-          tooltip-format = "{ifname} via {gwaddr}";
+          format-icons = [
+            "󰤯"
+            "󰤟"
+            "󰤢"
+            "󰤥"
+            "󰤨"
+          ];
+          tooltip-format = "{essid} ({signalStrength}%) via {gwaddr}";
         };
 
         "pulseaudio" = {
@@ -86,13 +102,20 @@
             portable = "";
             car = "";
             default = [
-              ""
-              ""
-              ""
+              "󰕿"
+              "󰕿"
+              "󰖀"
+              "󰖀"
+              "󰖀"
+              "󰕾"
+              "󰕾"
+              "󰕾"
+              "󰕾"
+              "󰕾"
             ];
           };
           tooltip-format = "Volume: {volume}%";
-          on-click = "${pkgs.pavucontrol}/bin/pavucontrol";
+          on-click = "${pkgs.kitty}/bin/kitty --class floating_mixer -e pulsemixer";
         };
       };
     };
@@ -149,6 +172,7 @@
           margin-right: 15px;
           padding-left: 5px;
           padding-right: 5px;
+          font-size: 16px;
       }
 
       #network {
