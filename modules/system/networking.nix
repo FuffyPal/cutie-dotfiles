@@ -2,6 +2,7 @@
   systemSettings,
   userSettings,
   config,
+  pkgs,
   ...
 }:
 {
@@ -9,6 +10,7 @@
   networking.hostName = systemSettings.hostname;
   networking.networkmanager.enable = true;
   networking.networkmanager.dns = "systemd-resolved";
+
   services.zapret = {
     enable = true;
     params =
@@ -37,6 +39,7 @@
       "fluffypal.me"
     ];
   };
+
   services.openssh = {
     enable = false;
     settings = {
@@ -74,9 +77,19 @@
       };
     };
   };
+
   programs.alvr.openFirewall = true;
   programs.steam.remotePlay.openFirewall = true;
   programs.steam.dedicatedServer.openFirewall = true;
+
+  services.opensnitch = {
+    enable = true;
+  };
+
+  environment.systemPackages = with pkgs; [
+    opensnitch-ui
+  ];
+
   networking.firewall = {
     enable = true;
     allowPing = true;

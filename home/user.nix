@@ -366,5 +366,50 @@
       };
     };
   };
+
+  xdg.configFile."autostart/opensnitch-ui.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Name=OpenSnitch UI
+    Comment=OpenSnitch Application Firewall Security GUI
+    Exec=${pkgs.opensnitch-ui}/bin/opensnitch-ui
+    Icon=opensnitch-ui
+    Terminal=false
+    Categories=System;Security;
+  '';
+
+  xdg.configFile."autostart/thunderbird.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Name=Thunderbird
+    Comment=Mail & News Client
+    Exec=flatpak run org.mozilla.thunderbird
+    Icon=org.mozilla.thunderbird
+    Terminal=false
+    Categories=Network;Email;
+  '';
+
+  xdg.configFile."autostart/trayscale.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Name=Trayscale
+    Comment=An unofficial GUI wrapper for Tailscale
+    Exec=flatpak run dev.deedles.Trayscale --hide-window
+    Icon=dev.deedles.Trayscale
+    Terminal=false
+    Categories=Network;
+  '';
+
+  xdg.configFile."autostart/easyeffects.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Name=EasyEffects
+    Comment=Audio Effects for PipeWire applications
+    Exec=flatpak run com.github.wwmm.easyeffects --gapplication-service
+    Icon=com.github.wwmm.easyeffects
+    Terminal=false
+    Categories=AudioVideo;Audio;
+  '';
+
   programs.home-manager.enable = true;
 }
