@@ -18,11 +18,6 @@
         gradient_color_2 = "'#f2cdcd'";
         gradient_color_3 = "'#cdd6f4'";
       };
-
-      smoothing = {
-        monstercat = 1;
-        waves = 1;
-      };
     };
   };
 }
